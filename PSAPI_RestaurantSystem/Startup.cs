@@ -30,11 +30,9 @@ namespace PSAPI_RestaurantSystem
 
             // Database context setup
 
-            //services.AddDbContextPool<YourDbContext>(options => options
-            //    // replace with your connection string
-            //    .UseMySql("Server=localhost;Database=ef;User=root;Password=1234;", mySqlOptions => mySqlOptions
-            //        // replace with your Server Version and Type
-            //        .ServerVersion(new Version(8, 0, 18), ServerType.MySql)
+            services.AddDbContextPool<RestaurantContext>(options => options
+                .UseMySql("Server=localhost;Database=psapi_db;User=root;Password=psapi;", mySqlOptions =>
+                    mySqlOptions.ServerVersion(new Version(8, 0, 18), ServerType.MySql)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
