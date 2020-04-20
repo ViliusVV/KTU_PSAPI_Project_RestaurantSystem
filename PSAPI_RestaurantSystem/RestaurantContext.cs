@@ -10,7 +10,7 @@ namespace PSAPI_RestaurantSystem
     public class RestaurantContext: DbContext
     {
         public DbSet<Person> People { get; set; }
-
+        public DbSet<Table> Tables { get; set; }
 
         public RestaurantContext(DbContextOptions<RestaurantContext> options): base(options)
         {
