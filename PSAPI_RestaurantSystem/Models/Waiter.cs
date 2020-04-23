@@ -12,6 +12,12 @@ namespace PSAPIRestaurantSystem.Models
         public int WaiterId { get; set; }
 
         [Required] 
-        public double Tips { get; set; } 
+        public double Tips { get; set; }
+
+
+        // Relationships
+        // Employee to waiter (1 to 1)
+        public int EmployeeId { get; set; }
+        public Employee Employee { get; set; }
     }
 }

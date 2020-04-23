@@ -27,5 +27,18 @@ namespace PSAPIRestaurantSystem
         {
         
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Employee>()
+            //    .HasOne(b => b.Admin)
+            //    .WithOne(i => i.Employee)
+            //    .HasForeignKey<Admin>(b => b.EmployeeId);
+
+            //modelBuilder.Entity<Employee>()
+            //    .HasOne(b => b.Waiter)
+            //    .WithOne(i => i.Employee)
+            //    .HasForeignKey<Waiter>(b => b.EmployeeId);
+        }
     }
 }

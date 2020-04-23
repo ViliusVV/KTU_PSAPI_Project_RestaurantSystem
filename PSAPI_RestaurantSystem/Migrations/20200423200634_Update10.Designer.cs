@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PSAPIRestaurantSystem;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20200423200634_Update10")]
+    partial class Update10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,9 +187,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<int>("PeopleCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReservedDate")
                         .HasColumnType("datetime(6)");
 
@@ -198,8 +197,6 @@ namespace PSAPIRestaurantSystem.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ReservationId");
-
-                    b.HasIndex("ReservedByUserId");
 
                     b.ToTable("Reservations");
                 });
@@ -346,15 +343,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
                         .WithOne("Employee")
                         .HasForeignKey("PSAPIRestaurantSystem.Models.Employee", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Reservation", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "ReservedBy")
-                        .WithMany("Reservations")
-                        .HasForeignKey("ReservedByUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

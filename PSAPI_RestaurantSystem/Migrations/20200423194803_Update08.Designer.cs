@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PSAPIRestaurantSystem;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20200423194803_Update08")]
+    partial class Update08
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,9 +55,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<DateTime>("EndedWork")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("RegisteredByAdminId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Salary")
                         .HasColumnType("int");
 
@@ -63,8 +62,6 @@ namespace PSAPIRestaurantSystem.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("EmployeeId");
-
-                    b.HasIndex("RegisteredByAdminId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -185,9 +182,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<int>("PeopleCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReservedDate")
                         .HasColumnType("datetime(6)");
 
@@ -198,8 +192,6 @@ namespace PSAPIRestaurantSystem.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ReservationId");
-
-                    b.HasIndex("ReservedByUserId");
 
                     b.ToTable("Reservations");
                 });
@@ -337,24 +329,9 @@ namespace PSAPIRestaurantSystem.Migrations
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Employee", b =>
                 {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Admin", "RegisteredBy")
-                        .WithMany("RegisteredEmployees")
-                        .HasForeignKey("RegisteredByAdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
                         .WithOne("Employee")
                         .HasForeignKey("PSAPIRestaurantSystem.Models.Employee", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Reservation", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "ReservedBy")
-                        .WithMany("Reservations")
-                        .HasForeignKey("ReservedByUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

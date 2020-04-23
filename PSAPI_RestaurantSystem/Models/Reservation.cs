@@ -24,5 +24,10 @@ namespace PSAPIRestaurantSystem.Models
         public int State { get; set; }
 
         public string Comment { get; set; }
+
+        // Relationships
+        // User to reservation (0 to *)
+        public int ReservedByUserId { get; set; }
+        public User ReservedBy { get; set; }
     }
 }

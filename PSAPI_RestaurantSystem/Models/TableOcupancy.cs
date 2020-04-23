@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace PSAPIRestaurantSystem.Models
 {
-    public class Location
+    public class TableOccupancy
     {
+        public int TableOccupancyId { get; set; }
+
+
+        // Relationships
 
     }
 }

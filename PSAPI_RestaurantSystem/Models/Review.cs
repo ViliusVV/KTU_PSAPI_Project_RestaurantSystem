@@ -19,5 +19,11 @@ namespace PSAPIRestaurantSystem.Models
 
         [Required]
         public DateTime ReviewDate { get; set; }
+
+
+        // Relationships
+        // User to review (0 to *)
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

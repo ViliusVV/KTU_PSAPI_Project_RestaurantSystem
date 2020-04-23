@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PSAPIRestaurantSystem;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20200423191920_Update05")]
+    partial class Update05
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,7 +25,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("EmployeeId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("WorkEmail")
@@ -32,7 +34,7 @@ namespace PSAPIRestaurantSystem.Migrations
 
                     b.HasKey("AdminId");
 
-                    b.HasIndex("EmployeeId")
+                    b.HasIndex("UserId")
                         .IsUnique();
 
                     b.ToTable("Admins");
@@ -40,9 +42,8 @@ namespace PSAPIRestaurantSystem.Migrations
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Employee", b =>
                 {
-                    b.Property<int>("EmployeeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("EmployeeCode")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("BeganWork")
                         .HasColumnType("datetime(6)");
@@ -53,21 +54,10 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<DateTime>("EndedWork")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("RegisteredByAdminId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Salary")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeeId");
-
-                    b.HasIndex("RegisteredByAdminId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasKey("EmployeeCode");
 
                     b.ToTable("Employees");
                 });
@@ -185,9 +175,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<int>("PeopleCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReservedDate")
                         .HasColumnType("datetime(6)");
 
@@ -198,8 +185,6 @@ namespace PSAPIRestaurantSystem.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ReservationId");
-
-                    b.HasIndex("ReservedByUserId");
 
                     b.ToTable("Reservations");
                 });
@@ -219,12 +204,7 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<int>("ReviewText")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("ReviewId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -312,58 +292,19 @@ namespace PSAPIRestaurantSystem.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
                     b.Property<double>("Tips")
                         .HasColumnType("double");
 
                     b.HasKey("WaiterId");
-
-                    b.HasIndex("EmployeeId")
-                        .IsUnique();
 
                     b.ToTable("Waiters");
                 });
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Admin", b =>
                 {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Employee", "Employee")
+                    b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
                         .WithOne("Admin")
-                        .HasForeignKey("PSAPIRestaurantSystem.Models.Admin", "EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Employee", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Admin", "RegisteredBy")
-                        .WithMany("RegisteredEmployees")
-                        .HasForeignKey("RegisteredByAdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
-                        .WithOne("Employee")
-                        .HasForeignKey("PSAPIRestaurantSystem.Models.Employee", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Reservation", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "ReservedBy")
-                        .WithMany("Reservations")
-                        .HasForeignKey("ReservedByUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Review", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("PSAPIRestaurantSystem.Models.Admin", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -373,15 +314,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.HasOne("PSAPIRestaurantSystem.Models.Person", "Person")
                         .WithOne("User")
                         .HasForeignKey("PSAPIRestaurantSystem.Models.User", "PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Waiter", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Employee", "Employee")
-                        .WithOne("Waiter")
-                        .HasForeignKey("PSAPIRestaurantSystem.Models.Waiter", "EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

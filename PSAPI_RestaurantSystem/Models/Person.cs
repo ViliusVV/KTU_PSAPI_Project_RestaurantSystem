@@ -16,7 +16,9 @@ namespace PSAPIRestaurantSystem.Models
         [Required]
         public string Surname { get; set; }
 
-        
+
+        // Relationships
+        // Person to user (1 to 1)
         public User User { get; set; }
     }
 }
