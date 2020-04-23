@@ -8,6 +8,10 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Admin
     {
+        [Key]
+        public int AdminId { get; set; }
 
+        [Required]
+        public string WorkEmail { get; set; }
     }
 }

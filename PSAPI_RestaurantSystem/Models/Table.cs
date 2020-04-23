@@ -10,6 +10,7 @@ namespace PSAPIRestaurantSystem.Models
     {
         [Key]
         public int TableNum { get; set; }
+
         [Required]
         public int SeatCount { get; set; }
 

@@ -8,6 +8,13 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Menu
     {
+        [Key]
+        public int MenuId { get; set; }
 
+        [Required]
+        public string Title { get; set; }
+        
+        [Required]
+        public DateTime Changed { get; set; }
     }
 }

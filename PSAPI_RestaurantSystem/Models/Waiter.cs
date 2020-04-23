@@ -8,6 +8,10 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Waiter
     {
+        [Key]
+        public int WaiterId { get; set; }
 
+        [Required] 
+        public double Tips { get; set; } 
     }
 }

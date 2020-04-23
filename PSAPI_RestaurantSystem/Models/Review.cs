@@ -8,6 +8,16 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Review
     {
+        [Key]
+        public int ReviewId { get; set; }
 
+        [Required]
+        public int Rating { get; set; }
+
+        [Required]
+        public int ReviewText { get; set; }
+
+        [Required]
+        public DateTime ReviewDate { get; set; }
     }
 }
