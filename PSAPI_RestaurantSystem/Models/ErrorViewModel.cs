@@ -1,6 +1,6 @@
 using System;
 
-namespace PSAPI_RestaurantSystem.Models
+namespace PSAPIRestaurantSystem.Models
 {
     public class ErrorViewModel
     {

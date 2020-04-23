@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PSAPI_RestaurantSystem": {
+    "PSAPIRestaurantSystem": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

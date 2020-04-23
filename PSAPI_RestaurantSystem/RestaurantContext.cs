@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PSAPI_RestaurantSystem.Models;
+using PSAPIRestaurantSystem.Models;
 
-namespace PSAPI_RestaurantSystem
+namespace PSAPIRestaurantSystem
 {
     public class RestaurantContext: DbContext
     {

@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace PSAPI_RestaurantSystem
+namespace PSAPIRestaurantSystem
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {

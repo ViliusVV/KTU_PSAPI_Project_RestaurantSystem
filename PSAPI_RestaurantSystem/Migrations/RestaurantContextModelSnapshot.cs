@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PSAPI_RestaurantSystem;
+using PSAPIRestaurantSystem;
 
-namespace PSAPI_RestaurantSystem.Migrations
+namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
     partial class RestaurantContextModelSnapshot : ModelSnapshot
@@ -16,7 +16,7 @@ namespace PSAPI_RestaurantSystem.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("PSAPI_RestaurantSystem.Models.Person", b =>
+            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Person", b =>
                 {
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd()
@@ -35,7 +35,7 @@ namespace PSAPI_RestaurantSystem.Migrations
                     b.ToTable("People");
                 });
 
-            modelBuilder.Entity("PSAPI_RestaurantSystem.Models.Table", b =>
+            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Table", b =>
                 {
                     b.Property<int>("TableNum")
                         .ValueGeneratedOnAdd()

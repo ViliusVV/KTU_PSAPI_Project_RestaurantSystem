@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PSAPI_RestaurantSystem;
+using PSAPIRestaurantSystem;
 
-namespace PSAPI_RestaurantSystem.Migrations
+namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
     [Migration("20200420175330_InitialCreate")]
@@ -18,7 +18,7 @@ namespace PSAPI_RestaurantSystem.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("PSAPI_RestaurantSystem.Models.Person", b =>
+            modelBuilder.Entity("PSAPIRestaurantSystem.Models.Person", b =>
                 {
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd()

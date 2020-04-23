@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PSAPI_RestaurantSystem.Models
+namespace PSAPIRestaurantSystem.Models
 {
     public class Person
     {

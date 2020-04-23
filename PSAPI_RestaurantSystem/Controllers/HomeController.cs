@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PSAPI_RestaurantSystem.Models;
+using PSAPIRestaurantSystem.Models;
 
-namespace PSAPI_RestaurantSystem.Controllers
+namespace PSAPIRestaurantSystem.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly RestaurantContext restaurantContext;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -25,7 +23,10 @@ namespace PSAPI_RestaurantSystem.Controllers
 
         public IActionResult Privacy()
         {
-            _logger.LogWarning("OMG. Someone is reading privacy TOS!!!11!1!");
+            _logger.LogWarning("Someone is reading privacy TOS!!!11!1!");
+            var list = restaurantContext.Tables.ToList();
+            _logger.LogWarning(list[0].TableNum.ToString());
+            _logger.LogWarning(list[0].SeatCount.ToString());
             return View();
         }
 

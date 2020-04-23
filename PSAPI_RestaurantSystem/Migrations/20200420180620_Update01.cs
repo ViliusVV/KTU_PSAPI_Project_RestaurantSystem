@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PSAPI_RestaurantSystem.Migrations
+namespace PSAPIRestaurantSystem.Migrations
 {
     public partial class Update01 : Migration
     {

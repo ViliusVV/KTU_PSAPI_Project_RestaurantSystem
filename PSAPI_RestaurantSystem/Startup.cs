@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
-namespace PSAPI_RestaurantSystem
+namespace PSAPIRestaurantSystem
 {
     public class Startup
     {

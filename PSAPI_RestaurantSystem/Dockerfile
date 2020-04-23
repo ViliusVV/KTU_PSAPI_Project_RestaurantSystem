@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["PSAPI_RestaurantSystem/PSAPI_RestaurantSystem.csproj", "PSAPI_RestaurantSystem/"]
-RUN dotnet restore "PSAPI_RestaurantSystem/PSAPI_RestaurantSystem.csproj"
+COPY ["PSAPIRestaurantSystem/PSAPIRestaurantSystem.csproj", "PSAPIRestaurantSystem/"]
+RUN dotnet restore "PSAPIRestaurantSystem/PSAPIRestaurantSystem.csproj"
 COPY . .
-WORKDIR "/src/PSAPI_RestaurantSystem"
-RUN dotnet build "PSAPI_RestaurantSystem.csproj" -c Release -o /app/build
+WORKDIR "/src/PSAPIRestaurantSystem"
+RUN dotnet build "PSAPIRestaurantSystem.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PSAPI_RestaurantSystem.csproj" -c Release -o /app/publish
+RUN dotnet publish "PSAPIRestaurantSystem.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "PSAPI_RestaurantSystem.dll"]
+ENTRYPOINT ["dotnet", "PSAPIRestaurantSystem.dll"]

@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace PSAPIRestaurantSystem.Models
 {
-    public class Table
+    public class User
     {
-        [Key]
-        public int TableNum { get; set; }
-        [Required]
-        public int SeatCount { get; set; }
-
 
     }
 }
