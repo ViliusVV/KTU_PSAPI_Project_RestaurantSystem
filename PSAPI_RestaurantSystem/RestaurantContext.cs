@@ -55,7 +55,8 @@ namespace PSAPIRestaurantSystem
             modelBuilder.Entity<TableOccupancy>()
                 .HasOne(pt => pt.Reservation)
                 .WithMany(p => p.TableOccupancies)
-                .HasForeignKey(pt => pt.ReservationId);
+                .HasForeignKey(pt => pt.ReservationId)
+                .IsRequired(false);
         }
     }
 }

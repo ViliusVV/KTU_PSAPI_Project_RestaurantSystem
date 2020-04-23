@@ -25,5 +25,8 @@ namespace PSAPIRestaurantSystem.Models
         // Menu to menuentry (1 to *)
         public int MenuId { get; set; }
         public Menu Menu {get; set; }
+
+        // Menuentry to orderedmeal (1 to *)
+        public List<OrderedMeal> OrderedMeals { get; set; }
     }
 }

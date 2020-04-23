@@ -21,7 +21,7 @@ namespace PSAPIRestaurantSystem.Models
         public Order Order { get; set; }
 
         // Reservation to tableoccupancy (0.1 to *)
-        public int ReservationId { get; set; }
+        public int? ReservationId { get; set; }
         public Reservation Reservation { get; set; }
     }
 }

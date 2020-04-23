@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,5 +31,10 @@ namespace PSAPIRestaurantSystem.Models
 
         // Order to tableoccupancy (1 to *)
         public List<TableOccupancy> TableOccupancies {get;set;}
+
+        // Order to orderedmeal (1 to *)
+        [InverseProperty("InOrder")]
+        public List<OrderedMeal> OrderedMeals { get; set; }
+
     }
 }

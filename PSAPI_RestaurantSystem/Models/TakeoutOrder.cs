@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,5 +35,9 @@ namespace PSAPIRestaurantSystem.Models
         // User to takeoutorder (0 to *)
         public int OrderedByUserId { get; set; }
         public User OrderedBy { get; set; }
+
+        // Takeoutorder to ordered meal (1 to 1.*)
+        [InverseProperty("InTakeout")]
+        public List<OrderedMeal> OrderedMeals { get; set; }
     }
 }
