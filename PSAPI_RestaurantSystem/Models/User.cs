@@ -29,5 +29,7 @@ namespace PSAPIRestaurantSystem.Models
         public DateTime LastLoginDate { get; set; }
 
 
+        public int PersonId { get; set; }
+        public Person Person { get; set; }
     }
 }
