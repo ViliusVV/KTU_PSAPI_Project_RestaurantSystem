@@ -24,5 +24,15 @@ namespace PSAPIRestaurantSystem.Models
 
         [Required]
         public int State { get; set; }
+
+
+        // Relationship
+        // Waiter to takeoutorder (1 to *)
+        public int ManagedByWaiterId { get; set; }
+        public Waiter ManagedBy { get; set; }
+
+        // User to takeoutorder (0 to *)
+        public int OrderedByUserId { get; set; }
+        public User OrderedBy { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace PSAPIRestaurantSystem
         public DbSet<TakeoutOrder> TakeoutOrders { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Waiter> Waiters { get; set; }
+        public DbSet<TableOccupancy> TableOccupancies { get; set; }
 
         public RestaurantContext(DbContextOptions<RestaurantContext> options): base(options)
         {
@@ -39,6 +40,22 @@ namespace PSAPIRestaurantSystem
             //    .HasOne(b => b.Waiter)
             //    .WithOne(i => i.Employee)
             //    .HasForeignKey<Waiter>(b => b.EmployeeId);
+
+            // Describes TableOccupancy relationships
+            modelBuilder.Entity<TableOccupancy>()
+                .HasOne(pt => pt.Table)
+                .WithMany(p => p.TableOccupancies)
+                .HasForeignKey(pt => pt.TableId);
+
+            modelBuilder.Entity<TableOccupancy>()
+                .HasOne(pt => pt.Order)
+                .WithMany(p => p.TableOccupancies)
+                .HasForeignKey(pt => pt.OrderId);
+
+            modelBuilder.Entity<TableOccupancy>()
+                .HasOne(pt => pt.Reservation)
+                .WithMany(p => p.TableOccupancies)
+                .HasForeignKey(pt => pt.ReservationId);
         }
     }
 }

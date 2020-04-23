@@ -22,5 +22,13 @@ namespace PSAPIRestaurantSystem.Models
 
         [Required]
         public int State { get; set; }
+
+        // Relationship
+        // Waiter to order (1 to *)
+        public int ManagedByWaiterId { get; set; }
+        public Waiter ManagedBy { get; set; }
+
+        // Order to tableoccupancy (1 to *)
+        public List<TableOccupancy> TableOccupancies {get;set;}
     }
 }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PSAPIRestaurantSystem;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20200423202042_Update12")]
+    partial class Update12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,15 +105,10 @@ namespace PSAPIRestaurantSystem.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("MenuId")
-                        .HasColumnType("int");
-
                     b.Property<double>("Price")
                         .HasColumnType("double");
 
                     b.HasKey("MenuEntryId");
-
-                    b.HasIndex("MenuId");
 
                     b.ToTable("MenuEntries");
                 });
@@ -253,32 +250,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.ToTable("Tables");
                 });
 
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.TableOccupancy", b =>
-                {
-                    b.Property<int>("TableOccupancyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TableId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TableOccupancyId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ReservationId");
-
-                    b.HasIndex("TableId");
-
-                    b.ToTable("TableOccupancies");
-                });
-
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.TakeoutOrder", b =>
                 {
                     b.Property<int>("TakeoutOrderNum")
@@ -294,9 +265,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("OrderedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("OrderedForDate")
                         .HasColumnType("datetime(6)");
 
@@ -309,8 +277,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.HasKey("TakeoutOrderNum");
 
                     b.HasIndex("ManagedByWaiterId");
-
-                    b.HasIndex("OrderedByUserId");
 
                     b.ToTable("TakeoutOrders");
                 });
@@ -396,15 +362,6 @@ namespace PSAPIRestaurantSystem.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.MenuEntry", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Menu", "Menu")
-                        .WithMany("MenuEntries")
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Order", b =>
                 {
                     b.HasOne("PSAPIRestaurantSystem.Models.Waiter", "ManagedBy")
@@ -432,38 +389,11 @@ namespace PSAPIRestaurantSystem.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PSAPIRestaurantSystem.Models.TableOccupancy", b =>
-                {
-                    b.HasOne("PSAPIRestaurantSystem.Models.Order", "Order")
-                        .WithMany("TableOccupancies")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PSAPIRestaurantSystem.Models.Reservation", "Reservation")
-                        .WithMany("TableOccupancies")
-                        .HasForeignKey("ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PSAPIRestaurantSystem.Models.Table", "Table")
-                        .WithMany("TableOccupancies")
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.TakeoutOrder", b =>
                 {
                     b.HasOne("PSAPIRestaurantSystem.Models.Waiter", "ManagedBy")
                         .WithMany("TakeoutOrders")
                         .HasForeignKey("ManagedByWaiterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PSAPIRestaurantSystem.Models.User", "OrderedBy")
-                        .WithMany("TakeoutOrders")
-                        .HasForeignKey("OrderedByUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

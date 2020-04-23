@@ -15,5 +15,8 @@ namespace PSAPIRestaurantSystem.Models
         public int SeatCount { get; set; }
 
 
+        // Relationships
+        // Table to tableoccupancy (1 to *)
+        public List<TableOccupancy> TableOccupancies { get; set; }
     }
 }

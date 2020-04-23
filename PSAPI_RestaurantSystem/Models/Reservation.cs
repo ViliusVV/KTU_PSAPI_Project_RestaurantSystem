@@ -29,5 +29,8 @@ namespace PSAPIRestaurantSystem.Models
         // User to reservation (0 to *)
         public int ReservedByUserId { get; set; }
         public User ReservedBy { get; set; }
+
+        // Reservation to tableoccupancy (0.1 to *)
+        public List<TableOccupancy> TableOccupancies { get; set; }
     }
 }

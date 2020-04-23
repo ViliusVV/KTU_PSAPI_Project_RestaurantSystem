@@ -12,6 +12,16 @@ namespace PSAPIRestaurantSystem.Models
 
 
         // Relationships
+        // Table to tableoccupancy (1 to *)
+        public int TableId { get; set; }
+        public Table Table { get; set; }
 
+        // Order to tableoccupancy (1 to *)
+        public int OrderId { get; set; }
+        public Order Order { get; set; }
+
+        // Reservation to tableoccupancy (0.1 to *)
+        public int ReservationId { get; set; }
+        public Reservation Reservation { get; set; }
     }
 }

@@ -19,5 +19,11 @@ namespace PSAPIRestaurantSystem.Models
 
         [Required]
         public DateTime Changed { get; set; }
+
+
+        // Relationshps
+        // Menu to menuentry (1 to *)
+        public int MenuId { get; set; }
+        public Menu Menu {get; set; }
     }
 }

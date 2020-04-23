@@ -43,5 +43,9 @@ namespace PSAPIRestaurantSystem.Models
         // User to reservation (0 to *)
         [InverseProperty("ReservedBy")]
         public List<Reservation> Reservations { get; set; }
+
+        // User to takeoutorder (0 to *)
+        [InverseProperty("OrderedBy")]
+        public List<TakeoutOrder> TakeoutOrders { get; set; }
     }
 }
