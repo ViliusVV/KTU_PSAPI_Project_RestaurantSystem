@@ -7,7 +7,7 @@
 <h1>Meniu</h1>
 
 <p>
-    <a asp-action="Create"><i class="fas fa-plus"></i>Pridėti naują menių įrašą</a>
+    <a asp-controller="Admin" asp-action="InserMenuEntryForm"><i class="fas fa-plus"></i>Pridėti naują menių įrašą</a>
 </p>
 
 <table class="table table-hover">
@@ -29,7 +29,7 @@
     @foreach (var item in Model)
     {
         <thead>
-            <tr style="background:#d7dadd;">
+            <tr class="font-weight-bold" style="background:#d7dadd;">
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
@@ -52,8 +52,8 @@
                         @Html.DisplayFor(modelEntry => entry.Changed)
                     </td>
                     <th>
-                        <a asp-controller="Admin" asp-action="Delete" asp-route-id="@entry.MenuEntryId"><i class="fas fa-edit"></i></a>
-                        <a asp-controller="Admin" asp-action="Delete" asp-route-id="@entry.MenuEntryId"><i class="fas fa-trash-alt"></i></a>
+                        <a asp-controller="Admin" asp-action="EditMenuEntryForm" asp-route-id="@entry.MenuEntryId"><i class="fas fa-edit"></i></a>
+                        <a asp-controller="Admin" asp-action="DeleteMenuEntryForm" asp-route-id="@entry.MenuEntryId"><i class="fas fa-trash-alt"></i></a>
                     </th>
                 </tr>
             }

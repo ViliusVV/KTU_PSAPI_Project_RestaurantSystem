@@ -18,8 +18,9 @@ namespace PSAPIRestaurantSystem.Controllers
 
         public IActionResult Index()
         {
-            return Redirect("User/TestFood");
+            return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
