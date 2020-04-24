@@ -57,6 +57,25 @@ namespace PSAPIRestaurantSystem
                 .WithMany(p => p.TableOccupancies)
                 .HasForeignKey(pt => pt.ReservationId)
                 .IsRequired(false);
+
+            // Seed initial data
+            // Tables
+            modelBuilder.Entity<Table>().HasData(
+                    new Table { TableNum = 1, SeatCount = 4},
+                    new Table { TableNum = 2, SeatCount = 2 },
+                    new Table { TableNum = 3, SeatCount = 4 },
+                    new Table { TableNum = 4, SeatCount = 5 },
+                    new Table { TableNum = 5, SeatCount = 12 },
+                    new Table { TableNum = 6, SeatCount = 12 },
+                    new Table { TableNum = 7, SeatCount = 4 },
+                    new Table { TableNum = 8, SeatCount = 4 },
+                    new Table { TableNum = 9, SeatCount = 2 },
+                    new Table { TableNum = 10, SeatCount = 2 },
+                    new Table { TableNum = 11, SeatCount = 6 },
+                    new Table { TableNum = 12, SeatCount = 6 }
+                );
+
+
         }
     }
 }

@@ -5,7 +5,26 @@ using System.Threading.Tasks;
 
 namespace PSAPIRestaurantSystem.Models
 {
-    public class Enumerators
+    enum WorkState
     {
+        Working,
+        Holiday,
+        Fired
+    }
+
+    enum OrderState
+    {
+        Created,
+        Made,
+        Taked,
+        Canceled,
+        Submitted
+    }
+
+    enum ReservationState
+    {
+        NotConfirmed,
+        Confirmed,
+        Canceled
     }
 }
