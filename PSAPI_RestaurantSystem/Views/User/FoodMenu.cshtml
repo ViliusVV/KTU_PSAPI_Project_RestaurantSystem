@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<PSAPIRestaurantSystem.Models.MenuEntry>
 
 @{
-    ViewData["Title"] = "FoodMenu";
+    ViewData["Title"] = "Menių";
 }
 
-<h1>FoodMenu</h1>
+<h1>Menių</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Iterpti naują menių įrašą</a>
 </p>
-<table class="table">
+
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>
@@ -43,9 +44,8 @@
                 @Html.DisplayFor(modelItem => item.Menu.Title)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MenuEntryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MenuEntryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MenuEntryId">Delete</a>
+                <a asp-controller="Admin" asp-action="Edit" asp-route-id="@item.MenuEntryId">Edit</a> |
+                <a asp-controller="Admin" asp-action="Delete" asp-route-id="@item.MenuEntryId">Delete</a>
             </td>
         </tr>
 }
