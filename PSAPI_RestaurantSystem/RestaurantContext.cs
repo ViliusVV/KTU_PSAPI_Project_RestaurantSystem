@@ -75,7 +75,43 @@ namespace PSAPIRestaurantSystem
                     new Table { TableNum = 12, SeatCount = 6 }
                 );
 
+            // Menu
+            modelBuilder.Entity<Menu>().HasData(
+                    new Menu { MenuId = 1, Title = "Sriubos", Changed = DateTime.Now },
+                    new Menu { MenuId = 2, Title = "Užkandžiai", Changed = DateTime.Now },
+                    new Menu { MenuId = 3, Title = "Salotos", Changed = DateTime.Now },
+                    new Menu { MenuId = 4, Title = "Kiauliena", Changed = DateTime.Now },
+                    new Menu { MenuId = 5, Title = "Vistiena", Changed = DateTime.Now },
+                    new Menu { MenuId = 6, Title = "Zuvis", Changed = DateTime.Now },
+                    new Menu { MenuId = 7, Title = "Miltiniai patiekalai", Changed = DateTime.Now },
+                    new Menu { MenuId = 8, Title = "Gaivieji gėrimai", Changed = DateTime.Now },
+                    new Menu { MenuId = 9, Title = "Alus", Changed = DateTime.Now },
+                    new Menu { MenuId = 10, Title = "Šampanas", Changed = DateTime.Now },
+                    new Menu { MenuId = 11, Title = "Konjakas", Changed = DateTime.Now },
+                    new Menu { MenuId = 12, Title = "Degtinė", Changed = DateTime.Now },
+                    new Menu { MenuId = 13, Title = "Brendis", Changed = DateTime.Now },
+                    new Menu { MenuId = 14, Title = "Vynas", Changed = DateTime.Now },
+                    new Menu { MenuId = 15, Title = "Sidras", Changed = DateTime.Now },
+                    new Menu { MenuId = 16, Title = "Burbonas", Changed = DateTime.Now },
+                    new Menu { MenuId = 17, Title = "Džinas", Changed = DateTime.Now },
+                    new Menu { MenuId = 18, Title = "Viskis", Changed = DateTime.Now }
+                );
 
+            // Menu entries
+            modelBuilder.Entity<MenuEntry>().HasData(
+                    // Sriubos id 1
+                    new MenuEntry { MenuEntryId = 1, MenuId = 1, MenuEntryName = "Dienos sriuba", Price = 1.20, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 2, MenuId = 1, MenuEntryName = "Čili", Price = 3.00 ,Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 3, MenuId = 1, MenuEntryName = "Cibulynė", Price = 2.00, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 4, MenuId = 1, MenuEntryName = "Šaltibarščiai", Price = 2.50, Changed = DateTime.Now },
+                    // Salotos id 2
+                    new MenuEntry { MenuEntryId = 5, MenuId = 3, MenuEntryName = "Šviežių daržovių salotos", Price = 3.00, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 6, MenuId = 3, MenuEntryName = "Sveikuolių salotos ", Price = 3.50, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 7, MenuId = 3, MenuEntryName = "Vištienos salotos", Price = 3.50, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 8, MenuId = 3, MenuEntryName = "Graikiškos salotos ", Price = 4.50, Changed = DateTime.Now },
+                    new MenuEntry { MenuEntryId = 9, MenuId = 3, MenuEntryName = "Burokėlių salotos su fetos sūriu ", Price = 4.50, Changed = DateTime.Now }
+
+                    );
         }
     }
 }
