@@ -103,10 +103,39 @@ namespace PSAPIRestaurantSystem.Controllers
             return View(menuEntry);
         }
 
-        public IActionResult DeleteMenuEntryForm()
+
+        // =========== DELETE ============
+        // Delete menu entry GET
+        public IActionResult DeleteMenuEntryForm(int? id)
         {
-            var restaurantContext = _context.Menus.Include(m => m.MenuEntries);
-            return View(restaurantContext.ToList());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var menuEntry = _context.MenuEntries.Include(m => m.Menu).FirstOrDefault(m => m.MenuEntryId == id);
+
+            if (menuEntry == null)
+            {
+                return NotFound();
+            }
+
+            return View(menuEntry);
+        }
+
+        // Delete menu entry POST
+        [HttpPost]
+        public IActionResult DeleteMenuEntryForm(int id)
+        {
+            var menuEntry = _context.MenuEntries.Find(id);
+
+            var menu = _context.Menus.Find(menuEntry.MenuId);
+            menu.Changed = DateTime.Now;
+
+            _context.MenuEntries.Remove(menuEntry);
+            _context.Menus.Update(menu);
+            _context.SaveChanges();
+            return Redirect("/User/FoodMenu");
         }
 
 

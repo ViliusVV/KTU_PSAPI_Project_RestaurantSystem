@@ -1,0 +1,45 @@
+﻿@model PSAPIRestaurantSystem.Models.MenuEntry
+
+@{
+    ViewData["Title"] = "Ištrinti menių įrašą";
+}
+
+    <h1>Ištrinti menių įrašą</h1>
+
+<h3>Ar tikrai norite ištrinti?</h3>
+<div>
+    <h4>Meniu įrašas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MenuEntryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MenuEntryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Changed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Changed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Menu.Title)
+        </dd class>
+    </dl>
+    
+    <form asp-action="DeleteMenuEntryForm">
+        <input type="hidden" asp-for="MenuEntryId" />
+        <input type="submit" value="Ištrinti" class="btn btn-danger" />
+        <input type="button" value="Atšaukti" class="btn btn-success" onclick="location.href='@Url.Action("FoodMenu", "User")'" />
+    </form>
+</div>
