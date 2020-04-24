@@ -1,53 +1,63 @@
-﻿@model IEnumerable<PSAPIRestaurantSystem.Models.MenuEntry>
+﻿@model IEnumerable<PSAPIRestaurantSystem.Models.Menu>
 
 @{
-    ViewData["Title"] = "Menių";
+    ViewData["Title"] = "Meniu";
 }
 
-<h1>Menių</h1>
+<h1>Meniu</h1>
 
 <p>
-    <a asp-action="Create">Iterpti naują menių įrašą</a>
+    <a asp-action="Create"><i class="fas fa-plus"></i>Pridėti naują menių įrašą</a>
 </p>
 
-<table class="table table-striped table-hover">
-    <thead>
+<table class="table table-hover">
+    <thead class="bg-info">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MenuEntryName)
+                @Html.DisplayNameFor(model => model.FirstOrDefault().MenuEntries.FirstOrDefault().MenuEntryName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.FirstOrDefault().MenuEntries.FirstOrDefault().Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Changed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Menu)
+                @Html.DisplayNameFor(model => model.FirstOrDefault().MenuEntries.FirstOrDefault().Changed)
             </th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MenuEntryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Changed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Menu.Title)
-            </td>
-            <td>
-                <a asp-controller="Admin" asp-action="Edit" asp-route-id="@item.MenuEntryId">Edit</a> |
-                <a asp-controller="Admin" asp-action="Delete" asp-route-id="@item.MenuEntryId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+
+    @foreach (var item in Model)
+    {
+        <thead>
+            <tr style="background:#d7dadd;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <th></th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Changed)
+                </td>
+                <th></th>
+            </tr>
+            @foreach (var entry in item.MenuEntries)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(modelEntry => entry.MenuEntryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelEntry => entry.Price)€
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelEntry => entry.Changed)
+                    </td>
+                    <th>
+                        <a asp-controller="Admin" asp-action="Delete" asp-route-id="@entry.MenuEntryId"><i class="fas fa-edit"></i></a>
+                        <a asp-controller="Admin" asp-action="Delete" asp-route-id="@entry.MenuEntryId"><i class="fas fa-trash-alt"></i></a>
+                    </th>
+                </tr>
+            }
+        </thead>
+    }
+
 </table>

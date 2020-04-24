@@ -12,12 +12,15 @@ namespace PSAPIRestaurantSystem.Models
         public int MenuEntryId { get; set; }
 
         [Required]
+        [Display(Name = "Patiekalo pavadinimas")]
         public string MenuEntryName { get; set; }
 
         [Required]
+        [Display(Name = "Kaina, €")]
         public double Price { get; set; }
 
         [Required]
+        [Display(Name = "Paskutinį karta redaguota")]
         public DateTime Changed { get; set; }
 
 

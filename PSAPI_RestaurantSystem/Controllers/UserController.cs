@@ -17,7 +17,7 @@ namespace PSAPIRestaurantSystem.Controllers
             _context = context;
         }
 
-        public IActionResult TestFood()
+        public IActionResult FoodMenu()
         {
             var restaurantContext = _context.Menus.Include(m => m.MenuEntries);
             return View(restaurantContext.ToList());
