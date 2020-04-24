@@ -1,16 +1,16 @@
 ﻿@model PSAPIRestaurantSystem.Models.MenuEntry
 
 @{
-    ViewData["Title"] = "Redaguoti menių įrašą";
+    ViewData["Title"] = "Pridėti menių įrašą";
 }
 
-<h1>Redaguoti menių įrašą</h1>
+<h1>Pridėti menių įrašą</h1>
 
 <h4>Meniu įrašas</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="EditMenuEntryForm">
+        <form asp-action="InsertMenuEntryForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MenuEntryId" />
             <div class="form-group">

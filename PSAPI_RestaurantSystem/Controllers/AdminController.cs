@@ -19,13 +19,36 @@ namespace PSAPIRestaurantSystem.Controllers
             _context = context;
         }
 
+
+        // ========= INSERT ================
+        // Insert menu entry GET
         public IActionResult InsertMenuEntryForm()
         {
-            var restaurantContext = _context.Menus.Include(m => m.MenuEntries);
-            return View(restaurantContext.ToList());
+            ViewData["MenuId"] = new SelectList(_context.Menus, "MenuId", "Title");
+            return View();
         }
 
-        // EDIT
+        // Insert menu entry POST
+        [HttpPost]
+        public IActionResult InsertMenuEntryForm(MenuEntry menuEntry)
+        {
+            ModelState.Remove("MenuEntryId");
+            if (ModelState.IsValid)
+            {
+                var menu = _context.Menus.Find(menuEntry.MenuId);
+                menu.Changed = DateTime.Now;
+                menuEntry.Changed = DateTime.Now;
+                _context.Add(menuEntry);
+                _context.SaveChanges();
+
+                return Redirect("/User/FoodMenu");
+            }
+            ViewData["MenuId"] = new SelectList(_context.Menus, "MenuId", "Title", menuEntry.MenuId);
+            return View(menuEntry);
+        }
+
+
+        // ========== EDIT =================
         // Edit menu entry GET 
         public IActionResult EditMenuEntryForm(int? id)
         {
