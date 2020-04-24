@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PSAPIRestaurantSystem.Models.MenuEntry>
+
+@{
+    ViewData["Title"] = "FoodMenu";
+}
+
+<h1>FoodMenu</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuEntryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Changed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuEntryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Changed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Menu.Title)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MenuEntryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MenuEntryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MenuEntryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

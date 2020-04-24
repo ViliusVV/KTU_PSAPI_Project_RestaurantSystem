@@ -21,15 +21,6 @@ namespace PSAPIRestaurantSystem.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            //_logger.LogWarning("Someone is reading privacy TOS!!!11!1!");
-            //var list = restaurantContext.Tables.ToList();
-            //_logger.LogWarning(list[0].TableNum.ToString());
-            //_logger.LogWarning(list[0].SeatCount.ToString());
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,0 +1,42 @@
+﻿@model PSAPIRestaurantSystem.Models.MenuEntry
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MenuEntry</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MenuEntryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MenuEntryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Changed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Changed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Menu.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MenuEntryId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
