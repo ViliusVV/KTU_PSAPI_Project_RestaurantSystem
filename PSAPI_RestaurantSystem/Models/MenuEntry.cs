@@ -20,13 +20,15 @@ namespace PSAPIRestaurantSystem.Models
         public double Price { get; set; }
 
         [Required]
-        [Display(Name = "Paskutinį karta redaguota")]
+        [Display(Name = "Paskutinį kartą redaguota")]
         public DateTime Changed { get; set; }
 
 
         // Relationshps
         // Menu to menuentry (1 to *)
+        [Display(Name = "Meniu kategorija")]
         public int MenuId { get; set; }
+        [Display(Name = "Meniu kategorija")]
         public Menu Menu {get; set; }
 
         // Menuentry to orderedmeal (1 to *)

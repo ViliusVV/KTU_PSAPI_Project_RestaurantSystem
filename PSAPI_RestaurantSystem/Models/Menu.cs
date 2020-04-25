@@ -9,6 +9,7 @@ namespace PSAPIRestaurantSystem.Models
     public class Menu
     {
         [Key]
+        [Display(Name = "Meniu kategorija")]
         public int MenuId { get; set; }
 
         [Required]
