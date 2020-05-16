@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using PSAPIRestaurantSystem.Models;
 using PSAPIRestaurantSystem.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PSAPIRestaurantSystem.Controllers
 {
@@ -81,6 +83,87 @@ namespace PSAPIRestaurantSystem.Controllers
         {
             var reviews = _context.Reviews.Include(u => u.User).ThenInclude(p => p.Person);
             return View(reviews.ToList());
+        }
+
+        // Edit/Create review
+        public IActionResult EditableReviewsPage()
+        {
+            var usrID = HttpContext.Session.GetInt32("userID");
+
+            var review = _context.Reviews.Where(r => r.UserId == usrID).FirstOrDefault();
+
+            if (review == null)
+            {
+                return RedirectToAction("ReviewInsertForm");
+            }
+            else
+            {
+                return RedirectToAction("ReviewEditForm", new { id = usrID } );
+            }
+            return RedirectToAction("ReviewsPage");
+        }
+
+        // Edit review form GET
+
+        public IActionResult ReviewEditForm(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var reviewEntry = _context.Reviews.Where(r => r.UserId == id).FirstOrDefault();
+            if (reviewEntry == null)
+            {
+                return NotFound();
+            }
+            ViewData["Rating"] = new SelectList(Review.digits, "Value", "Text");
+            return View(reviewEntry);
+        }
+
+        // Insert review form GET
+
+        public IActionResult ReviewInsertForm()
+        {
+            ViewData["Rating"] = new SelectList(Review.digits, "Value", "Text");
+            return View();
+        }
+        
+        // Insert review form POST
+
+        [HttpPost]
+        public IActionResult ReviewInsertForm(Review rev)
+        {
+            ModelState.Remove("ReviewId");
+            if (ModelState.IsValid)
+            {
+                rev.UserId = (int)HttpContext.Session.GetInt32("userID");
+                rev.ReviewDate = DateTime.Now;
+                _context.Add(rev);
+                _context.SaveChanges();
+
+                return Redirect("/User/ReviewsPage");
+            }
+            ViewData["Rating"] = new SelectList(Review.digits, "Value", "Text");
+            return View(rev);
+        }
+
+        // Edit review form POST
+        [HttpPost]
+        public IActionResult ReviewEditForm(int? id, Review reviewEntry)
+        {
+            if (ModelState.IsValid)
+            {
+                reviewEntry.UserId = (int)HttpContext.Session.GetInt32("userID");
+                reviewEntry.ReviewDate = DateTime.Now;
+                _context.Update(reviewEntry);
+                _context.SaveChanges();
+
+                return Redirect("/User/ReviewsPage");
+            }
+
+            ViewData["Rating"] = new SelectList(Review.digits, "Value", "Text");
+            return View(reviewEntry);
         }
     }
 }

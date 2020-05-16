@@ -1,50 +1,30 @@
-﻿@model IEnumerable<PSAPIRestaurantSystem.Models.Review>
+﻿@using Microsoft.AspNetCore.Http;
+@model IEnumerable<PSAPIRestaurantSystem.Models.Review>
 
 @{
     ViewData["Title"] = "ReviewsPage";
+    var role = Context.Session.GetString("role");
 }
 
 <h1>Atsiliepimai</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReviewText)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReviewDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-         var name = item.User.Person.Name + " " + item.User.Person.Surname;
-            
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rating)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReviewText)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReviewDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => name)
-                    </td>
-                </tr>
-            }
-        </tbody>
-</table>
+@if (role == "user")
+{
+    <p>
+        <a asp-controller="User" asp-action="EditableReviewsPage"><i class="fas fa-plus"></i>Sukurti/Redaguoti atsiliepimą</a>
+    </p>
+}
+
+
+@foreach (var item in Model)
+{
+    var name = item.User.Person.Name + " " + item.User.Person.Surname;
+    <div class="card" style="width: 60%; margin:0 auto; margin-bottom:30px">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => name)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(modelItem => item.Rating)</h6>
+            <p style="color:gray; font-size:0.6rem">@Html.DisplayFor(modelItem => item.ReviewDate)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.ReviewText)</p>
+        </div>
+    </div>
+}
