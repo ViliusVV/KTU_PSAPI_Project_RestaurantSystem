@@ -12,12 +12,15 @@ namespace PSAPIRestaurantSystem.Models
         public int ReviewId { get; set; }
 
         [Required]
+        [Display(Name = "Įvertinimas")]
         public int Rating { get; set; }
 
         [Required]
-        public int ReviewText { get; set; }
+        [Display(Name = "Atsiliepimo tekstas")]
+        public string ReviewText { get; set; }
 
         [Required]
+        [Display(Name = "Data")]
         public DateTime ReviewDate { get; set; }
 
 

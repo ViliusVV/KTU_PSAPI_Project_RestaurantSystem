@@ -112,6 +112,25 @@ namespace PSAPIRestaurantSystem
                     new MenuEntry { MenuEntryId = 9, MenuId = 3, MenuEntryName = "Burokėlių salotos su fetos sūriu ", Price = 4.50, Changed = DateTime.Now }
 
                     );
+
+            // People
+            modelBuilder.Entity<Person>().HasData(
+                new Person {PersonId = 1, Name = "Jonas", Surname = "Petraitis"},
+                new Person { PersonId = 2, Name = "Mantas", Surname = "Jablonoskis" }
+
+            );
+
+            // Users
+            modelBuilder.Entity<User>().HasData(
+                new User { UserId = 1, PersonId = 1, Email = "jonas@emai.com", RegistrationDate = DateTime.Now, LastLoginDate = DateTime.Now,
+                            LoyalityPoints = 1, Confirmed = true, Password = "slaptozodis" }
+            );
+
+            // Reviews
+
+            modelBuilder.Entity<Review>().HasData(
+                new Review { ReviewId = 1, UserId = 1, Rating = 2, ReviewDate = DateTime.Now, ReviewText = "GTFO"}
+            );
         }
     }
 }

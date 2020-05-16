@@ -22,5 +22,12 @@ namespace PSAPIRestaurantSystem.Controllers
             var restaurantContext = _context.Menus.Include(m => m.MenuEntries);
             return View(restaurantContext.ToList());
         }
+
+        // Open generic review list page
+        public IActionResult ReviewsPage()
+        {
+            var reviews = _context.Reviews.Include(u => u.User).ThenInclude(p => p.Person);
+            return View(reviews.ToList());
+        }
     }
 }
