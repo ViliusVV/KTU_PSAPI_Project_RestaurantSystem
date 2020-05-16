@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using PSAPIRestaurantSystem.Models;
 using PSAPIRestaurantSystem.Models.ViewModels;
 
 namespace PSAPIRestaurantSystem.Controllers
@@ -34,9 +35,29 @@ namespace PSAPIRestaurantSystem.Controllers
         public IActionResult LoginForm(LoginViewModel model)
         {
             _logger.LogDebug(model.LoginName);
-            var usr = _context.Users.Select(u => u.Email == model.LoginName).FirstOrDefault();
+            var usr = _context.Users.Where(u => u.Email == model.LoginName).Include(e => e.Employee).ThenInclude(a => a.Admin).Include(e => e.Employee).ThenInclude(w => w.Waiter).FirstOrDefault();
+
+            if(usr.Employee != null)
+            {
+                if (usr.Employee.Waiter != null)
+                {
+
+                }
+
+                if (usr.Employee.Admin != null)
+                {
+
+                }
+            }
 
             return View();
+        }
+
+        // Open generic review list page
+        public IActionResult ReviewsPage()
+        {
+            var reviews = _context.Reviews.Include(u => u.User).ThenInclude(p => p.Person);
+            return View(reviews.ToList());
         }
     }
 }

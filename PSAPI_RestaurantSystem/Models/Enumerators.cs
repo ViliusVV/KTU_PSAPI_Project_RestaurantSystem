@@ -7,14 +7,14 @@ namespace PSAPIRestaurantSystem.Models
 {
     enum WorkState
     {
-        Working,
+        Working = 1,
         Holiday,
         Fired
     }
 
     enum OrderState
     {
-        Created,
+        Created = 1,
         Made,
         Taked,
         Canceled,
@@ -23,7 +23,7 @@ namespace PSAPIRestaurantSystem.Models
 
     enum ReservationState
     {
-        NotConfirmed,
+        NotConfirmed = 1,
         Confirmed,
         Canceled
     }

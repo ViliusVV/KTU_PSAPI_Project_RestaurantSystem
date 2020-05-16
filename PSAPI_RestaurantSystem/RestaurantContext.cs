@@ -131,6 +131,10 @@ namespace PSAPIRestaurantSystem
             modelBuilder.Entity<Review>().HasData(
                 new Review { ReviewId = 1, UserId = 1, Rating = 2, ReviewDate = DateTime.Now, ReviewText = "GTFO"}
             );
+
+            modelBuilder.Entity<Employee>().HasData(
+                new Employee {EmployeeId = 1, UserId = 1, EmployeeState = (int)WorkState.Working, BeganWork = DateTime.Now, Salary = 1000}
+                );
         }
     }
 }

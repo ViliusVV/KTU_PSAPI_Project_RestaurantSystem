@@ -34,7 +34,7 @@ namespace PSAPIRestaurantSystem.Models
         public Waiter Waiter { get; set; }
 
         // Admin to employee (1 to *)
-        public int RegisteredByAdminId { get; set; }
+        public int? RegisteredByAdminId { get; set; }
         public Admin RegisteredBy { get; set; }
     }   
 }
