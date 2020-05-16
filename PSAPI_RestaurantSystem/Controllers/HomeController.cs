@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PSAPIRestaurantSystem.Models;
@@ -10,10 +11,12 @@ namespace PSAPIRestaurantSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly RestaurantContext restaurantContext;
-
-        public HomeController(ILogger<HomeController> logger)
+        //private readonly ISession session;
+        public HomeController(ILogger<HomeController> logger/*, IHttpContextAccessor httpContextAccessor*/)
         {
             _logger = logger;
+            //this.session = httpContextAccessor.HttpContext.Session;
+            //session.SetString("role", "unregistered");
         }
 
         public IActionResult Index()

@@ -135,6 +135,10 @@ namespace PSAPIRestaurantSystem
             modelBuilder.Entity<Employee>().HasData(
                 new Employee {EmployeeId = 1, UserId = 1, EmployeeState = (int)WorkState.Working, BeganWork = DateTime.Now, Salary = 1000}
                 );
+
+            modelBuilder.Entity<Admin>().HasData(
+                new Admin { AdminId = 1, EmployeeId = 1, WorkEmail = "workmail@mymail.com"}
+                );
         }
     }
 }

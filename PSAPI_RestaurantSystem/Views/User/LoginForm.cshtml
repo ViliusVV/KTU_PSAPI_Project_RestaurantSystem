@@ -1,10 +1,11 @@
-﻿@model PSAPIRestaurantSystem.Models.ViewModels.LoginViewModel
-
+﻿@using Microsoft.AspNetCore.Http;
+@model PSAPIRestaurantSystem.Models.ViewModels.LoginViewModel
 @{
     ViewData["Title"] = "Prisijungimo forma";
+    var role = Context.Session.GetString("role");
 }
 
-<h1>Prisijungimo forma</h1>
+<h1>Prisijungimo forma @role</h1>
 
 <h4>Įvekite prisijungimo duomenis</h4>
 <hr />

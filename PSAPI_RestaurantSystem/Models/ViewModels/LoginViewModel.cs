@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace PSAPIRestaurantSystem.Models.ViewModels
 {
@@ -12,5 +13,7 @@ namespace PSAPIRestaurantSystem.Models.ViewModels
         public string LoginName { get; set; }
         [Display(Name = "Slaptažodis")]
         public string Password { get; set; }
+
+
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using PSAPIRestaurantSystem.Models;
 using PSAPIRestaurantSystem.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace PSAPIRestaurantSystem.Controllers
 {
@@ -37,17 +38,31 @@ namespace PSAPIRestaurantSystem.Controllers
             _logger.LogDebug(model.LoginName);
             var usr = _context.Users.Where(u => u.Email == model.LoginName).Include(e => e.Employee).ThenInclude(a => a.Admin).Include(e => e.Employee).ThenInclude(w => w.Waiter).FirstOrDefault();
 
-            if(usr.Employee != null)
+            HttpContext.Session.SetString("role", "admin");
+            if (usr == null)
+            {
+                return View();
+            }
+            else
+            {
+                HttpContext.Session.SetInt32("userID", usr.UserId);
+            }
+            if (usr.Employee != null)
             {
                 if (usr.Employee.Waiter != null)
                 {
+                    HttpContext.Session.SetString("role", "waiter");
 
                 }
 
-                if (usr.Employee.Admin != null)
+                else if (usr.Employee.Admin != null)
                 {
-
+                    HttpContext.Session.SetString("role", "admin");
                 }
+            }
+            else
+            {
+                HttpContext.Session.SetString("role", "registered");
             }
 
             return View();

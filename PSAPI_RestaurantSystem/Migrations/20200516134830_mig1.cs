@@ -3,467 +3,442 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
-    public partial class Update25 : Migration
+    public partial class mig1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Employees_Admins_RegisteredByAdminId",
-                table: "Employees");
-
-            migrationBuilder.AlterColumn<int>(
-                name: "RegisteredByAdminId",
-                table: "Employees",
-                nullable: true,
-                oldClrType: typeof(int),
-                oldType: "int");
-
             migrationBuilder.InsertData(
+                table: "Admins",
+                columns: new[] { "AdminId", "EmployeeId", "WorkEmail" },
+                values: new object[] { 1, 1, "workmail@mymail.com" });
+
+            migrationBuilder.UpdateData(
                 table: "Employees",
-                columns: new[] { "EmployeeId", "BeganWork", "EmployeeState", "EndedWork", "RegisteredByAdminId", "Salary", "UserId" },
-                values: new object[] { 1, new DateTime(2020, 5, 16, 16, 39, 58, 766, DateTimeKind.Local).AddTicks(6065), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1000, 1 });
+                keyColumn: "EmployeeId",
+                keyValue: 1,
+                column: "BeganWork",
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 985, DateTimeKind.Local).AddTicks(5189));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 1,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7119));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6236));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 2,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7548));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6663));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 3,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7568));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6683));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 4,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7573));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6685));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 5,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7576));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6688));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 6,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7579));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6688));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 7,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7581));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6691));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 8,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7584));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6694));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 9,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(7584));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(6696));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 1,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 763, DateTimeKind.Local).AddTicks(649));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 981, DateTimeKind.Local).AddTicks(9631));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 2,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4864));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3931));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 3,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4891));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3970));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 4,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4894));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3976));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 5,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4897));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3978));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 6,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4900));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3978));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 7,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4902));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3981));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 8,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4905));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3984));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 9,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4908));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3987));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 10,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4908));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3990));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 11,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4911));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3990));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 12,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4913));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3992));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 13,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4916));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3995));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 14,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4919));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(3998));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 15,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4922));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(4001));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 16,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4955));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(4001));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 17,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4958));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(4003));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 18,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 765, DateTimeKind.Local).AddTicks(4961));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(4006));
 
             migrationBuilder.UpdateData(
                 table: "Reviews",
                 keyColumn: "ReviewId",
                 keyValue: 1,
                 column: "ReviewDate",
-                value: new DateTime(2020, 5, 16, 16, 39, 58, 766, DateTimeKind.Local).AddTicks(3910));
+                value: new DateTime(2020, 5, 16, 16, 48, 29, 985, DateTimeKind.Local).AddTicks(2975));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "UserId",
                 keyValue: 1,
                 columns: new[] { "LastLoginDate", "RegistrationDate" },
-                values: new object[] { new DateTime(2020, 5, 16, 16, 39, 58, 766, DateTimeKind.Local).AddTicks(1078), new DateTime(2020, 5, 16, 16, 39, 58, 766, DateTimeKind.Local).AddTicks(699) });
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Employees_Admins_RegisteredByAdminId",
-                table: "Employees",
-                column: "RegisteredByAdminId",
-                principalTable: "Admins",
-                principalColumn: "AdminId",
-                onDelete: ReferentialAction.Restrict);
+                values: new object[] { new DateTime(2020, 5, 16, 16, 48, 29, 985, DateTimeKind.Local).AddTicks(193), new DateTime(2020, 5, 16, 16, 48, 29, 984, DateTimeKind.Local).AddTicks(9813) });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Employees_Admins_RegisteredByAdminId",
-                table: "Employees");
-
             migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "EmployeeId",
+                table: "Admins",
+                keyColumn: "AdminId",
                 keyValue: 1);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "RegisteredByAdminId",
+            migrationBuilder.UpdateData(
                 table: "Employees",
-                type: "int",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldNullable: true);
+                keyColumn: "EmployeeId",
+                keyValue: 1,
+                column: "BeganWork",
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(5274));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 1,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1044));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6325));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 2,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1596));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6752));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 3,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1632));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6774));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 4,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1636));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6777));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 5,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1640));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6780));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 6,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1643));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6783));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 7,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1647));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6785));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 8,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1650));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6788));
 
             migrationBuilder.UpdateData(
                 table: "MenuEntries",
                 keyColumn: "MenuEntryId",
                 keyValue: 9,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(1654));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6788));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 1,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 442, DateTimeKind.Local).AddTicks(6360));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 21, DateTimeKind.Local).AddTicks(8930));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 2,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8149));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3929));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 3,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8196));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3962));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 4,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8201));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3965));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 5,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8205));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3968));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 6,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8209));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3971));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 7,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8212));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3973));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 8,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8215));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3976));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 9,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8218));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3979));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 10,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8222));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3979));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 11,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8225));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3982));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 12,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8229));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3984));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 13,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8232));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3987));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 14,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8235));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3990));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 15,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8239));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3993));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 16,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8242));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3993));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 17,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8245));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3995));
 
             migrationBuilder.UpdateData(
                 table: "Menus",
                 keyColumn: "MenuId",
                 keyValue: 18,
                 column: "Changed",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 444, DateTimeKind.Local).AddTicks(8248));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3998));
 
             migrationBuilder.UpdateData(
                 table: "Reviews",
                 keyColumn: "ReviewId",
                 keyValue: 1,
                 column: "ReviewDate",
-                value: new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(9609));
+                value: new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(3124));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "UserId",
                 keyValue: 1,
                 columns: new[] { "LastLoginDate", "RegistrationDate" },
-                values: new object[] { new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(5901), new DateTime(2020, 5, 16, 15, 9, 30, 445, DateTimeKind.Local).AddTicks(5441) });
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Employees_Admins_RegisteredByAdminId",
-                table: "Employees",
-                column: "RegisteredByAdminId",
-                principalTable: "Admins",
-                principalColumn: "AdminId",
-                onDelete: ReferentialAction.Cascade);
+                values: new object[] { new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(290), new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(9916) });
         }
     }
 }

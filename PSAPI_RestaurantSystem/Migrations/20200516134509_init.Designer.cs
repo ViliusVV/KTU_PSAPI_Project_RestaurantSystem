@@ -9,8 +9,8 @@ using PSAPIRestaurantSystem;
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20200516120214_Update22")]
-    partial class Update22
+    [Migration("20200516134509_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,7 +55,7 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<DateTime>("EndedWork")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("RegisteredByAdminId")
+                    b.Property<int?>("RegisteredByAdminId")
                         .HasColumnType("int");
 
                     b.Property<int>("Salary")
@@ -72,6 +72,17 @@ namespace PSAPIRestaurantSystem.Migrations
                         .IsUnique();
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            EmployeeId = 1,
+                            BeganWork = new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(5274),
+                            EmployeeState = 1,
+                            EndedWork = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Salary = 1000,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Menu", b =>
@@ -95,109 +106,109 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuId = 1,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 917, DateTimeKind.Local).AddTicks(432),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 21, DateTimeKind.Local).AddTicks(8930),
                             Title = "Sriubos"
                         },
                         new
                         {
                             MenuId = 2,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5600),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3929),
                             Title = "Užkandžiai"
                         },
                         new
                         {
                             MenuId = 3,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5650),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3962),
                             Title = "Salotos"
                         },
                         new
                         {
                             MenuId = 4,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5656),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3965),
                             Title = "Kiauliena"
                         },
                         new
                         {
                             MenuId = 5,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5659),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3968),
                             Title = "Vistiena"
                         },
                         new
                         {
                             MenuId = 6,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5662),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3971),
                             Title = "Zuvis"
                         },
                         new
                         {
                             MenuId = 7,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5666),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3973),
                             Title = "Miltiniai patiekalai"
                         },
                         new
                         {
                             MenuId = 8,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5669),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3976),
                             Title = "Gaivieji gėrimai"
                         },
                         new
                         {
                             MenuId = 9,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5672),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3979),
                             Title = "Alus"
                         },
                         new
                         {
                             MenuId = 10,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5676),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3979),
                             Title = "Šampanas"
                         },
                         new
                         {
                             MenuId = 11,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5679),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3982),
                             Title = "Konjakas"
                         },
                         new
                         {
                             MenuId = 12,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5683),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3984),
                             Title = "Degtinė"
                         },
                         new
                         {
                             MenuId = 13,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5686),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3987),
                             Title = "Brendis"
                         },
                         new
                         {
                             MenuId = 14,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5691),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3990),
                             Title = "Vynas"
                         },
                         new
                         {
                             MenuId = 15,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5694),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3993),
                             Title = "Sidras"
                         },
                         new
                         {
                             MenuId = 16,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5697),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3993),
                             Title = "Burbonas"
                         },
                         new
                         {
                             MenuId = 17,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5701),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3995),
                             Title = "Džinas"
                         },
                         new
                         {
                             MenuId = 18,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(5704),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(3998),
                             Title = "Viskis"
                         });
                 });
@@ -231,7 +242,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 1,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9271),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6325),
                             MenuEntryName = "Dienos sriuba",
                             MenuId = 1,
                             Price = 1.2
@@ -239,7 +250,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 2,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9792),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6752),
                             MenuEntryName = "Čili",
                             MenuId = 1,
                             Price = 3.0
@@ -247,7 +258,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 3,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9818),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6774),
                             MenuEntryName = "Cibulynė",
                             MenuId = 1,
                             Price = 2.0
@@ -255,7 +266,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 4,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9822),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6777),
                             MenuEntryName = "Šaltibarščiai",
                             MenuId = 1,
                             Price = 2.5
@@ -263,7 +274,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 5,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9826),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6780),
                             MenuEntryName = "Šviežių daržovių salotos",
                             MenuId = 3,
                             Price = 3.0
@@ -271,7 +282,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 6,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9829),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6783),
                             MenuEntryName = "Sveikuolių salotos ",
                             MenuId = 3,
                             Price = 3.5
@@ -279,7 +290,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 7,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9833),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6785),
                             MenuEntryName = "Vištienos salotos",
                             MenuId = 3,
                             Price = 3.5
@@ -287,7 +298,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 8,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9836),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6788),
                             MenuEntryName = "Graikiškos salotos ",
                             MenuId = 3,
                             Price = 4.5
@@ -295,7 +306,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 9,
-                            Changed = new DateTime(2020, 5, 16, 15, 2, 13, 919, DateTimeKind.Local).AddTicks(9839),
+                            Changed = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(6788),
                             MenuEntryName = "Burokėlių salotos su fetos sūriu ",
                             MenuId = 3,
                             Price = 4.5
@@ -447,8 +458,9 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("ReviewText")
-                        .HasColumnType("int");
+                    b.Property<string>("ReviewText")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -458,6 +470,16 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            ReviewId = 1,
+                            Rating = 2,
+                            ReviewDate = new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(3124),
+                            ReviewText = "GTFO",
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Table", b =>
@@ -633,6 +655,19 @@ namespace PSAPIRestaurantSystem.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Confirmed = true,
+                            Email = "jonas@emai.com",
+                            LastLoginDate = new DateTime(2020, 5, 16, 16, 45, 9, 25, DateTimeKind.Local).AddTicks(290),
+                            LoyalityPoints = 1,
+                            Password = "slaptozodis",
+                            PersonId = 1,
+                            RegistrationDate = new DateTime(2020, 5, 16, 16, 45, 9, 24, DateTimeKind.Local).AddTicks(9916)
+                        });
                 });
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.Waiter", b =>
@@ -668,9 +703,7 @@ namespace PSAPIRestaurantSystem.Migrations
                 {
                     b.HasOne("PSAPIRestaurantSystem.Models.Admin", "RegisteredBy")
                         .WithMany("RegisteredEmployees")
-                        .HasForeignKey("RegisteredByAdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RegisteredByAdminId");
 
                     b.HasOne("PSAPIRestaurantSystem.Models.User", "User")
                         .WithOne("Employee")
