@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PSAPIRestaurantSystem.Models.Review>
+
+@{
+    ViewData["Title"] = "ReviewsPage";
+}
+
+<h1>Atsiliepimai</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+         var name = item.User.Person.Name + " " + item.User.Person.Surname;
+            
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewText)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+</table>
