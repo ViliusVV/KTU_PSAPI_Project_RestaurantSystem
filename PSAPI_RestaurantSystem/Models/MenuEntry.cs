@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace PSAPIRestaurantSystem.Models
 {
     public class MenuEntry
@@ -22,7 +23,6 @@ namespace PSAPIRestaurantSystem.Models
         [Required]
         [Display(Name = "Paskutinį kartą redaguota")]
         public DateTime Changed { get; set; }
-
 
         // Relationshps
         // Menu to menuentry (1 to *)
