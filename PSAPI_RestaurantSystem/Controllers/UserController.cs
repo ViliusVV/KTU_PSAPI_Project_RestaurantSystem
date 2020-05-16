@@ -36,7 +36,13 @@ namespace PSAPIRestaurantSystem.Controllers
         public IActionResult LoginForm(LoginViewModel model)
         {
             _logger.LogDebug(model.LoginName);
-            var usr = _context.Users.Where(u => u.Email == model.LoginName).Include(e => e.Employee).ThenInclude(a => a.Admin).Include(e => e.Employee).ThenInclude(w => w.Waiter).FirstOrDefault();
+            var usr = _context.Users.Where(u => u.Email == model.LoginName)
+                .Include(e => e.Employee)
+                    .ThenInclude(a => a.Admin)
+                .Include(e => e.Employee)
+                    .ThenInclude(w => w.Waiter)
+                .Include(p => p.Person)
+                .FirstOrDefault();
 
             HttpContext.Session.SetString("role", "admin");
             if (usr == null)
@@ -46,6 +52,8 @@ namespace PSAPIRestaurantSystem.Controllers
             else
             {
                 HttpContext.Session.SetInt32("userID", usr.UserId);
+                HttpContext.Session.SetString("name", usr.Person.Name);
+                HttpContext.Session.SetString("surname", usr.Person.Surname);
             }
             if (usr.Employee != null)
             {
@@ -62,7 +70,7 @@ namespace PSAPIRestaurantSystem.Controllers
             }
             else
             {
-                HttpContext.Session.SetString("role", "registered");
+                HttpContext.Session.SetString("role", "user");
             }
 
             return View();

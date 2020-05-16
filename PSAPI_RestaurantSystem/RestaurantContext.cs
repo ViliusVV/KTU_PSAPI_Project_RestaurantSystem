@@ -116,14 +116,37 @@ namespace PSAPIRestaurantSystem
             // People
             modelBuilder.Entity<Person>().HasData(
                 new Person {PersonId = 1, Name = "Jonas", Surname = "Petraitis"},
-                new Person { PersonId = 2, Name = "Mantas", Surname = "Jablonoskis" }
-
+                new Person { PersonId = 2, Name = "Mantas", Surname = "Jablonoskis" },
+                new Person { PersonId = 3, Name = "Tomas", Surname = "Tomaitis" },
+                new Person { PersonId = 4, Name = "Petras", Surname = "Petraitis" }
             );
 
             // Users
             modelBuilder.Entity<User>().HasData(
                 new User { UserId = 1, PersonId = 1, Email = "jonas@emai.com", RegistrationDate = DateTime.Now, LastLoginDate = DateTime.Now,
-                            LoyalityPoints = 1, Confirmed = true, Password = "slaptozodis" }
+                            LoyalityPoints = 1, Confirmed = true, Password = "slaptozodis" },
+                new User
+                {
+                    UserId = 2,
+                    PersonId = 2,
+                    Email = "mantas@email.com",
+                    RegistrationDate = DateTime.Now,
+                    LastLoginDate = DateTime.Now,
+                    LoyalityPoints = 10,
+                    Confirmed = true,
+                    Password = "slaptozodis"
+                },
+                new User
+                {
+                    UserId = 3,
+                    PersonId = 3,
+                    Email = "tomas@email.com",
+                    RegistrationDate = DateTime.Now,
+                    LastLoginDate = DateTime.Now,
+                    LoyalityPoints = 20,
+                    Confirmed = true,
+                    Password = "slaptozodis"
+                }
             );
 
             // Reviews
@@ -132,12 +155,22 @@ namespace PSAPIRestaurantSystem
                 new Review { ReviewId = 1, UserId = 1, Rating = 2, ReviewDate = DateTime.Now, ReviewText = "GTFO"}
             );
 
+            // Employees
+
             modelBuilder.Entity<Employee>().HasData(
-                new Employee {EmployeeId = 1, UserId = 1, EmployeeState = (int)WorkState.Working, BeganWork = DateTime.Now, Salary = 1000}
+                new Employee {EmployeeId = 1, UserId = 1, EmployeeState = (int)WorkState.Working, BeganWork = DateTime.Now, Salary = 1000},
+                new Employee { EmployeeId = 2, UserId = 2, EmployeeState = (int)WorkState.Working, BeganWork = DateTime.Now, Salary = 3000 }
                 );
+
+            // Admins
 
             modelBuilder.Entity<Admin>().HasData(
                 new Admin { AdminId = 1, EmployeeId = 1, WorkEmail = "workmail@mymail.com"}
+                );
+            // Waiters
+
+            modelBuilder.Entity<Waiter>().HasData(
+                new Waiter { WaiterId = 1, EmployeeId = 2, Tips = 100 }
                 );
         }
     }
