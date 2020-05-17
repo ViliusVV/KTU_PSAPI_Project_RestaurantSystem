@@ -21,12 +21,12 @@ namespace PSAPIRestaurantSystem.Models
         public string Comment { get; set; }
 
         // Relationships
-        // Takeoutorder to orderedmeal (1 to 1.*)
-        public int InTakeoutTakeoutOrderId { get; set; }
+        // Takeoutorder to orderedmeal (0 to 1.*)
+        public int? InTakeoutTakeoutOrderId { get; set; }
         public TakeoutOrder InTakeout { get; set; }
 
         // Order to orderedmeal (0 to *)
-        public int InOrderOrderId { get; set; }
+        public int? InOrderOrderId { get; set; }
         public Order InOrder { get; set; }
 
         // Menuentry to orderedmeal (1 to *)
