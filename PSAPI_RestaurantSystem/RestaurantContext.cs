@@ -262,49 +262,53 @@ namespace PSAPIRestaurantSystem
                 new Waiter { WaiterId = 3, EmployeeId = 4, Tips = 250 }
                 );
 
-            modelBuilder.Entity<Reservation>().HasData(
-                new Reservation { ReservationId = 1, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Confirmed, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 2, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 3, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 1, Comment = "Atsivesiu suni" },
-                new Reservation { ReservationId = 4, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 5, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 6, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Confirmed, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 7, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 8, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 1 },
-                new Reservation { ReservationId = 9, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Confirmed, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 10, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 11, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5, Comment = "Atsivesiu kate" },
-                new Reservation { ReservationId = 12, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 13, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 14, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Confirmed, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 15, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 16, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 17, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Confirmed, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 18, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 19, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 6, Comment = "Atsivesiu suni" },
-                new Reservation { ReservationId = 20, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 21, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 22, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Confirmed, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 23, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 24, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 6 },
-                new Reservation { ReservationId = 25, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Confirmed, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 26, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 27, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 7, Comment = "Atsinesiu vezliuka" },
-                new Reservation { ReservationId = 28, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 29, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 30, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Confirmed, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 31, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
-                new Reservation { ReservationId = 32, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 7 },
+            // reservations
 
-                new Reservation { ReservationId = 33, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-48), ReservedForDate = DateTime.Now.AddHours(-24), State = (int)ReservationState.Confirmed, ReservedByUserId = 5 },
+            modelBuilder.Entity<Reservation>().HasData(
+                new Reservation { ReservationId = 1, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Done, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 2, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 3, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.Active, ReservedByUserId = 1, Comment = "Atsivesiu suni" },
+                new Reservation { ReservationId = 4, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 5, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.Active, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 6, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Done, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 7, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 8, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.Active, ReservedByUserId = 1 },
+                new Reservation { ReservationId = 9, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Done, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 10, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 11, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.Active, ReservedByUserId = 5, Comment = "Atsivesiu kate" },
+                new Reservation { ReservationId = 12, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 13, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.Active, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 14, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Done, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 15, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 16, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.Active, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 17, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Done, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 18, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 19, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.Active, ReservedByUserId = 6, Comment = "Atsivesiu suni" },
+                new Reservation { ReservationId = 20, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 21, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.Active, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 22, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Done, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 23, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 24, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.Active, ReservedByUserId = 6 },
+                new Reservation { ReservationId = 25, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(24), State = (int)ReservationState.Done, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 26, PeopleCount = 1, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(48), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 27, PeopleCount = 3, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(60), State = (int)ReservationState.Active, ReservedByUserId = 7, Comment = "Atsinesiu vezliuka" },
+                new Reservation { ReservationId = 28, PeopleCount = 4, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(80), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 29, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(100), State = (int)ReservationState.Active, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 30, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(120), State = (int)ReservationState.Done, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 31, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(160), State = (int)ReservationState.Canceled, ReservedByUserId = 7 },
+                new Reservation { ReservationId = 32, PeopleCount = 2, ReservedDate = DateTime.Now, ReservedForDate = DateTime.Now.AddHours(180), State = (int)ReservationState.Active, ReservedByUserId = 7 },
+
+                new Reservation { ReservationId = 33, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-48), ReservedForDate = DateTime.Now.AddHours(-24), State = (int)ReservationState.Done, ReservedByUserId = 5 },
                 new Reservation { ReservationId = 34, PeopleCount = 1, ReservedDate = DateTime.Now.AddHours(-60), ReservedForDate = DateTime.Now.AddHours(-48), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 35, PeopleCount = 3, ReservedDate = DateTime.Now.AddHours(-80), ReservedForDate = DateTime.Now.AddHours(-60), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5, Comment = "Atsivesiu suni" },
+                new Reservation { ReservationId = 35, PeopleCount = 3, ReservedDate = DateTime.Now.AddHours(-80), ReservedForDate = DateTime.Now.AddHours(-60), State = (int)ReservationState.Active, ReservedByUserId = 5, Comment = "Atsivesiu suni" },
                 new Reservation { ReservationId = 36, PeopleCount = 4, ReservedDate = DateTime.Now.AddHours(-100), ReservedForDate = DateTime.Now.AddHours(-80), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 37, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-120), ReservedForDate = DateTime.Now.AddHours(-100), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 38, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-160), ReservedForDate = DateTime.Now.AddHours(-120), State = (int)ReservationState.Confirmed, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 37, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-120), ReservedForDate = DateTime.Now.AddHours(-100), State = (int)ReservationState.Active, ReservedByUserId = 5 },
+                new Reservation { ReservationId = 38, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-160), ReservedForDate = DateTime.Now.AddHours(-120), State = (int)ReservationState.Done, ReservedByUserId = 5 },
                 new Reservation { ReservationId = 39, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-180), ReservedForDate = DateTime.Now.AddHours(-160), State = (int)ReservationState.Canceled, ReservedByUserId = 5 },
-                new Reservation { ReservationId = 40, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-200), ReservedForDate = DateTime.Now.AddHours(-180), State = (int)ReservationState.NotConfirmed, ReservedByUserId = 5 }
+                new Reservation { ReservationId = 40, PeopleCount = 2, ReservedDate = DateTime.Now.AddHours(-200), ReservedForDate = DateTime.Now.AddHours(-180), State = (int)ReservationState.Active, ReservedByUserId = 5 }
                 );
+
+            // orders
 
             modelBuilder.Entity<Order>().HasData(
                 new Order { OrderNum = 1, State = (int)OrderState.Created, ManagedByWaiterId = null },
@@ -349,6 +353,8 @@ namespace PSAPIRestaurantSystem
                 new Order { OrderNum = 39, State = (int)OrderState.Canceled, ManagedByWaiterId = 3 },
                 new Order { OrderNum = 40, State = (int)OrderState.Submitted, ManagedByWaiterId = 2, Price = 65, Duration = 153 }
                 );
+
+            // Table occupancies
 
             modelBuilder.Entity<TableOccupancy>().HasData(
                 new TableOccupancy { TableOccupancyId = 1, OrderId = 33, ReservationId = 33, TableId = 2 },
