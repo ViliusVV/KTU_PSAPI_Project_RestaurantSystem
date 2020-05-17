@@ -1,0 +1,137 @@
+﻿@using PSAPIRestaurantSystem.Models;
+@model IEnumerable<PSAPIRestaurantSystem.Models.Reservation>
+
+@{
+    ViewData["Title"] = "ReservationPage";
+}
+
+<h1>ReservationPage</h1>
+
+<table class="table table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ReservationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().PeopleCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ReservedForDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ReservedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Comment)
+            </th>
+        </tr>
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Aktyvios Rezervacijos</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)ReservationState.Active)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservationId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.PeopleCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Comment)
+                    </td>
+
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Atšauktos rezervacijos</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)ReservationState.Canceled)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservationId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.PeopleCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Comment)
+                    </td>
+
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Užbaigtos rezervacijos</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)ReservationState.Done)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservationId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.PeopleCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ReservedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Comment)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+
+</table>
+

@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace PSAPIRestaurantSystem.Models
 {
-    enum WorkState
+    public enum WorkState
     {
         Working = 1,
         Holiday,
         Fired
     }
 
-    enum OrderState
+    public enum OrderState
     {
         Created = 1,
         Made,
@@ -21,10 +21,10 @@ namespace PSAPIRestaurantSystem.Models
         Submitted
     }
 
-    enum ReservationState
+    public enum ReservationState : int
     {
-        NotConfirmed = 1,
-        Confirmed,
+        Active = 1,
+        Done,
         Canceled
     }
 }

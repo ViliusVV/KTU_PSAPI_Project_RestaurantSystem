@@ -174,5 +174,14 @@ namespace PSAPIRestaurantSystem.Controllers
 
             return Redirect("/");
         }
+
+        // Open reservation page
+
+        public IActionResult ReservationPage()
+        {
+            var usrID = HttpContext.Session.GetInt32("userID");
+            var reservation = _context.Reservations.Where(r => r.ReservedByUserId == usrID);
+            return View(reservation.ToList());
+        }
     }
 }

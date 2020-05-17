@@ -8,21 +8,26 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Reservation
     {
+        [Display(Name = "Nr")]
         [Key]
         public int ReservationId { get; set; }
 
+        [Display(Name = "Žmonių kiekis")]
         [Required]
         public int PeopleCount { get; set; }
 
+        [Display(Name = "Rezervacijos data")]
         [Required]
         public DateTime ReservedForDate { get; set; }
 
+        [Display(Name = "Rezervuota data")]
         [Required]
         public DateTime ReservedDate { get; set; }
 
         [Required]
         public int State { get; set; }
-
+        
+        [Display(Name = "Pastabos")]
         public string Comment { get; set; }
 
         // Relationships
