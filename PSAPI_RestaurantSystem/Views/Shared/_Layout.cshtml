@@ -45,9 +45,15 @@
 								<a class="nav-link text-dark" asp-area="" asp-controller="Waiter" asp-action="WaiterReservationPage">Rezervacijos</a>
 							</li>
 						}
-						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Naudotojai</a>
-						</li>
+						@if (role == "admin")
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Naudotojai</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Grafikai</a>
+							</li>
+						}
 						@if (role != null)
 						{
 							<li class="nav-item">

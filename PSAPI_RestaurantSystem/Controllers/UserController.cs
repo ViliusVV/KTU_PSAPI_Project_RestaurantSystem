@@ -208,7 +208,7 @@ namespace PSAPIRestaurantSystem.Controllers
 
         public void CreateOrderPriorityQueue(Reservation rev)
         {
-            var order = new Order { OrderDate = DateTime.Now, Price = 0.0, Duration = 0, State = (int)OrderState.Created };
+            var order = new Order { OrderDate = DateTime.Now, Price = 0.0, Duration = 0, State = (int)OrderState.CreatedReservation};
             _context.Add(order);
             _context.SaveChanges();
             var tables = _context.Tables.ToList();
