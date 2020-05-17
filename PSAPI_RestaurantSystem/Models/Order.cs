@@ -26,7 +26,7 @@ namespace PSAPIRestaurantSystem.Models
 
         // Relationship
         // Waiter to order (1 to *)
-        public int ManagedByWaiterId { get; set; }
+        public int? ManagedByWaiterId { get; set; }
         public Waiter ManagedBy { get; set; }
 
         // Order to tableoccupancy (1 to *)

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PSAPIRestaurantSystem;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20200517113501_mig7")]
+    partial class mig7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,7 +85,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             EmployeeId = 1,
-                            BeganWork = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(6455),
+                            BeganWork = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(568),
                             EmployeeState = 1,
                             EndedWork = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Salary = 1000,
@@ -92,7 +94,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             EmployeeId = 2,
-                            BeganWork = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(7203),
+                            BeganWork = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(1313),
                             EmployeeState = 1,
                             EndedWork = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Salary = 3000,
@@ -101,7 +103,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             EmployeeId = 3,
-                            BeganWork = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(7222),
+                            BeganWork = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(1332),
                             EmployeeState = 1,
                             EndedWork = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Salary = 2000,
@@ -110,7 +112,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             EmployeeId = 4,
-                            BeganWork = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(7225),
+                            BeganWork = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(1335),
                             EmployeeState = 1,
                             EndedWork = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Salary = 1500,
@@ -139,109 +141,109 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuId = 1,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 232, DateTimeKind.Local).AddTicks(9736),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 716, DateTimeKind.Local).AddTicks(3817),
                             Title = "Sriubos"
                         },
                         new
                         {
                             MenuId = 2,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3879),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8652),
                             Title = "Užkandžiai"
                         },
                         new
                         {
                             MenuId = 3,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3906),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8683),
                             Title = "Salotos"
                         },
                         new
                         {
                             MenuId = 4,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3912),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8686),
                             Title = "Kiauliena"
                         },
                         new
                         {
                             MenuId = 5,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3915),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8688),
                             Title = "Vistiena"
                         },
                         new
                         {
                             MenuId = 6,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3920),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8691),
                             Title = "Zuvis"
                         },
                         new
                         {
                             MenuId = 7,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3923),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8694),
                             Title = "Miltiniai patiekalai"
                         },
                         new
                         {
                             MenuId = 8,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3926),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8697),
                             Title = "Gaivieji gėrimai"
                         },
                         new
                         {
                             MenuId = 9,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3926),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8699),
                             Title = "Alus"
                         },
                         new
                         {
                             MenuId = 10,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3931),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8702),
                             Title = "Šampanas"
                         },
                         new
                         {
                             MenuId = 11,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3931),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8705),
                             Title = "Konjakas"
                         },
                         new
                         {
                             MenuId = 12,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3934),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8708),
                             Title = "Degtinė"
                         },
                         new
                         {
                             MenuId = 13,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3937),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8711),
                             Title = "Brendis"
                         },
                         new
                         {
                             MenuId = 14,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3940),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8713),
                             Title = "Vynas"
                         },
                         new
                         {
                             MenuId = 15,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3943),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8713),
                             Title = "Sidras"
                         },
                         new
                         {
                             MenuId = 16,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3945),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8716),
                             Title = "Burbonas"
                         },
                         new
                         {
                             MenuId = 17,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3948),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8719),
                             Title = "Džinas"
                         },
                         new
                         {
                             MenuId = 18,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(3951),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 718, DateTimeKind.Local).AddTicks(8722),
                             Title = "Viskis"
                         });
                 });
@@ -275,7 +277,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 1,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6256),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(946),
                             MenuEntryName = "Dienos sriuba",
                             MenuId = 1,
                             Price = 1.2
@@ -283,7 +285,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 2,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6719),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1390),
                             MenuEntryName = "Čili",
                             MenuId = 1,
                             Price = 3.0
@@ -291,7 +293,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 3,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6744),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1412),
                             MenuEntryName = "Cibulynė",
                             MenuId = 1,
                             Price = 2.0
@@ -299,7 +301,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 4,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6746),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1415),
                             MenuEntryName = "Šaltibarščiai",
                             MenuId = 1,
                             Price = 2.5
@@ -307,7 +309,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 5,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6749),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1417),
                             MenuEntryName = "Šviežių daržovių salotos",
                             MenuId = 3,
                             Price = 3.0
@@ -315,7 +317,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 6,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6752),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1420),
                             MenuEntryName = "Sveikuolių salotos ",
                             MenuId = 3,
                             Price = 3.5
@@ -323,7 +325,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 7,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6755),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1423),
                             MenuEntryName = "Vištienos salotos",
                             MenuId = 3,
                             Price = 3.5
@@ -331,7 +333,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 8,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6757),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1423),
                             MenuEntryName = "Graikiškos salotos ",
                             MenuId = 3,
                             Price = 4.5
@@ -339,7 +341,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         new
                         {
                             MenuEntryId = 9,
-                            Changed = new DateTime(2020, 5, 17, 14, 59, 56, 235, DateTimeKind.Local).AddTicks(6760),
+                            Changed = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(1428),
                             MenuEntryName = "Burokėlių salotos su fetos sūriu ",
                             MenuId = 3,
                             Price = 4.5
@@ -381,326 +383,6 @@ namespace PSAPIRestaurantSystem.Migrations
                             OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Price = 0.0,
                             State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 2,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 3,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 4,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 5,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 6,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 7,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 8,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 9,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 10,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 11,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 12,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 13,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 14,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 15,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 16,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 17,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 18,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 19,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 20,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 21,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 22,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 23,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 24,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 25,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 26,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 27,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 28,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 29,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 30,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 31,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 32,
-                            Duration = 0,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 1
-                        },
-                        new
-                        {
-                            OrderNum = 33,
-                            Duration = 45,
-                            ManagedByWaiterId = 1,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 10.0,
-                            State = 5
-                        },
-                        new
-                        {
-                            OrderNum = 34,
-                            Duration = 0,
-                            ManagedByWaiterId = 1,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 4
-                        },
-                        new
-                        {
-                            OrderNum = 35,
-                            Duration = 51,
-                            ManagedByWaiterId = 2,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 11.0,
-                            State = 5
-                        },
-                        new
-                        {
-                            OrderNum = 36,
-                            Duration = 0,
-                            ManagedByWaiterId = 3,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 4
-                        },
-                        new
-                        {
-                            OrderNum = 37,
-                            Duration = 30,
-                            ManagedByWaiterId = 2,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 20.0,
-                            State = 5
-                        },
-                        new
-                        {
-                            OrderNum = 38,
-                            Duration = 37,
-                            ManagedByWaiterId = 1,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 40.0,
-                            State = 5
-                        },
-                        new
-                        {
-                            OrderNum = 39,
-                            Duration = 0,
-                            ManagedByWaiterId = 3,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 0.0,
-                            State = 4
-                        },
-                        new
-                        {
-                            OrderNum = 40,
-                            Duration = 153,
-                            ManagedByWaiterId = 2,
-                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Price = 65.0,
-                            State = 5
                         });
                 });
 
@@ -862,8 +544,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 1,
                             PeopleCount = 2,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(1649),
-                            ReservedForDate = new DateTime(2020, 5, 18, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(2037),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(5707),
+                            ReservedForDate = new DateTime(2020, 5, 18, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(6090),
                             State = 2
                         },
                         new
@@ -871,8 +553,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 2,
                             PeopleCount = 1,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3104),
-                            ReservedForDate = new DateTime(2020, 5, 19, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3121),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7162),
+                            ReservedForDate = new DateTime(2020, 5, 19, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7178),
                             State = 3
                         },
                         new
@@ -881,8 +563,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             Comment = "Atsivesiu suni",
                             PeopleCount = 3,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3140),
-                            ReservedForDate = new DateTime(2020, 5, 20, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3143),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7198),
+                            ReservedForDate = new DateTime(2020, 5, 20, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7201),
                             State = 1
                         },
                         new
@@ -890,8 +572,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 4,
                             PeopleCount = 4,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3506),
-                            ReservedForDate = new DateTime(2020, 5, 20, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3514),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7561),
+                            ReservedForDate = new DateTime(2020, 5, 20, 22, 35, 0, 720, DateTimeKind.Local).AddTicks(7572),
                             State = 3
                         },
                         new
@@ -899,8 +581,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 5,
                             PeopleCount = 2,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3517),
-                            ReservedForDate = new DateTime(2020, 5, 21, 18, 59, 56, 237, DateTimeKind.Local).AddTicks(3520),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7575),
+                            ReservedForDate = new DateTime(2020, 5, 21, 18, 35, 0, 720, DateTimeKind.Local).AddTicks(7577),
                             State = 1
                         },
                         new
@@ -908,8 +590,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 6,
                             PeopleCount = 2,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3522),
-                            ReservedForDate = new DateTime(2020, 5, 22, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3525),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7580),
+                            ReservedForDate = new DateTime(2020, 5, 22, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7583),
                             State = 2
                         },
                         new
@@ -917,8 +599,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 7,
                             PeopleCount = 2,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3528),
-                            ReservedForDate = new DateTime(2020, 5, 24, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3531),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7583),
+                            ReservedForDate = new DateTime(2020, 5, 24, 6, 35, 0, 720, DateTimeKind.Local).AddTicks(7586),
                             State = 3
                         },
                         new
@@ -926,8 +608,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 8,
                             PeopleCount = 2,
                             ReservedByUserId = 1,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3533),
-                            ReservedForDate = new DateTime(2020, 5, 25, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3533),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7588),
+                            ReservedForDate = new DateTime(2020, 5, 25, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7591),
                             State = 1
                         },
                         new
@@ -935,8 +617,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 9,
                             PeopleCount = 2,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3536),
-                            ReservedForDate = new DateTime(2020, 5, 18, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3539),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7594),
+                            ReservedForDate = new DateTime(2020, 5, 18, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7597),
                             State = 2
                         },
                         new
@@ -944,8 +626,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 10,
                             PeopleCount = 1,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3542),
-                            ReservedForDate = new DateTime(2020, 5, 19, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3544),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7599),
+                            ReservedForDate = new DateTime(2020, 5, 19, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7599),
                             State = 3
                         },
                         new
@@ -954,8 +636,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             Comment = "Atsivesiu kate",
                             PeopleCount = 3,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3547),
-                            ReservedForDate = new DateTime(2020, 5, 20, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3550),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7605),
+                            ReservedForDate = new DateTime(2020, 5, 20, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7605),
                             State = 1
                         },
                         new
@@ -963,8 +645,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 12,
                             PeopleCount = 4,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3561),
-                            ReservedForDate = new DateTime(2020, 5, 20, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3564),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7622),
+                            ReservedForDate = new DateTime(2020, 5, 20, 22, 35, 0, 720, DateTimeKind.Local).AddTicks(7622),
                             State = 3
                         },
                         new
@@ -972,8 +654,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 13,
                             PeopleCount = 2,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3567),
-                            ReservedForDate = new DateTime(2020, 5, 21, 18, 59, 56, 237, DateTimeKind.Local).AddTicks(3569),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7624),
+                            ReservedForDate = new DateTime(2020, 5, 21, 18, 35, 0, 720, DateTimeKind.Local).AddTicks(7627),
                             State = 1
                         },
                         new
@@ -981,8 +663,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 14,
                             PeopleCount = 2,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3572),
-                            ReservedForDate = new DateTime(2020, 5, 22, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3575),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7630),
+                            ReservedForDate = new DateTime(2020, 5, 22, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7633),
                             State = 2
                         },
                         new
@@ -990,8 +672,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 15,
                             PeopleCount = 2,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3578),
-                            ReservedForDate = new DateTime(2020, 5, 24, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3580),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7636),
+                            ReservedForDate = new DateTime(2020, 5, 24, 6, 35, 0, 720, DateTimeKind.Local).AddTicks(7638),
                             State = 3
                         },
                         new
@@ -999,8 +681,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 16,
                             PeopleCount = 2,
                             ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3583),
-                            ReservedForDate = new DateTime(2020, 5, 25, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3583),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7641),
+                            ReservedForDate = new DateTime(2020, 5, 25, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7644),
                             State = 1
                         },
                         new
@@ -1008,8 +690,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 17,
                             PeopleCount = 2,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3586),
-                            ReservedForDate = new DateTime(2020, 5, 18, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3589),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7647),
+                            ReservedForDate = new DateTime(2020, 5, 18, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7647),
                             State = 2
                         },
                         new
@@ -1017,8 +699,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 18,
                             PeopleCount = 1,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3592),
-                            ReservedForDate = new DateTime(2020, 5, 19, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3594),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7649),
+                            ReservedForDate = new DateTime(2020, 5, 19, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7652),
                             State = 3
                         },
                         new
@@ -1027,8 +709,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             Comment = "Atsivesiu suni",
                             PeopleCount = 3,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3597),
-                            ReservedForDate = new DateTime(2020, 5, 20, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3597),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7655),
+                            ReservedForDate = new DateTime(2020, 5, 20, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7658),
                             State = 1
                         },
                         new
@@ -1036,8 +718,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 20,
                             PeopleCount = 4,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3600),
-                            ReservedForDate = new DateTime(2020, 5, 20, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3603),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7660),
+                            ReservedForDate = new DateTime(2020, 5, 20, 22, 35, 0, 720, DateTimeKind.Local).AddTicks(7663),
                             State = 3
                         },
                         new
@@ -1045,8 +727,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 21,
                             PeopleCount = 2,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3605),
-                            ReservedForDate = new DateTime(2020, 5, 21, 18, 59, 56, 237, DateTimeKind.Local).AddTicks(3608),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7663),
+                            ReservedForDate = new DateTime(2020, 5, 21, 18, 35, 0, 720, DateTimeKind.Local).AddTicks(7666),
                             State = 1
                         },
                         new
@@ -1054,8 +736,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 22,
                             PeopleCount = 2,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3611),
-                            ReservedForDate = new DateTime(2020, 5, 22, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3614),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7669),
+                            ReservedForDate = new DateTime(2020, 5, 22, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7672),
                             State = 2
                         },
                         new
@@ -1063,8 +745,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 23,
                             PeopleCount = 2,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3614),
-                            ReservedForDate = new DateTime(2020, 5, 24, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3617),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7674),
+                            ReservedForDate = new DateTime(2020, 5, 24, 6, 35, 0, 720, DateTimeKind.Local).AddTicks(7677),
                             State = 3
                         },
                         new
@@ -1072,8 +754,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 24,
                             PeopleCount = 2,
                             ReservedByUserId = 6,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3619),
-                            ReservedForDate = new DateTime(2020, 5, 25, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3622),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7680),
+                            ReservedForDate = new DateTime(2020, 5, 25, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7680),
                             State = 1
                         },
                         new
@@ -1081,8 +763,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 25,
                             PeopleCount = 2,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3625),
-                            ReservedForDate = new DateTime(2020, 5, 18, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3628),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7683),
+                            ReservedForDate = new DateTime(2020, 5, 18, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7685),
                             State = 2
                         },
                         new
@@ -1090,8 +772,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 26,
                             PeopleCount = 1,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3628),
-                            ReservedForDate = new DateTime(2020, 5, 19, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3630),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7688),
+                            ReservedForDate = new DateTime(2020, 5, 19, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7691),
                             State = 3
                         },
                         new
@@ -1100,8 +782,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             Comment = "Atsinesiu vezliuka",
                             PeopleCount = 3,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3633),
-                            ReservedForDate = new DateTime(2020, 5, 20, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3636),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7694),
+                            ReservedForDate = new DateTime(2020, 5, 20, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7694),
                             State = 1
                         },
                         new
@@ -1109,8 +791,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 28,
                             PeopleCount = 4,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3639),
-                            ReservedForDate = new DateTime(2020, 5, 20, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3641),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7696),
+                            ReservedForDate = new DateTime(2020, 5, 20, 22, 35, 0, 720, DateTimeKind.Local).AddTicks(7699),
                             State = 3
                         },
                         new
@@ -1118,8 +800,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 29,
                             PeopleCount = 2,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3644),
-                            ReservedForDate = new DateTime(2020, 5, 21, 18, 59, 56, 237, DateTimeKind.Local).AddTicks(3644),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7702),
+                            ReservedForDate = new DateTime(2020, 5, 21, 18, 35, 0, 720, DateTimeKind.Local).AddTicks(7705),
                             State = 1
                         },
                         new
@@ -1127,8 +809,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 30,
                             PeopleCount = 2,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3647),
-                            ReservedForDate = new DateTime(2020, 5, 22, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3650),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7708),
+                            ReservedForDate = new DateTime(2020, 5, 22, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7710),
                             State = 2
                         },
                         new
@@ -1136,8 +818,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 31,
                             PeopleCount = 2,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3653),
-                            ReservedForDate = new DateTime(2020, 5, 24, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3655),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7710),
+                            ReservedForDate = new DateTime(2020, 5, 24, 6, 35, 0, 720, DateTimeKind.Local).AddTicks(7713),
                             State = 3
                         },
                         new
@@ -1145,81 +827,8 @@ namespace PSAPIRestaurantSystem.Migrations
                             ReservationId = 32,
                             PeopleCount = 2,
                             ReservedByUserId = 7,
-                            ReservedDate = new DateTime(2020, 5, 17, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3658),
-                            ReservedForDate = new DateTime(2020, 5, 25, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3661),
-                            State = 1
-                        },
-                        new
-                        {
-                            ReservationId = 33,
-                            PeopleCount = 2,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 15, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3664),
-                            ReservedForDate = new DateTime(2020, 5, 16, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3664),
-                            State = 2
-                        },
-                        new
-                        {
-                            ReservationId = 34,
-                            PeopleCount = 1,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 15, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3666),
-                            ReservedForDate = new DateTime(2020, 5, 15, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3669),
-                            State = 3
-                        },
-                        new
-                        {
-                            ReservationId = 35,
-                            Comment = "Atsivesiu suni",
-                            PeopleCount = 3,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 14, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3672),
-                            ReservedForDate = new DateTime(2020, 5, 15, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3675),
-                            State = 1
-                        },
-                        new
-                        {
-                            ReservationId = 36,
-                            PeopleCount = 4,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 13, 10, 59, 56, 237, DateTimeKind.Local).AddTicks(3677),
-                            ReservedForDate = new DateTime(2020, 5, 14, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3680),
-                            State = 3
-                        },
-                        new
-                        {
-                            ReservationId = 37,
-                            PeopleCount = 2,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 12, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3683),
-                            ReservedForDate = new DateTime(2020, 5, 13, 10, 59, 56, 237, DateTimeKind.Local).AddTicks(3683),
-                            State = 1
-                        },
-                        new
-                        {
-                            ReservationId = 38,
-                            PeopleCount = 2,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 10, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3686),
-                            ReservedForDate = new DateTime(2020, 5, 12, 14, 59, 56, 237, DateTimeKind.Local).AddTicks(3689),
-                            State = 2
-                        },
-                        new
-                        {
-                            ReservationId = 39,
-                            PeopleCount = 2,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 10, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3691),
-                            ReservedForDate = new DateTime(2020, 5, 10, 22, 59, 56, 237, DateTimeKind.Local).AddTicks(3694),
-                            State = 3
-                        },
-                        new
-                        {
-                            ReservationId = 40,
-                            PeopleCount = 2,
-                            ReservedByUserId = 5,
-                            ReservedDate = new DateTime(2020, 5, 9, 6, 59, 56, 237, DateTimeKind.Local).AddTicks(3697),
-                            ReservedForDate = new DateTime(2020, 5, 10, 2, 59, 56, 237, DateTimeKind.Local).AddTicks(3700),
+                            ReservedDate = new DateTime(2020, 5, 17, 14, 35, 0, 720, DateTimeKind.Local).AddTicks(7716),
+                            ReservedForDate = new DateTime(2020, 5, 25, 2, 35, 0, 720, DateTimeKind.Local).AddTicks(7719),
                             State = 1
                         });
                 });
@@ -1254,7 +863,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         {
                             ReviewId = 1,
                             Rating = 2,
-                            ReviewDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(4111),
+                            ReviewDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(8252),
                             ReviewText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.",
                             UserId = 1
                         },
@@ -1262,7 +871,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         {
                             ReviewId = 2,
                             Rating = 5,
-                            ReviewDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(4875),
+                            ReviewDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(9019),
                             ReviewText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.",
                             UserId = 2
                         },
@@ -1270,7 +879,7 @@ namespace PSAPIRestaurantSystem.Migrations
                         {
                             ReviewId = 3,
                             Rating = 4,
-                            ReviewDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(4895),
+                            ReviewDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(9041),
                             ReviewText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.",
                             UserId = 3
                         });
@@ -1376,57 +985,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     b.HasIndex("TableId");
 
                     b.ToTable("TableOccupancies");
-
-                    b.HasData(
-                        new
-                        {
-                            TableOccupancyId = 1,
-                            OrderId = 33,
-                            ReservationId = 33,
-                            TableId = 2
-                        },
-                        new
-                        {
-                            TableOccupancyId = 2,
-                            OrderId = 33,
-                            ReservationId = 33,
-                            TableId = 10
-                        },
-                        new
-                        {
-                            TableOccupancyId = 3,
-                            OrderId = 33,
-                            ReservationId = 33,
-                            TableId = 4
-                        },
-                        new
-                        {
-                            TableOccupancyId = 4,
-                            OrderId = 35,
-                            ReservationId = 35,
-                            TableId = 11
-                        },
-                        new
-                        {
-                            TableOccupancyId = 5,
-                            OrderId = 37,
-                            ReservationId = 37,
-                            TableId = 12
-                        },
-                        new
-                        {
-                            TableOccupancyId = 6,
-                            OrderId = 38,
-                            ReservationId = 38,
-                            TableId = 11
-                        },
-                        new
-                        {
-                            TableOccupancyId = 7,
-                            OrderId = 40,
-                            ReservationId = 40,
-                            TableId = 12
-                        });
                 });
 
             modelBuilder.Entity("PSAPIRestaurantSystem.Models.TakeoutOrder", b =>
@@ -1507,110 +1065,110 @@ namespace PSAPIRestaurantSystem.Migrations
                             UserId = 1,
                             Confirmed = true,
                             Email = "jonas@emai.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(949),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(5147),
                             LoyalityPoints = 1,
                             Password = "slaptozodis",
                             PersonId = 1,
-                            RegistrationDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(553)
+                            RegistrationDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(4753)
                         },
                         new
                         {
                             UserId = 2,
                             Confirmed = true,
                             Email = "mantas@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2379),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6565),
                             LoyalityPoints = 10,
                             Password = "slaptozodis",
                             PersonId = 2,
-                            RegistrationDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2357)
+                            RegistrationDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6537)
                         },
                         new
                         {
                             UserId = 3,
                             Confirmed = true,
                             Email = "tomas@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2404),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6601),
                             LoyalityPoints = 20,
                             Password = "slaptozodis",
                             PersonId = 3,
-                            RegistrationDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2401)
+                            RegistrationDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6598)
                         },
                         new
                         {
                             UserId = 4,
                             Confirmed = true,
                             Email = "petraitis@gmail.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2410),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6607),
                             LoyalityPoints = 5,
                             Password = "slaptozodis",
                             PersonId = 4,
-                            RegistrationDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2407)
+                            RegistrationDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6604)
                         },
                         new
                         {
                             UserId = 5,
                             Confirmed = true,
                             Email = "domas@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2434),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6629),
                             LoyalityPoints = 50,
                             Password = "slaptozodis",
                             PersonId = 5,
-                            RegistrationDate = new DateTime(2020, 5, 15, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2412)
+                            RegistrationDate = new DateTime(2020, 5, 15, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6609)
                         },
                         new
                         {
                             UserId = 6,
                             Confirmed = true,
                             Email = "stasys@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2440),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6634),
                             LoyalityPoints = 60,
                             Password = "slaptozodis",
                             PersonId = 6,
-                            RegistrationDate = new DateTime(2020, 5, 14, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2437)
+                            RegistrationDate = new DateTime(2020, 5, 14, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6632)
                         },
                         new
                         {
                             UserId = 7,
                             Confirmed = true,
                             Email = "martyna@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2443),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6679),
                             LoyalityPoints = 70,
                             Password = "slaptozodis",
                             PersonId = 7,
-                            RegistrationDate = new DateTime(2020, 5, 13, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2443)
+                            RegistrationDate = new DateTime(2020, 5, 13, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6676)
                         },
                         new
                         {
                             UserId = 8,
                             Confirmed = true,
                             Email = "diana@email.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2448),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6684),
                             LoyalityPoints = 80,
                             Password = "slaptozodis",
                             PersonId = 8,
-                            RegistrationDate = new DateTime(2020, 5, 12, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2446)
+                            RegistrationDate = new DateTime(2020, 5, 12, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6681)
                         },
                         new
                         {
                             UserId = 9,
                             Confirmed = true,
                             Email = "tomas@gmail.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2454),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6690),
                             LoyalityPoints = 3,
                             Password = "slaptozodis",
                             PersonId = 9,
-                            RegistrationDate = new DateTime(2020, 5, 11, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2451)
+                            RegistrationDate = new DateTime(2020, 5, 11, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6687)
                         },
                         new
                         {
                             UserId = 10,
                             Confirmed = true,
                             Email = "petras@gmail.com",
-                            LastLoginDate = new DateTime(2020, 5, 17, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2459),
+                            LastLoginDate = new DateTime(2020, 5, 17, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6695),
                             LoyalityPoints = 4,
                             Password = "slaptozodis",
                             PersonId = 10,
-                            RegistrationDate = new DateTime(2020, 5, 16, 14, 59, 56, 236, DateTimeKind.Local).AddTicks(2457)
+                            RegistrationDate = new DateTime(2020, 5, 16, 14, 35, 0, 719, DateTimeKind.Local).AddTicks(6693)
                         });
                 });
 
