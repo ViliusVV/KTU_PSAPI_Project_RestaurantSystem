@@ -180,8 +180,53 @@ namespace PSAPIRestaurantSystem.Controllers
         public IActionResult ReservationPage()
         {
             var usrID = HttpContext.Session.GetInt32("userID");
-            var reservation = _context.Reservations.Where(r => r.ReservedByUserId == usrID);
+            var reservation = _context.Reservations.Where(r => r.ReservedByUserId == usrID).Include(t => t.TableOccupancies);
             return View(reservation.ToList());
+        }
+
+        public IActionResult ReservationForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ReservationForm(Reservation reserv)
+        {
+            ModelState.Remove("ReservationId");
+            if(ModelState.IsValid)
+            {
+                reserv.ReservedByUserId = (int)HttpContext.Session.GetInt32("userID");
+                reserv.ReservedDate = DateTime.Now;
+                reserv.State = (int)ReservationState.Active;
+                _context.Add(reserv);
+                _context.SaveChanges();
+                CreateOrderPriorityQueue(reserv);
+                return Redirect("/User/ReservationPage");
+            }
+            return View(reserv);
+        }
+
+        public void CreateOrderPriorityQueue(Reservation rev)
+        {
+            var order = new Order { OrderDate = DateTime.Now, Price = 0.0, Duration = 0, State = (int)OrderState.Created };
+            _context.Add(order);
+            _context.SaveChanges();
+            var tables = _context.Tables.ToList();
+            var count = rev.PeopleCount;
+            var idList = new List<int>();
+            var index = 0;
+            while (count > 0)
+            {
+                idList.Add(tables[index].TableNum);
+                count = count - tables[index].SeatCount;
+                index++;
+            }
+            foreach (int id in idList)
+            {
+                var temp = new TableOccupancy { OrderId = order.OrderNum, ReservationId = rev.ReservationId, TableId = id };
+                _context.Add(temp);
+            }
+            _context.SaveChanges();
         }
     }
 }

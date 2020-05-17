@@ -16,11 +16,11 @@ namespace PSAPIRestaurantSystem.Models
         [Required]
         public int PeopleCount { get; set; }
 
-        [Display(Name = "Rezervacijos data")]
+        [Display(Name = "Rezervuota datai")]
         [Required]
         public DateTime ReservedForDate { get; set; }
 
-        [Display(Name = "Rezervuota data")]
+        [Display(Name = "Rezervacijos data")]
         [Required]
         public DateTime ReservedDate { get; set; }
 
