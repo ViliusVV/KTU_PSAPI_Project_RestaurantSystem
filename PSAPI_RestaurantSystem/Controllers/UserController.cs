@@ -75,7 +75,7 @@ namespace PSAPIRestaurantSystem.Controllers
                 HttpContext.Session.SetString("role", "user");
             }
 
-            return View();
+            return Redirect("/");
         }
 
         // Open generic review list page
@@ -164,6 +164,15 @@ namespace PSAPIRestaurantSystem.Controllers
 
             ViewData["Rating"] = new SelectList(Review.digits, "Value", "Text");
             return View(reviewEntry);
+        }
+
+        // User logout
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return Redirect("/");
         }
     }
 }
