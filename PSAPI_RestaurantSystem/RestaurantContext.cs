@@ -418,10 +418,12 @@ namespace PSAPIRestaurantSystem
 
                 );
 
+            // takeout orders
+
             modelBuilder.Entity<TakeoutOrder>().HasData(
                 new TakeoutOrder { TakeoutOrderNum = 1, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(5), Price = 100, State = (int)OrderState.Taked, OrderedByUserId = 5, ManagedByWaiterId = 1 },
-                new TakeoutOrder { TakeoutOrderNum = 2, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(4), Price = 10.11, State = (int)OrderState.Canceled, OrderedByUserId = 5, ManagedByWaiterId = 1 },
-                new TakeoutOrder { TakeoutOrderNum = 3, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), Price = 100, State = (int)OrderState.Made, OrderedByUserId = 5, ManagedByWaiterId = 2 },
+                new TakeoutOrder { TakeoutOrderNum = 2, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(4), Price = 10.11, State = (int)OrderState.Made, OrderedByUserId = 5, ManagedByWaiterId = 1 },
+                new TakeoutOrder { TakeoutOrderNum = 3, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), Price = 100, State = (int)OrderState.Canceled, OrderedByUserId = 5, ManagedByWaiterId = 2 },
                 new TakeoutOrder { TakeoutOrderNum = 4, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(3), Price = 15.49, State = (int)OrderState.Made, OrderedByUserId = 5, ManagedByWaiterId = 3 },
                 new TakeoutOrder { TakeoutOrderNum = 5, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(50), Price = 13.50, State = (int)OrderState.Taked, OrderedByUserId = 5, ManagedByWaiterId = 1 },
                 new TakeoutOrder { TakeoutOrderNum = 6, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(6), Price = 100, State = (int)OrderState.Created, OrderedByUserId = 5, ManagedByWaiterId = 2 },
@@ -433,6 +435,34 @@ namespace PSAPIRestaurantSystem
                 new TakeoutOrder { TakeoutOrderNum = 12, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(9), Price = 100, State = (int)OrderState.Taked, OrderedByUserId = 5, ManagedByWaiterId = 3 },
                 new TakeoutOrder { TakeoutOrderNum = 13, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), Price = 100, State = (int)OrderState.Canceled, OrderedByUserId = 5, ManagedByWaiterId = 1 },
                 new TakeoutOrder { TakeoutOrderNum = 14, OrderDate = DateTime.Now, OrderedForDate = DateTime.Now.AddHours(2), ConfirmationDate = DateTime.Now.AddMinutes(1), Price = 100, State = (int)OrderState.Taked, OrderedByUserId = 5, ManagedByWaiterId = 2 }
+                );
+
+            modelBuilder.Entity<OrderedMeal>().HasData(
+                new OrderedMeal { OrderedMealId = 1, Price = 6, Quantity = 5, MenuEntryId = 1, InOrderOrderId = 33 },
+                new OrderedMeal { OrderedMealId = 2, Price = 6.5, Quantity = 1, MenuEntryId = 1, InOrderOrderId = 35 },
+                new OrderedMeal { OrderedMealId = 3, Price = 4, Quantity = 4, MenuEntryId = 2, InOrderOrderId = 37 },
+                new OrderedMeal { OrderedMealId = 4, Price = 3, Quantity = 9, MenuEntryId = 3, InOrderOrderId = 38 },
+                new OrderedMeal { OrderedMealId = 5, Price = 1, Quantity = 10, MenuEntryId = 4, InOrderOrderId = 40 },
+                new OrderedMeal { OrderedMealId = 6, Price = 10, Quantity = 11, MenuEntryId = 5, InOrderOrderId = 33 },
+                new OrderedMeal { OrderedMealId = 7, Price = 16, Quantity = 12, MenuEntryId = 6, InOrderOrderId = 35 },
+                new OrderedMeal { OrderedMealId = 8, Price = 13, Quantity = 4, MenuEntryId = 7, InOrderOrderId = 38 },
+                new OrderedMeal { OrderedMealId = 9, Price = 12.49, Quantity = 1, MenuEntryId = 8, InOrderOrderId = 35 },
+                new OrderedMeal { OrderedMealId = 10, Price = 3.33, Quantity = 2, MenuEntryId = 9, InOrderOrderId = 37 },
+                new OrderedMeal { OrderedMealId = 11, Price = 5.59, Quantity = 1, MenuEntryId = 1, InOrderOrderId = 40 },
+                new OrderedMeal { OrderedMealId = 12, Price = 6.12, Quantity = 2, MenuEntryId = 2, InOrderOrderId = 40 },
+                new OrderedMeal { OrderedMealId = 13, Price = 6.39, Quantity = 1, MenuEntryId = 3, InOrderOrderId = 33 },
+                new OrderedMeal { OrderedMealId = 14, Price = 5.69, Quantity = 3, MenuEntryId = 4, InOrderOrderId = 37 },
+                new OrderedMeal { OrderedMealId = 15, Price = 7.6, Quantity = 4, MenuEntryId = 5, InOrderOrderId = 38 },
+                new OrderedMeal { OrderedMealId = 16, Price = 6.2, Quantity = 5, MenuEntryId = 6, InTakeoutTakeoutOrderId = 1 },
+                new OrderedMeal { OrderedMealId = 17, Price = 9.6, Quantity = 1, MenuEntryId = 7, InTakeoutTakeoutOrderId = 5 },
+                new OrderedMeal { OrderedMealId = 18, Price = 2.6, Quantity = 1, MenuEntryId = 8, InTakeoutTakeoutOrderId = 7 },
+                new OrderedMeal { OrderedMealId = 19, Price = 1.6, Quantity = 1, MenuEntryId = 9, InTakeoutTakeoutOrderId = 10 },
+                new OrderedMeal { OrderedMealId = 20, Price = 19.99, Quantity = 2, MenuEntryId = 1, InTakeoutTakeoutOrderId = 12 },
+                new OrderedMeal { OrderedMealId = 21, Price = 6.12, Quantity = 3, MenuEntryId = 2, InTakeoutTakeoutOrderId = 14 },
+                new OrderedMeal { OrderedMealId = 22, Price = 6.19, Quantity = 1, MenuEntryId = 3, InTakeoutTakeoutOrderId = 2 },
+                new OrderedMeal { OrderedMealId = 23, Price = 8.6, Quantity = 2, MenuEntryId = 4, InTakeoutTakeoutOrderId = 4 },
+                new OrderedMeal { OrderedMealId = 24, Price = 4.6, Quantity = 4, MenuEntryId = 5, InTakeoutTakeoutOrderId = 8 },
+                new OrderedMeal { OrderedMealId = 25, Price = 4.6, Quantity = 4, MenuEntryId = 5, InTakeoutTakeoutOrderId = 11 }
                 );
 
         }
