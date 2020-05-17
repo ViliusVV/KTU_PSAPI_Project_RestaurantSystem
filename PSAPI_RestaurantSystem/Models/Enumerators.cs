@@ -18,7 +18,8 @@ namespace PSAPIRestaurantSystem.Models
         Made,
         Taked,
         Canceled,
-        Submitted
+        Paid,
+        CreatedReservation
     }
 
     public enum ReservationState : int
