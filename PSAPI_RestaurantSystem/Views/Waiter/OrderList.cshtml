@@ -12,7 +12,7 @@
     <thead class="bg-info">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderNum)
+                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstOrDefault().ManagedBy)
@@ -47,9 +47,14 @@
             @if (item.State == (int)OrderState.Created)
             {
                 var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
                 <tr style="padding-left:30px">
                     <td>
-                        @Html.DisplayFor(entryItem => item.OrderNum)
+                        @Html.DisplayFor(entryItem => item.OrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
@@ -58,7 +63,7 @@
                         @Html.DisplayFor(entryItem => item.OrderDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.Duration)
@@ -86,9 +91,14 @@
             @if (item.State == (int)OrderState.CreatedReservation)
             {
                 var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
                 <tr style="padding-left:30px">
                     <td>
-                        @Html.DisplayFor(entryItem => item.OrderNum)
+                        @Html.DisplayFor(entryItem => item.OrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
@@ -97,7 +107,7 @@
                         @Html.DisplayFor(entryItem => item.OrderDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.Duration)
@@ -125,9 +135,14 @@
             @if (item.State == (int)OrderState.Paid)
             {
                 var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
                 <tr style="padding-left:30px">
                     <td>
-                        @Html.DisplayFor(entryItem => item.OrderNum)
+                        @Html.DisplayFor(entryItem => item.OrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
@@ -136,7 +151,7 @@
                         @Html.DisplayFor(entryItem => item.OrderDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.Duration)
@@ -164,9 +179,14 @@
             @if (item.State == (int)OrderState.Canceled)
             {
                 var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
                 <tr style="padding-left:30px">
                     <td>
-                        @Html.DisplayFor(entryItem => item.OrderNum)
+                        @Html.DisplayFor(entryItem => item.OrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
@@ -175,7 +195,7 @@
                         @Html.DisplayFor(entryItem => item.OrderDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.Duration)

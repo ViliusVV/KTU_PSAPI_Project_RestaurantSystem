@@ -10,7 +10,7 @@ namespace PSAPIRestaurantSystem.Models
     public class TakeoutOrder
     {
         [Key]
-        public int TakeoutOrderNum { get; set; }
+        public int TakeoutOrderId { get; set; }
 
         [Required]
         public DateTime OrderDate { get; set; }

@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200517113032_mig7.cs" />
-    <Compile Remove="Migrations\20200517113032_mig7.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 

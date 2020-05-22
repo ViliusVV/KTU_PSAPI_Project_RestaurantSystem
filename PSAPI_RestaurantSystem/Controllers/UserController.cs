@@ -223,7 +223,7 @@ namespace PSAPIRestaurantSystem.Controllers
             }
             foreach (int id in idList)
             {
-                var temp = new TableOccupancy { OrderId = order.OrderNum, ReservationId = rev.ReservationId, TableId = id };
+                var temp = new TableOccupancy { OrderId = order.OrderId, ReservationId = rev.ReservationId, TableId = id };
                 _context.Add(temp);
             }
             _context.SaveChanges();
