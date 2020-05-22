@@ -1,0 +1,196 @@
+﻿@using PSAPIRestaurantSystem.Models;
+@model IEnumerable<PSAPIRestaurantSystem.Models.TakeoutOrder>
+
+@{
+    ViewData["Title"] = "Užsakymai išsinešimui";
+}
+
+<h1>Užsakymų išsinešimui sąrašas</h1>
+
+<table class="table table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TakeoutOrderNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderedForDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ConfirmationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Price)
+            </th>
+        </tr>
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Sukurti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Created)
+            {
+                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Price)
+                    </td>
+                </tr>
+                @foreach (var meal in item.OrderedMeals)
+                {
+                    <tr style="padding-left:30px">
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Pagaminti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Made)
+            {
+                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Price)
+                    </td>
+                </tr>
+            }
+            @foreach (var meal in item.OrderedMeals)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Atsiimti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Taked)
+            {
+                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Price)
+                    </td>
+                </tr>
+            }
+            @foreach (var meal in item.OrderedMeals)
+            {
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Atšaukti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Canceled)
+            {
+                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderedForDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Price)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+</table>
+

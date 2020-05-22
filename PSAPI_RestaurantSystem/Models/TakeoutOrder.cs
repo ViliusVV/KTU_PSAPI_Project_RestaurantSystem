@@ -10,20 +10,25 @@ namespace PSAPIRestaurantSystem.Models
     public class TakeoutOrder
     {
         [Key]
+        [Display(Name = "Užsakymo id")]
         public int TakeoutOrderNum { get; set; }
 
         [Required]
+        [Display(Name = "Užsakymo data")]
         public DateTime OrderDate { get; set; }
 
         [Required]
+        [Display(Name = "Užsakyta datai")]
         public DateTime OrderedForDate { get; set; }
-
+        [Display(Name = "Patvirtinimo data")]
         public DateTime ConfirmationDate { get; set; }
 
         [Required]
+        [Display(Name = "Kaina")]
         public double Price { get; set; }
 
         [Required]
+        [Display(Name = "Būsena")]
         public int State { get; set; }
 
 

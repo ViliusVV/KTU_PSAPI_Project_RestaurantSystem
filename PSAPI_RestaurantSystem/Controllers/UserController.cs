@@ -228,5 +228,11 @@ namespace PSAPIRestaurantSystem.Controllers
             }
             _context.SaveChanges();
         }
+        public IActionResult TakeoutOrdersPage()
+        {
+            var usrID = HttpContext.Session.GetInt32("userID");
+            var takeoutOrder = _context.TakeoutOrders.Include(t => t.OrderedMeals).ThenInclude(m => m.MenuEntry).Where(o => o.OrderedBy.UserId == usrID);
+            return View(takeoutOrder.ToList());
+        }
     }
 }
