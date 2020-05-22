@@ -143,5 +143,12 @@ namespace PSAPIRestaurantSystem.Controllers
         {
             return _context.MenuEntries.Any(e => e.MenuEntryId == id);
         }
+
+        public IActionResult OrderChartPage()
+        {
+            var orders = _context.Orders.Include(m => m.OrderedMeals).ThenInclude(m => m.MenuEntry).ToList();
+
+            return View(orders);
+        }
     }
 }
