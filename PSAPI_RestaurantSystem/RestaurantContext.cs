@@ -358,8 +358,10 @@ namespace PSAPIRestaurantSystem
                 new Order { OrderNum = 43, State = (int)OrderState.Created, ManagedByWaiterId = null },
                 new Order { OrderNum = 44, State = (int)OrderState.Created, ManagedByWaiterId = null },
                 new Order { OrderNum = 45, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderNum = 46, State = (int)OrderState.Created, ManagedByWaiterId = null }
+                new Order { OrderNum = 46, State = (int)OrderState.Created, ManagedByWaiterId = null },
 
+                //big chungus order
+                new Order { OrderNum = 47, State = (int)OrderState.Paid, ManagedByWaiterId = 3, Price = 9999.12, Duration = 359}
                 );
 
             // Table occupancies
@@ -414,8 +416,9 @@ namespace PSAPIRestaurantSystem
                 new TableOccupancy { TableOccupancyId = 43, OrderId = 43, TableId = 12 },
                 new TableOccupancy { TableOccupancyId = 44, OrderId = 44, TableId = 12 },
                 new TableOccupancy { TableOccupancyId = 45, OrderId = 45, TableId = 12 },
-                new TableOccupancy { TableOccupancyId = 46, OrderId = 46, TableId = 12 }
+                new TableOccupancy { TableOccupancyId = 46, OrderId = 46, TableId = 12 },
 
+                new TableOccupancy { TableOccupancyId = 47, OrderId = 47, TableId = 1 }
                 );
 
             // takeout orders
@@ -462,7 +465,18 @@ namespace PSAPIRestaurantSystem
                 new OrderedMeal { OrderedMealId = 22, Price = 6.19, Quantity = 1, MenuEntryId = 3, InTakeoutTakeoutOrderId = 2 },
                 new OrderedMeal { OrderedMealId = 23, Price = 8.6, Quantity = 2, MenuEntryId = 4, InTakeoutTakeoutOrderId = 4 },
                 new OrderedMeal { OrderedMealId = 24, Price = 4.6, Quantity = 4, MenuEntryId = 5, InTakeoutTakeoutOrderId = 8 },
-                new OrderedMeal { OrderedMealId = 25, Price = 4.6, Quantity = 4, MenuEntryId = 5, InTakeoutTakeoutOrderId = 11 }
+                new OrderedMeal { OrderedMealId = 25, Price = 4.6, Quantity = 4, MenuEntryId = 5, InTakeoutTakeoutOrderId = 11 },
+
+                new OrderedMeal { OrderedMealId = 26, Price = 100.12, Quantity = 31, MenuEntryId = 1, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 163.21, Quantity = 13, MenuEntryId = 2, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 240.12, Quantity = 90, MenuEntryId = 3, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 321.66, Quantity = 31, MenuEntryId = 4, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 45.94, Quantity = 23, MenuEntryId = 5, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 100.61, Quantity = 67, MenuEntryId = 6, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 544.87, Quantity = 84, MenuEntryId = 7, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 202.22, Quantity = 101, MenuEntryId = 8, InOrderOrderId = 47 },
+                new OrderedMeal { OrderedMealId = 26, Price = 156.12, Quantity = 72, MenuEntryId = 9, InOrderOrderId = 47 }
+
                 );
 
         }
