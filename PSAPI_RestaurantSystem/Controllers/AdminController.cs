@@ -153,7 +153,7 @@ namespace PSAPIRestaurantSystem.Controllers
         }
 
         // Return order chart data json GET
-        public JsonResult PopulationChart()
+        public JsonResult GetChartData()
         {
             var menuEntriesRevenue = new List<MenuEntryRevenuModel>();
             var tablePopularity = new List<TablePopularityModel>();

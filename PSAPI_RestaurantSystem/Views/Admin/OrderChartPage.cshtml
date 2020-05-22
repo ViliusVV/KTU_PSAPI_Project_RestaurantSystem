@@ -8,8 +8,9 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div id="chart_div1"></div>
 <div id="chart_div2"></div>
-<div id="chart_div3"></div>
 <div id="chart_div33"></div>
+<div id="chart_div3"></div>
+
 
 
 <script type="text/javascript">
@@ -23,7 +24,7 @@
     function LoadData() {
         $.ajax({
 
-            url: '/Admin/PopulationChart',
+            url: '/Admin/GetChartData',
             dataType: "json",
             type: "GET",
             success: function (data) {
@@ -66,12 +67,11 @@
             ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
             ['Užsakymų skaičius', null, 0, 0]
         ];
-
-        $.each(data.tables, function (i, item) {
-            dataArray3.push([item.tableId, item.count, item.count]);
+        $.each(data.menu, function (i, item) {
+            dataArray33.push([item.menuEntryName, "Užsakymų skaičius", item.counts, item.counts]);
         });
-        var data3 = google.visualization.arrayToDataTable(dataArray3);
-        data3.sort({ column: 1, desc: true });
+        var data33 = google.visualization.arrayToDataTable(dataArray33);
+        data33.sort({ column: 1, desc: true });
 
         var options1 = {
             title: 'Patiekalų apyvartos grafikas',
@@ -136,14 +136,22 @@
             }
         };
 
-        tree.draw(data, {
-            minColor: '#f00',
-            midColor: '#ddd',
-            maxColor: '#0d0',
-            headerHeight: 15,
-            fontColor: 'black',
-            showScale: true
-        });
+        var options33 = {
+            width: 1200,
+            height: 600,
+            minColor: '#b82323',
+            midColor: '#ebc621',
+            maxColor: '##2de358',
+            showScale: true,
+            generateTooltip: showFullTooltip
+        };
+
+
+        function showFullTooltip(row, size, value) {
+            return '<div style="background:#fd9; padding:10px; border-style:solid">' +
+                '<span style="font-family:Courier"><b>' + data33.getValue(row, 0) + "buvo užsakyta" +
+                data33.getValue(row, 2) + ' kartą/us ' + '</b></span><br></div>';
+        }
 
 
 
@@ -153,7 +161,7 @@
 
         var chart3 = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
 
-        var chart33 = new google.visualization.TreeMap(document.getElementById('chart_div3'));
+        var chart33 = new google.visualization.TreeMap(document.getElementById('chart_div33'));
 
         chart1.draw(data1, options1);
         chart2.draw(data2, options2);
