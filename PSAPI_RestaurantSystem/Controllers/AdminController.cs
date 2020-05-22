@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PSAPIRestaurantSystem.Models;
+using PSAPIRestaurantSystem.Models.ViewModels;
 
 namespace PSAPIRestaurantSystem.Controllers
 {
@@ -144,11 +145,45 @@ namespace PSAPIRestaurantSystem.Controllers
             return _context.MenuEntries.Any(e => e.MenuEntryId == id);
         }
 
+
+        // Char order page GET
         public IActionResult OrderChartPage()
         {
-            var orders = _context.Orders.Include(m => m.OrderedMeals).ThenInclude(m => m.MenuEntry).ToList();
-
-            return View(orders);
+            return View();
         }
+
+        // Return order chart data json GET
+        public JsonResult PopulationChart()
+        {
+            var menuEntriesRevenue = new List<MenuEntryRevenuModel>();
+            var tablePopularity = new List<TablePopularityModel>();
+
+            var menuEntries = _context.MenuEntries.Include(m => m.OrderedMeals).ToList();
+            var tables = _context.Tables.Include(t => t.TableOccupancies);
+
+
+            foreach(var entry in menuEntries)
+            {
+                menuEntriesRevenue.Add(new MenuEntryRevenuModel
+                {
+                    MenuEntryName = entry.MenuEntryName,
+                    Revenue = entry.OrderedMeals.Sum(s => (int)(s.Quantity * s.Price)),
+                    Counts = entry.OrderedMeals.Sum(s => s.Quantity)
+                });
+            }
+
+            foreach(var table in tables)
+            {
+                tablePopularity.Add(new TablePopularityModel
+                {
+                    TableId = "Nr. " + table.TableNum.ToString(),
+                    Count = table.TableOccupancies.Count
+                });
+            }
+
+
+            return Json(new {menu = menuEntriesRevenue, tables = tablePopularity});
+        }
+
     }
 }

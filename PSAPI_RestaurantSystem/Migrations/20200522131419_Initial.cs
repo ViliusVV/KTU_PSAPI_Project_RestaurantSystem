@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PSAPIRestaurantSystem.Migrations
 {
-    public partial class m1 : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -334,24 +334,24 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "MenuId", "Changed", "Title" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 5, 22, 15, 10, 49, 626, DateTimeKind.Local).AddTicks(5686), "Sriubos" },
-                    { 17, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9607), "Džinas" },
-                    { 16, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9604), "Burbonas" },
-                    { 15, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9601), "Sidras" },
-                    { 14, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9599), "Vynas" },
-                    { 13, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9596), "Brendis" },
-                    { 12, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9593), "Degtinė" },
-                    { 11, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9590), "Konjakas" },
-                    { 10, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9590), "Šampanas" },
-                    { 18, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9607), "Viskis" },
-                    { 8, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9585), "Gaivieji gėrimai" },
-                    { 7, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9582), "Miltiniai patiekalai" },
-                    { 6, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9579), "Zuvis" },
-                    { 5, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9579), "Vistiena" },
-                    { 4, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9577), "Kiauliena" },
-                    { 3, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9571), "Salotos" },
-                    { 2, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9543), "Užkandžiai" },
-                    { 9, new DateTime(2020, 5, 22, 15, 10, 49, 628, DateTimeKind.Local).AddTicks(9588), "Alus" }
+                    { 1, new DateTime(2020, 5, 22, 16, 14, 19, 228, DateTimeKind.Local).AddTicks(8838), "Sriubos" },
+                    { 17, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7909), "Džinas" },
+                    { 16, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7906), "Burbonas" },
+                    { 15, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7903), "Sidras" },
+                    { 14, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7899), "Vynas" },
+                    { 13, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7895), "Brendis" },
+                    { 12, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7892), "Degtinė" },
+                    { 11, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7889), "Konjakas" },
+                    { 10, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7885), "Šampanas" },
+                    { 18, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7912), "Viskis" },
+                    { 8, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7878), "Gaivieji gėrimai" },
+                    { 7, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7875), "Miltiniai patiekalai" },
+                    { 6, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7871), "Zuvis" },
+                    { 5, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7868), "Vistiena" },
+                    { 4, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7865), "Kiauliena" },
+                    { 3, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7859), "Salotos" },
+                    { 2, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7795), "Užkandžiai" },
+                    { 9, new DateTime(2020, 5, 22, 16, 14, 19, 231, DateTimeKind.Local).AddTicks(7881), "Alus" }
                 });
 
             migrationBuilder.InsertData(
@@ -359,44 +359,44 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "OrderId", "Duration", "ManagedByWaiterId", "OrderDate", "Price", "State" },
                 values: new object[,]
                 {
-                    { 23, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9663), 0.0, 6 },
-                    { 24, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9663), 0.0, 6 },
-                    { 25, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9666), 0.0, 6 },
-                    { 26, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9669), 0.0, 6 },
-                    { 27, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9672), 0.0, 6 },
-                    { 28, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9674), 0.0, 6 },
-                    { 29, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9674), 0.0, 6 },
-                    { 30, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9677), 0.0, 6 },
-                    { 42, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(384), 0.0, 1 },
-                    { 32, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9683), 0.0, 6 },
-                    { 41, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(381), 0.0, 1 },
-                    { 43, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(386), 0.0, 1 },
-                    { 44, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(386), 0.0, 1 },
-                    { 45, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(389), 0.0, 1 },
-                    { 46, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(392), 0.0, 1 },
-                    { 22, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9660), 0.0, 6 },
-                    { 31, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9680), 0.0, 6 },
-                    { 20, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9655), 0.0, 6 },
-                    { 21, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9658), 0.0, 6 },
-                    { 18, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9652), 0.0, 6 },
-                    { 19, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9652), 0.0, 6 },
-                    { 1, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(8522), 0.0, 6 },
-                    { 2, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9569), 0.0, 6 },
-                    { 3, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9616), 0.0, 6 },
-                    { 4, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9619), 0.0, 6 },
-                    { 5, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9622), 0.0, 6 },
-                    { 6, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9624), 0.0, 6 },
-                    { 7, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9627), 0.0, 6 },
-                    { 9, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9630), 0.0, 6 },
-                    { 8, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9627), 0.0, 6 },
-                    { 11, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9636), 0.0, 6 },
-                    { 12, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9638), 0.0, 6 },
-                    { 13, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9641), 0.0, 6 },
-                    { 14, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9641), 0.0, 6 },
-                    { 15, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9644), 0.0, 6 },
-                    { 16, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9647), 0.0, 6 },
-                    { 17, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9649), 0.0, 6 },
-                    { 10, 0, null, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9633), 0.0, 6 }
+                    { 23, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(226), 0.0, 6 },
+                    { 24, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(229), 0.0, 6 },
+                    { 25, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(232), 0.0, 6 },
+                    { 26, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(236), 0.0, 6 },
+                    { 27, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(239), 0.0, 6 },
+                    { 28, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(242), 0.0, 6 },
+                    { 29, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(245), 0.0, 6 },
+                    { 30, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(248), 0.0, 6 },
+                    { 42, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1230), 0.0, 1 },
+                    { 32, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(255), 0.0, 6 },
+                    { 41, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1226), 0.0, 1 },
+                    { 43, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1233), 0.0, 1 },
+                    { 44, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1237), 0.0, 1 },
+                    { 45, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1240), 0.0, 1 },
+                    { 46, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1243), 0.0, 1 },
+                    { 22, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(222), 0.0, 6 },
+                    { 31, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(252), 0.0, 6 },
+                    { 20, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(216), 0.0, 6 },
+                    { 21, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(219), 0.0, 6 },
+                    { 18, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(209), 0.0, 6 },
+                    { 19, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(212), 0.0, 6 },
+                    { 1, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(7578), 0.0, 6 },
+                    { 2, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(9926), 0.0, 6 },
+                    { 3, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(9995), 0.0, 6 },
+                    { 4, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(9999), 0.0, 6 },
+                    { 5, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(2), 0.0, 6 },
+                    { 6, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(6), 0.0, 6 },
+                    { 7, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(172), 0.0, 6 },
+                    { 9, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(179), 0.0, 6 },
+                    { 8, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(176), 0.0, 6 },
+                    { 11, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(186), 0.0, 6 },
+                    { 12, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(190), 0.0, 6 },
+                    { 13, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(193), 0.0, 6 },
+                    { 14, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(196), 0.0, 6 },
+                    { 15, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(200), 0.0, 6 },
+                    { 16, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(203), 0.0, 6 },
+                    { 17, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(206), 0.0, 6 },
+                    { 10, 0, null, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(182), 0.0, 6 }
                 });
 
             migrationBuilder.InsertData(
@@ -440,15 +440,15 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "MenuEntryId", "Changed", "MenuEntryName", "MenuId", "Price" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(1776), "Dienos sriuba", 1, 1.2 },
-                    { 2, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2203), "Čili", 1, 3.0 },
-                    { 3, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2222), "Cibulynė", 1, 2.0 },
-                    { 4, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2225), "Šaltibarščiai", 1, 2.5 },
-                    { 5, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2228), "Šviežių daržovių salotos", 3, 3.0 },
-                    { 6, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2231), "Sveikuolių salotos ", 3, 3.5 },
-                    { 7, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2234), "Vištienos salotos", 3, 3.5 },
-                    { 8, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2236), "Graikiškos salotos ", 3, 4.5 },
-                    { 9, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(2239), "Burokėlių salotos su fetos sūriu ", 3, 4.5 }
+                    { 1, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1027), "Dienos sriuba", 1, 1.2 },
+                    { 2, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1589), "Čili", 1, 3.0 },
+                    { 3, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1620), "Cibulynė", 1, 2.0 },
+                    { 4, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1624), "Šaltibarščiai", 1, 2.5 },
+                    { 5, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1628), "Šviežių daržovių salotos", 3, 3.0 },
+                    { 6, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1631), "Sveikuolių salotos ", 3, 3.5 },
+                    { 7, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1635), "Vištienos salotos", 3, 3.5 },
+                    { 8, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1639), "Graikiškos salotos ", 3, 4.5 },
+                    { 9, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(1642), "Burokėlių salotos su fetos sūriu ", 3, 4.5 }
                 });
 
             migrationBuilder.InsertData(
@@ -469,16 +469,16 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "UserId", "Confirmed", "Email", "LastLoginDate", "LoyalityPoints", "Password", "PersonId", "RegistrationDate" },
                 values: new object[,]
                 {
-                    { 6, true, "stasys@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7171), 60, "slaptozodis", 6, new DateTime(2020, 5, 19, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7168) },
-                    { 7, true, "martyna@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7176), 70, "slaptozodis", 7, new DateTime(2020, 5, 18, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7173) },
-                    { 8, true, "diana@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7182), 80, "slaptozodis", 8, new DateTime(2020, 5, 17, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7179) },
-                    { 9, true, "tomas@gmail.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7184), 3, "slaptozodis", 9, new DateTime(2020, 5, 16, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7184) },
-                    { 10, true, "petras@gmail.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7190), 4, "slaptozodis", 10, new DateTime(2020, 5, 21, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7187) },
-                    { 3, true, "tomas@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7140), 20, "slaptozodis", 3, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7137) },
-                    { 2, true, "mantas@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7118), 10, "slaptozodis", 2, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7093) },
-                    { 1, true, "jonas@emai.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(5766), 1, "slaptozodis", 1, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(5378) },
-                    { 5, true, "domas@email.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7165), 50, "slaptozodis", 5, new DateTime(2020, 5, 20, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7148) },
-                    { 4, true, "petraitis@gmail.com", new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7146), 5, "slaptozodis", 4, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(7143) }
+                    { 6, true, "stasys@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8914), 60, "slaptozodis", 6, new DateTime(2020, 5, 19, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8910) },
+                    { 7, true, "martyna@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8921), 70, "slaptozodis", 7, new DateTime(2020, 5, 18, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8918) },
+                    { 8, true, "diana@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8990), 80, "slaptozodis", 8, new DateTime(2020, 5, 17, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8986) },
+                    { 9, true, "tomas@gmail.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8998), 3, "slaptozodis", 9, new DateTime(2020, 5, 16, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8994) },
+                    { 10, true, "petras@gmail.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(9005), 4, "slaptozodis", 10, new DateTime(2020, 5, 21, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(9001) },
+                    { 3, true, "tomas@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8861), 20, "slaptozodis", 3, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8857) },
+                    { 2, true, "mantas@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8824), 10, "slaptozodis", 2, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8789) },
+                    { 1, true, "jonas@emai.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(6722), 1, "slaptozodis", 1, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(6048) },
+                    { 5, true, "domas@email.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8906), 50, "slaptozodis", 5, new DateTime(2020, 5, 20, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8872) },
+                    { 4, true, "petraitis@gmail.com", new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8868), 5, "slaptozodis", 4, new DateTime(2020, 5, 22, 16, 14, 19, 232, DateTimeKind.Local).AddTicks(8865) }
                 });
 
             migrationBuilder.InsertData(
@@ -486,10 +486,10 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "EmployeeId", "BeganWork", "EmployeeState", "EndedWork", "RegisteredByAdminId", "Salary", "UserId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(844), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1000, 1 },
-                    { 3, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(1576), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2000, 9 },
-                    { 2, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(1554), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3000, 2 },
-                    { 4, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(1579), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1500, 10 }
+                    { 1, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(4869), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1000, 1 },
+                    { 3, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(6042), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2000, 9 },
+                    { 2, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(6010), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3000, 2 },
+                    { 4, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(6046), 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1500, 10 }
                 });
 
             migrationBuilder.InsertData(
@@ -497,46 +497,46 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "ReservationId", "Comment", "PeopleCount", "ReservedByUserId", "ReservedDate", "ReservedForDate", "State" },
                 values: new object[,]
                 {
-                    { 4, null, 4, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7394), new DateTime(2020, 5, 25, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7402), 3 },
-                    { 39, null, 2, 5, new DateTime(2020, 5, 15, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7638), new DateTime(2020, 5, 15, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7641), 3 },
-                    { 40, null, 2, 5, new DateTime(2020, 5, 14, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7643), new DateTime(2020, 5, 15, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7643), 1 },
-                    { 17, null, 2, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7541), new DateTime(2020, 5, 23, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7544), 2 },
-                    { 18, null, 1, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7547), new DateTime(2020, 5, 24, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7547), 3 },
-                    { 19, "Atsivesiu suni", 3, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7549), new DateTime(2020, 5, 25, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7552), 1 },
-                    { 20, null, 4, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7555), new DateTime(2020, 5, 25, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7558), 3 },
-                    { 21, null, 2, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7558), new DateTime(2020, 5, 26, 19, 10, 49, 630, DateTimeKind.Local).AddTicks(7560), 1 },
-                    { 22, null, 2, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7563), new DateTime(2020, 5, 27, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7566), 2 },
-                    { 38, null, 2, 5, new DateTime(2020, 5, 15, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7632), new DateTime(2020, 5, 17, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7635), 2 },
-                    { 23, null, 2, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7569), new DateTime(2020, 5, 29, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7569), 3 },
-                    { 25, null, 2, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7577), new DateTime(2020, 5, 23, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7580), 2 },
-                    { 26, null, 1, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7580), new DateTime(2020, 5, 24, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7583), 3 },
-                    { 27, "Atsinesiu vezliuka", 3, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7585), new DateTime(2020, 5, 25, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7588), 1 },
-                    { 28, null, 4, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7588), new DateTime(2020, 5, 25, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7591), 3 },
-                    { 29, null, 2, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7594), new DateTime(2020, 5, 26, 19, 10, 49, 630, DateTimeKind.Local).AddTicks(7596), 1 },
-                    { 30, null, 2, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7599), new DateTime(2020, 5, 27, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7599), 2 },
-                    { 31, null, 2, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7602), new DateTime(2020, 5, 29, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7605), 3 },
-                    { 32, null, 2, 7, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7607), new DateTime(2020, 5, 30, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7607), 1 },
-                    { 24, null, 2, 6, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7571), new DateTime(2020, 5, 30, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7574), 1 },
-                    { 3, "Atsivesiu suni", 3, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7051), new DateTime(2020, 5, 25, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7053), 1 },
-                    { 37, null, 2, 5, new DateTime(2020, 5, 17, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7630), new DateTime(2020, 5, 18, 11, 10, 49, 630, DateTimeKind.Local).AddTicks(7630), 1 },
-                    { 1, null, 2, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(5635), new DateTime(2020, 5, 23, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(6003), 2 },
-                    { 5, null, 2, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7405), new DateTime(2020, 5, 26, 19, 10, 49, 630, DateTimeKind.Local).AddTicks(7408), 1 },
-                    { 6, null, 2, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7411), new DateTime(2020, 5, 27, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7414), 2 },
-                    { 7, null, 2, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7416), new DateTime(2020, 5, 29, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7416), 3 },
-                    { 8, null, 2, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7419), new DateTime(2020, 5, 30, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7422), 1 },
-                    { 2, null, 1, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7012), new DateTime(2020, 5, 24, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7028), 3 },
-                    { 36, null, 4, 5, new DateTime(2020, 5, 18, 11, 10, 49, 630, DateTimeKind.Local).AddTicks(7624), new DateTime(2020, 5, 19, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7627), 3 },
-                    { 10, null, 1, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7430), new DateTime(2020, 5, 24, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7430), 3 },
-                    { 9, null, 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7425), new DateTime(2020, 5, 23, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7427), 2 },
-                    { 12, null, 4, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7447), new DateTime(2020, 5, 25, 23, 10, 49, 630, DateTimeKind.Local).AddTicks(7450), 3 },
-                    { 13, null, 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7452), new DateTime(2020, 5, 26, 19, 10, 49, 630, DateTimeKind.Local).AddTicks(7455), 1 },
-                    { 14, null, 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7458), new DateTime(2020, 5, 27, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7458), 2 },
-                    { 15, null, 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7533), new DateTime(2020, 5, 29, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7535), 3 },
-                    { 16, null, 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7538), new DateTime(2020, 5, 30, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7538), 1 },
-                    { 33, null, 2, 5, new DateTime(2020, 5, 20, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7610), new DateTime(2020, 5, 21, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7613), 2 },
-                    { 34, null, 1, 5, new DateTime(2020, 5, 20, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7616), new DateTime(2020, 5, 20, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7616), 3 },
-                    { 11, "Atsivesiu kate", 3, 5, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(7433), new DateTime(2020, 5, 25, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7436), 1 },
-                    { 35, "Atsivesiu suni", 3, 5, new DateTime(2020, 5, 19, 7, 10, 49, 630, DateTimeKind.Local).AddTicks(7619), new DateTime(2020, 5, 20, 3, 10, 49, 630, DateTimeKind.Local).AddTicks(7621), 1 }
+                    { 4, null, 4, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5418), new DateTime(2020, 5, 26, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5430), 3 },
+                    { 39, null, 2, 5, new DateTime(2020, 5, 15, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5868), new DateTime(2020, 5, 16, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5871), 3 },
+                    { 40, null, 2, 5, new DateTime(2020, 5, 14, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5875), new DateTime(2020, 5, 15, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5878), 1 },
+                    { 17, null, 2, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5531), new DateTime(2020, 5, 23, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5535), 2 },
+                    { 18, null, 1, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5538), new DateTime(2020, 5, 24, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5542), 3 },
+                    { 19, "Atsivesiu suni", 3, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5545), new DateTime(2020, 5, 25, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5739), 1 },
+                    { 20, null, 4, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5743), new DateTime(2020, 5, 26, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5746), 3 },
+                    { 21, null, 2, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5750), new DateTime(2020, 5, 26, 20, 14, 19, 234, DateTimeKind.Local).AddTicks(5753), 1 },
+                    { 22, null, 2, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5756), new DateTime(2020, 5, 27, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5759), 2 },
+                    { 38, null, 2, 5, new DateTime(2020, 5, 16, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5861), new DateTime(2020, 5, 17, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5864), 2 },
+                    { 23, null, 2, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5763), new DateTime(2020, 5, 29, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5766), 3 },
+                    { 25, null, 2, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5776), new DateTime(2020, 5, 23, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5779), 2 },
+                    { 26, null, 1, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5783), new DateTime(2020, 5, 24, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5786), 3 },
+                    { 27, "Atsinesiu vezliuka", 3, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5789), new DateTime(2020, 5, 25, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5792), 1 },
+                    { 28, null, 4, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5796), new DateTime(2020, 5, 26, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5799), 3 },
+                    { 29, null, 2, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5802), new DateTime(2020, 5, 26, 20, 14, 19, 234, DateTimeKind.Local).AddTicks(5805), 1 },
+                    { 30, null, 2, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5809), new DateTime(2020, 5, 27, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5812), 2 },
+                    { 31, null, 2, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5815), new DateTime(2020, 5, 29, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5818), 3 },
+                    { 32, null, 2, 7, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5822), new DateTime(2020, 5, 30, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5825), 1 },
+                    { 24, null, 2, 6, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5770), new DateTime(2020, 5, 30, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5772), 1 },
+                    { 3, "Atsivesiu suni", 3, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(4970), new DateTime(2020, 5, 25, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(4973), 1 },
+                    { 37, null, 2, 5, new DateTime(2020, 5, 17, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5855), new DateTime(2020, 5, 18, 12, 14, 19, 234, DateTimeKind.Local).AddTicks(5858), 1 },
+                    { 1, null, 2, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(2770), new DateTime(2020, 5, 23, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(3250), 2 },
+                    { 5, null, 2, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5434), new DateTime(2020, 5, 26, 20, 14, 19, 234, DateTimeKind.Local).AddTicks(5438), 1 },
+                    { 6, null, 2, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5441), new DateTime(2020, 5, 27, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5444), 2 },
+                    { 7, null, 2, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5448), new DateTime(2020, 5, 29, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5451), 3 },
+                    { 8, null, 2, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5454), new DateTime(2020, 5, 30, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5457), 1 },
+                    { 2, null, 1, 1, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(4924), new DateTime(2020, 5, 24, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(4943), 3 },
+                    { 36, null, 4, 5, new DateTime(2020, 5, 18, 12, 14, 19, 234, DateTimeKind.Local).AddTicks(5848), new DateTime(2020, 5, 19, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5851), 3 },
+                    { 10, null, 1, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5467), new DateTime(2020, 5, 24, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5472), 3 },
+                    { 9, null, 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5461), new DateTime(2020, 5, 23, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5464), 2 },
+                    { 12, null, 4, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5499), new DateTime(2020, 5, 26, 0, 14, 19, 234, DateTimeKind.Local).AddTicks(5502), 3 },
+                    { 13, null, 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5506), new DateTime(2020, 5, 26, 20, 14, 19, 234, DateTimeKind.Local).AddTicks(5509), 1 },
+                    { 14, null, 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5512), new DateTime(2020, 5, 27, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5515), 2 },
+                    { 15, null, 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5518), new DateTime(2020, 5, 29, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5521), 3 },
+                    { 16, null, 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5525), new DateTime(2020, 5, 30, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5528), 1 },
+                    { 33, null, 2, 5, new DateTime(2020, 5, 20, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5828), new DateTime(2020, 5, 21, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5831), 2 },
+                    { 34, null, 1, 5, new DateTime(2020, 5, 20, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5835), new DateTime(2020, 5, 20, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5838), 3 },
+                    { 11, "Atsivesiu kate", 3, 5, new DateTime(2020, 5, 22, 16, 14, 19, 234, DateTimeKind.Local).AddTicks(5475), new DateTime(2020, 5, 25, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5478), 1 },
+                    { 35, "Atsivesiu suni", 3, 5, new DateTime(2020, 5, 19, 8, 14, 19, 234, DateTimeKind.Local).AddTicks(5841), new DateTime(2020, 5, 20, 4, 14, 19, 234, DateTimeKind.Local).AddTicks(5845), 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -544,9 +544,9 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "ReviewId", "Rating", "ReviewDate", "ReviewText", "UserId" },
                 values: new object[,]
                 {
-                    { 3, 4, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(9398), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 3 },
-                    { 2, 5, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(9379), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 2 },
-                    { 1, 2, new DateTime(2020, 5, 22, 15, 10, 49, 629, DateTimeKind.Local).AddTicks(8664), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 1 }
+                    { 3, 4, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(1933), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 3 },
+                    { 2, 5, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(1905), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 2 },
+                    { 1, 2, new DateTime(2020, 5, 22, 16, 14, 19, 233, DateTimeKind.Local).AddTicks(1001), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur tincidunt justo ac sollicitudin. Quisque erat mauris, malesuada in sapien quis, accumsan condimentum dui. Curabitur porttitor nibh in odio ultrices, eget efficitur arcu sollicitudin. Quisque at eros lectus. Vestibulum et bibendum arcu. Nunc a nulla consequat leo congue egestas eget in enim. Aliquam dictum ultricies arcu, finibus accumsan nisi imperdiet sed. Curabitur ac nibh tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras porta cursus odio eget volutpat. Praesent tristique sollicitudin lacus, vel faucibus nisl vestibulum nec. Vestibulum iaculis nulla eu risus mattis, quis finibus risus bibendum.", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -608,15 +608,15 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "OrderId", "Duration", "ManagedByWaiterId", "OrderDate", "Price", "State" },
                 values: new object[,]
                 {
-                    { 33, 45, 1, new DateTime(2020, 5, 22, 15, 10, 49, 630, DateTimeKind.Local).AddTicks(9685), 10.0, 5 },
-                    { 47, 359, 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(395), 9999.1200000000008, 5 },
-                    { 39, 0, 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(375), 0.0, 4 },
-                    { 36, 0, 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(370), 0.0, 4 },
-                    { 40, 153, 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(378), 65.0, 5 },
-                    { 35, 51, 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(350), 11.0, 5 },
-                    { 37, 30, 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(372), 20.0, 5 },
-                    { 38, 37, 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(372), 40.0, 5 },
-                    { 34, 0, 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(339), 0.0, 4 }
+                    { 33, 45, 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(258), 10.0, 5 },
+                    { 47, 359, 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1247), 9999.1200000000008, 5 },
+                    { 39, 0, 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1219), 0.0, 4 },
+                    { 36, 0, 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1208), 0.0, 4 },
+                    { 40, 153, 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1222), 65.0, 5 },
+                    { 35, 51, 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1183), 11.0, 5 },
+                    { 37, 30, 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1212), 20.0, 5 },
+                    { 38, 37, 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1216), 40.0, 5 },
+                    { 34, 0, 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(1169), 0.0, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -624,20 +624,20 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "TakeoutOrderId", "ConfirmationDate", "ManagedByWaiterId", "OrderDate", "OrderedByUserId", "OrderedForDate", "Price", "State" },
                 values: new object[,]
                 {
-                    { 10, new DateTime(2020, 5, 22, 15, 22, 49, 631, DateTimeKind.Local).AddTicks(5712), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5706), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5709), 100.0, 3 },
-                    { 11, new DateTime(2020, 5, 22, 15, 20, 49, 631, DateTimeKind.Local).AddTicks(5717), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5714), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5714), 100.0, 2 },
-                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5725), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5728), 100.0, 4 },
-                    { 5, new DateTime(2020, 5, 22, 16, 0, 49, 631, DateTimeKind.Local).AddTicks(5678), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5676), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5676), 13.5, 3 },
-                    { 7, new DateTime(2020, 5, 22, 15, 17, 49, 631, DateTimeKind.Local).AddTicks(5692), 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5687), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5689), 100.0, 3 },
-                    { 2, new DateTime(2020, 5, 22, 15, 14, 49, 631, DateTimeKind.Local).AddTicks(5631), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5609), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5623), 10.109999999999999, 2 },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5662), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5665), 100.0, 4 },
-                    { 6, new DateTime(2020, 5, 22, 15, 16, 49, 631, DateTimeKind.Local).AddTicks(5687), 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5681), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5684), 100.0, 1 },
-                    { 9, new DateTime(2020, 5, 22, 15, 23, 49, 631, DateTimeKind.Local).AddTicks(5706), 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5701), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5703), 100.0, 1 },
-                    { 14, new DateTime(2020, 5, 22, 15, 11, 49, 631, DateTimeKind.Local).AddTicks(5734), 2, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5731), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5734), 100.0, 3 },
-                    { 1, new DateTime(2020, 5, 22, 15, 15, 49, 631, DateTimeKind.Local).AddTicks(3894), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(3176), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(3539), 100.0, 3 },
-                    { 4, new DateTime(2020, 5, 22, 15, 13, 49, 631, DateTimeKind.Local).AddTicks(5673), 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5667), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5670), 15.49, 2 },
-                    { 8, new DateTime(2020, 5, 22, 15, 25, 49, 631, DateTimeKind.Local).AddTicks(5698), 1, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5695), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5695), 100.0, 2 },
-                    { 12, new DateTime(2020, 5, 22, 15, 19, 49, 631, DateTimeKind.Local).AddTicks(5723), 3, new DateTime(2020, 5, 22, 15, 10, 49, 631, DateTimeKind.Local).AddTicks(5720), 5, new DateTime(2020, 5, 22, 17, 10, 49, 631, DateTimeKind.Local).AddTicks(5723), 100.0, 3 }
+                    { 10, new DateTime(2020, 5, 22, 16, 26, 19, 235, DateTimeKind.Local).AddTicks(9601), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9595), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9598), 100.0, 3 },
+                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9605), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9608), 100.0, 2 },
+                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9621), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9624), 100.0, 4 },
+                    { 5, new DateTime(2020, 5, 22, 17, 4, 19, 235, DateTimeKind.Local).AddTicks(9554), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9548), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9551), 13.5, 3 },
+                    { 7, new DateTime(2020, 5, 22, 16, 21, 19, 235, DateTimeKind.Local).AddTicks(9578), 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9572), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9575), 100.0, 3 },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9443), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9463), 10.109999999999999, 2 },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9533), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9537), 100.0, 4 },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9565), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9568), 100.0, 1 },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9589), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9592), 100.0, 1 },
+                    { 14, new DateTime(2020, 5, 22, 16, 15, 19, 235, DateTimeKind.Local).AddTicks(9634), 2, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9627), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9630), 100.0, 3 },
+                    { 1, new DateTime(2020, 5, 22, 16, 19, 19, 235, DateTimeKind.Local).AddTicks(7421), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(6245), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(6853), 100.0, 3 },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9541), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9544), 15.49, 2 },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9582), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9585), 100.0, 2 },
+                    { 12, new DateTime(2020, 5, 22, 16, 23, 19, 235, DateTimeKind.Local).AddTicks(9617), 3, new DateTime(2020, 5, 22, 16, 14, 19, 235, DateTimeKind.Local).AddTicks(9611), 5, new DateTime(2020, 5, 22, 18, 14, 19, 235, DateTimeKind.Local).AddTicks(9614), 100.0, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -646,13 +646,16 @@ namespace PSAPIRestaurantSystem.Migrations
                 values: new object[,]
                 {
                     { 1, null, 33, null, 1, 6.0, 5 },
+                    { 18, null, null, 7, 8, 2.6000000000000001, 1 },
+                    { 3, null, 37, null, 2, 4.0, 4 },
+                    { 10, null, 37, null, 9, 3.3300000000000001, 2 },
                     { 14, null, 37, null, 4, 5.6900000000000004, 3 },
                     { 5, null, 40, null, 4, 1.0, 10 },
                     { 11, null, 40, null, 1, 5.5899999999999999, 1 },
                     { 12, null, 40, null, 2, 6.1200000000000001, 2 },
                     { 21, null, null, 14, 2, 6.1200000000000001, 3 },
+                    { 9, null, 35, null, 8, 12.49, 1 },
                     { 26, null, 47, null, 1, 100.12, 31 },
-                    { 27, null, 47, null, 2, 163.21000000000001, 13 },
                     { 28, null, 47, null, 3, 240.12, 90 },
                     { 29, null, 47, null, 4, 321.66000000000003, 31 },
                     { 30, null, 47, null, 5, 45.939999999999998, 23 },
@@ -661,24 +664,25 @@ namespace PSAPIRestaurantSystem.Migrations
                     { 33, null, 47, null, 8, 202.22, 101 },
                     { 34, null, 47, null, 9, 156.12, 72 },
                     { 23, null, null, 4, 4, 8.5999999999999996, 2 },
-                    { 18, null, null, 7, 8, 2.6000000000000001, 1 },
-                    { 3, null, 37, null, 2, 4.0, 4 },
-                    { 10, null, 37, null, 9, 3.3300000000000001, 2 },
-                    { 16, null, null, 1, 6, 6.2000000000000002, 5 },
+                    { 27, null, 47, null, 2, 163.21000000000001, 13 },
+                    { 7, null, 35, null, 6, 16.0, 12 },
+                    { 20, null, null, 12, 1, 19.989999999999998, 2 },
+                    { 25, null, null, 11, 5, 4.5999999999999996, 4 },
                     { 6, null, 33, null, 5, 10.0, 11 },
                     { 13, null, 33, null, 3, 6.3899999999999997, 1 },
                     { 4, null, 38, null, 3, 3.0, 9 },
                     { 8, null, 38, null, 7, 13.0, 4 },
                     { 15, null, 38, null, 5, 7.5999999999999996, 4 },
-                    { 9, null, 35, null, 8, 12.49, 1 },
+                    { 2, null, 35, null, 1, 6.5, 1 },
+                    { 35, null, null, 1, 1, 3.21, 2 },
+                    { 16, null, null, 1, 6, 6.2000000000000002, 5 },
+                    { 37, null, null, 1, 3, 4.6600000000000001, 3 },
+                    { 38, null, null, 1, 4, 5.9699999999999998, 1 },
                     { 22, null, null, 2, 3, 6.1900000000000004, 1 },
-                    { 20, null, null, 12, 1, 19.989999999999998, 2 },
                     { 17, null, null, 5, 7, 9.5999999999999996, 1 },
                     { 24, null, null, 8, 5, 4.5999999999999996, 4 },
                     { 19, null, null, 10, 9, 1.6000000000000001, 1 },
-                    { 25, null, null, 11, 5, 4.5999999999999996, 4 },
-                    { 2, null, 35, null, 1, 6.5, 1 },
-                    { 7, null, 35, null, 6, 16.0, 12 }
+                    { 36, null, null, 1, 2, 1.22, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -686,6 +690,7 @@ namespace PSAPIRestaurantSystem.Migrations
                 columns: new[] { "TableOccupancyId", "OrderId", "ReservationId", "TableId" },
                 values: new object[,]
                 {
+                    { 39, 40, 40, 3 },
                     { 40, 40, 40, 5 },
                     { 38, 38, 38, 11 },
                     { 37, 37, 37, 12 },
@@ -693,7 +698,6 @@ namespace PSAPIRestaurantSystem.Migrations
                     { 34, 33, 33, 10 },
                     { 33, 33, 33, 2 },
                     { 47, 47, null, 1 },
-                    { 39, 40, 40, 3 },
                     { 36, 35, 35, 11 }
                 });
 
