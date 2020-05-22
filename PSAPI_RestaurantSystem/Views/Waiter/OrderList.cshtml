@@ -1,0 +1,213 @@
+﻿@using PSAPIRestaurantSystem.Models;
+@model IEnumerable<PSAPIRestaurantSystem.Models.Order>
+
+@{
+    ViewData["Title"] = "Užsakymai";
+}
+
+<h1>Užsakymai</h1>
+
+
+<table class="table table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ManagedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Duration)
+            </th>
+            <th>
+                Staliukai
+            </th>
+        </tr>
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Aktyvūs užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Created)
+            {
+                var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => tables)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Rezervacijų užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.CreatedReservation)
+            {
+                var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => tables)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Atlikti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Paid)
+            {
+                var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => tables)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+    <thead>
+        <tr class="font-weight-bold" style="background:#d7dadd;">
+            <th>Atšaukti užsakymai</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @if (item.State == (int)OrderState.Canceled)
+            {
+                var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
+                string price = item.Price.ToString("0.00");
+                if (item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px">
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(entryItem => item.ManagedBy.Employee.User.Person.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(entryItem => tables)
+                    </td>
+                </tr>
+            }
+        }
+    </thead>
+
+
+</table>
+

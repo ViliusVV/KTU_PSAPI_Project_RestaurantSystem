@@ -9,24 +9,31 @@ namespace PSAPIRestaurantSystem.Models
 {
     public class Order
     {
+        [Display(Name = "Nr")]
         [Key]
-        public int OrderNum { get; set; }
+        public int OrderId { get; set; }
 
+        [Display(Name = "Užsakymo data")]
         [Required]
         public DateTime OrderDate { get; set; }
 
+        [Display(Name = "Kaina")]
         [Required]
         public double Price { get; set; }
 
+        [Display(Name = "Trukmė")]
         [Required]
         public int Duration { get; set; }
 
+        [Display(Name = "Būsena")]
         [Required]
         public int State { get; set; }
 
         // Relationship
         // Waiter to order (1 to *)
         public int? ManagedByWaiterId { get; set; }
+
+        [Display(Name = "Padavėjas")]
         public Waiter ManagedBy { get; set; }
 
         // Order to tableoccupancy (1 to *)
