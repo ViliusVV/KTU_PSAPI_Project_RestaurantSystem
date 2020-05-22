@@ -232,6 +232,12 @@ namespace PSAPIRestaurantSystem.Controllers
         {
             var usrID = HttpContext.Session.GetInt32("userID");
             var takeoutOrder = _context.TakeoutOrders.Include(t => t.OrderedMeals).ThenInclude(m => m.MenuEntry).Where(o => o.OrderedBy.UserId == usrID);
+
+            foreach (var meal in takeoutOrder)
+            {
+                meal.Price = meal.OrderedMeals.Sum(s => s.Price * s.Quantity);
+            }
+
             return View(takeoutOrder.ToList());
         }
     }

@@ -11,7 +11,7 @@ namespace PSAPIRestaurantSystem.Models
     {
         [Key]
         [Display(Name = "Užsakymo id")]
-        public int TakeoutOrderNum { get; set; }
+        public int TakeoutOrderId { get; set; }
 
         [Required]
         [Display(Name = "Užsakymo data")]

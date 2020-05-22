@@ -11,7 +11,7 @@
     <thead class="bg-info">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().TakeoutOrderNum)
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TakeoutOrderId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstOrDefault().OrderDate)
@@ -41,10 +41,19 @@
         {
             @if (item.State == (int)OrderState.Created)
             {
-                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
-                <tr style="padding-left:30px">
+                string price = item.Price.ToString("0.00");
+                string date = item.ConfirmationDate.ToString();
+                if(date == default(DateTime).ToString())
+                {
+                    date = "-";
+                }
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px; background:#FFF9CA;">
                     <td>
-                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.OrderDate)
@@ -53,10 +62,10 @@
                         @Html.DisplayFor(entryItem => item.OrderedForDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                        @Html.DisplayFor(entryItem => date)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                 </tr>
                 @foreach (var meal in item.OrderedMeals)
@@ -64,6 +73,15 @@
                     <tr style="padding-left:30px">
                         <td>
                             @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.Quantity) * @Html.DisplayFor(mealItem => meal.Price)
                         </td>
                     </tr>
                 }
@@ -84,10 +102,19 @@
         {
             @if (item.State == (int)OrderState.Made)
             {
-                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
-                <tr style="padding-left:30px">
+                string price = item.Price.ToString("0.00");
+                string date = item.ConfirmationDate.ToString();
+                if(date == default(DateTime).ToString())
+                {
+                    date = "-";
+                }
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px; background:#FFF9CA;">
                     <td>
-                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.OrderDate)
@@ -96,21 +123,31 @@
                         @Html.DisplayFor(entryItem => item.OrderedForDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                        @Html.DisplayFor(entryItem => date)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                 </tr>
+                @foreach (var meal in item.OrderedMeals)
+                {
+                    <tr style="padding-left:30px">
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.Quantity) * @Html.DisplayFor(mealItem => meal.Price)
+                        </td>
+                    </tr>
+                }
             }
-            @foreach (var meal in item.OrderedMeals)
-            {
-                <tr style="padding-left:30px">
-                    <td>
-                        @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
-                    </td>
-                </tr>
-            }
+
         }
     </thead>
 
@@ -127,10 +164,19 @@
         {
             @if (item.State == (int)OrderState.Taked)
             {
-                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
-                <tr style="padding-left:30px">
+                string price = item.Price.ToString("0.00");
+                string date = item.ConfirmationDate.ToString();
+                if(date == default(DateTime).ToString())
+                {
+                    date = "-";
+                }
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px; background:#FFF9CA;">
                     <td>
-                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.OrderDate)
@@ -139,21 +185,31 @@
                         @Html.DisplayFor(entryItem => item.OrderedForDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                        @Html.DisplayFor(entryItem => date)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                 </tr>
+                @foreach (var meal in item.OrderedMeals)
+                {
+                    <tr style="padding-left:30px">
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.Quantity) * @Html.DisplayFor(mealItem => meal.Price)
+                        </td>
+                    </tr>
+                }
             }
-            @foreach (var meal in item.OrderedMeals)
-            {
-                <tr style="padding-left:30px">
-                    <td>
-                        @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
-                    </td>
-                </tr>
-            }
+
         }
     </thead>
 
@@ -170,10 +226,19 @@
         {
             @if (item.State == (int)OrderState.Canceled)
             {
-                var meals = String.Join(", ", item.OrderedMeals.Select(n => n.InTakeoutTakeoutOrderId.ToString()).ToArray());
-                <tr style="padding-left:30px">
+                string price = item.Price.ToString("0.00");
+                string date = item.ConfirmationDate.ToString();
+                if(date == default(DateTime).ToString())
+                {
+                    date = "-";
+                }
+                if(item.Price == 0)
+                {
+                    price = "-";
+                }
+                <tr style="padding-left:30px; background:#FFF9CA;">
                     <td>
-                        @Html.DisplayFor(entryItem => item.TakeoutOrderNum)
+                        @Html.DisplayFor(entryItem => item.TakeoutOrderId)
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => item.OrderDate)
@@ -182,12 +247,29 @@
                         @Html.DisplayFor(entryItem => item.OrderedForDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.ConfirmationDate)
+                        @Html.DisplayFor(entryItem => date)
                     </td>
                     <td>
-                        @Html.DisplayFor(entryItem => item.Price)
+                        @Html.DisplayFor(entryItem => price)
                     </td>
                 </tr>
+                @foreach (var meal in item.OrderedMeals)
+                {
+                    <tr style="padding-left:30px">
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.MenuEntry.MenuEntryName)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(mealItem => meal.Quantity) * @Html.DisplayFor(mealItem => meal.Price)
+                        </td>
+                    </tr>
+                }
             }
         }
     </thead>
