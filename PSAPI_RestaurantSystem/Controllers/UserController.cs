@@ -223,10 +223,22 @@ namespace PSAPIRestaurantSystem.Controllers
             }
             foreach (int id in idList)
             {
-                var temp = new TableOccupancy { OrderId = order.OrderNum, ReservationId = rev.ReservationId, TableId = id };
+                var temp = new TableOccupancy { OrderId = order.OrderId, ReservationId = rev.ReservationId, TableId = id };
                 _context.Add(temp);
             }
             _context.SaveChanges();
+        }
+        public IActionResult TakeoutOrdersPage()
+        {
+            var usrID = HttpContext.Session.GetInt32("userID");
+            var takeoutOrder = _context.TakeoutOrders.Include(t => t.OrderedMeals).ThenInclude(m => m.MenuEntry).Where(o => o.OrderedBy.UserId == usrID);
+
+            foreach (var meal in takeoutOrder)
+            {
+                meal.Price = meal.OrderedMeals.Sum(s => s.Price * s.Quantity);
+            }
+
+            return View(takeoutOrder.ToList());
         }
     }
 }
