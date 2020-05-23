@@ -7,7 +7,9 @@
 
 <h1>Užsakymai</h1>
 
-
+<p>
+    <a asp-controller="Waiter" asp-action="OrderCreationForm"><i class="fas fa-plus"></i>Sukurti naują užsąkymą</a>
+</p>
 <table class="table table-hover">
     <thead class="bg-info">
         <tr>
@@ -48,7 +50,7 @@
             {
                 var tables = String.Join(", ", item.TableOccupancies.Select(n => n.TableId.ToString()).ToArray());
                 string price = item.Price.ToString("0.00");
-                if(item.Price == 0)
+                if (item.Price == 0)
                 {
                     price = "-";
                 }

@@ -1,0 +1,46 @@
+﻿@model PSAPIRestaurantSystem.Models.ViewModels.OrderCreateViewModel
+
+@{
+    ViewData["Title"] = "Sukurti užsakyma";
+}
+
+<h1>Sukurti užsakyma</h1>
+
+<h4>Pasirinkite staliukus užsakymui</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model != null)
+            {
+                <label asp-for="CurrentTable" class="control-label"></label>
+                @for (int i = 0; i < Model.Tables.Count; i++)
+                {
+                    int tableNum = Model.Tables[i].TableNum;
+                    <div class="form-group">
+                        <select disabled asp-items="ViewBag.TableNum" asp-for="Tables[i].TableNum" class="control-label"></select>
+                        <input hidden asp-for="Tables[i].TableNum" value=@tableNum />
+                    </div>
+                }
+            }
+
+            <div class="form-group">
+                <label asp-for="CurrentTable" class="control-label"></label>
+                <select asp-for="CurrentTable" asp-items="ViewBag.TableNum" class="form-control"></select>
+                <span asp-validation-for="CurrentTable" class="text-danger"></span>
+            </div>
+            <br>
+            <button type="submit" class="btn" formaction="OrderCreationFormAdd"><i class="fas fa-plus"></i></button>
+            <div class="form-group">
+                <input type="submit" value="Create" asp-action="OrderCreationForm" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Grįžti atgal</a>
+</div>
+
