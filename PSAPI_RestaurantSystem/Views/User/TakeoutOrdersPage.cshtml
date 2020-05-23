@@ -6,6 +6,9 @@
 }
 
 <h1>Užsakymų išsinešimui sąrašas</h1>
+<p>
+    <a asp-controller="User" asp-action="TakeoutOrderForm"><i class="fas fa-plus"></i>Naujas užsakymas išsinešimui</a>
+</p>
 
 <table class="table table-hover">
     <thead class="bg-info">
@@ -43,11 +46,11 @@
             {
                 string price = item.Price.ToString("0.00");
                 string date = item.ConfirmationDate.ToString();
-                if(date == default(DateTime).ToString())
+                if (date == default(DateTime).ToString())
                 {
                     date = "-";
                 }
-                if(item.Price == 0)
+                if (item.Price == 0)
                 {
                     price = "-";
                 }
@@ -104,11 +107,11 @@
             {
                 string price = item.Price.ToString("0.00");
                 string date = item.ConfirmationDate.ToString();
-                if(date == default(DateTime).ToString())
+                if (date == default(DateTime).ToString())
                 {
                     date = "-";
                 }
-                if(item.Price == 0)
+                if (item.Price == 0)
                 {
                     price = "-";
                 }
@@ -166,11 +169,11 @@
             {
                 string price = item.Price.ToString("0.00");
                 string date = item.ConfirmationDate.ToString();
-                if(date == default(DateTime).ToString())
+                if (date == default(DateTime).ToString())
                 {
                     date = "-";
                 }
-                if(item.Price == 0)
+                if (item.Price == 0)
                 {
                     price = "-";
                 }
@@ -228,11 +231,11 @@
             {
                 string price = item.Price.ToString("0.00");
                 string date = item.ConfirmationDate.ToString();
-                if(date == default(DateTime).ToString())
+                if (date == default(DateTime).ToString())
                 {
                     date = "-";
                 }
-                if(item.Price == 0)
+                if (item.Price == 0)
                 {
                     price = "-";
                 }

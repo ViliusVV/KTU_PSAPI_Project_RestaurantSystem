@@ -240,5 +240,126 @@ namespace PSAPIRestaurantSystem.Controllers
 
             return View(takeoutOrder.ToList());
         }
+
+        // AddOrderedMeals for order GET
+        public IActionResult TakeoutOrderForm()
+        {
+            var model = new AddOrderedMealViewModel();
+            model.OrderedMeals = new List<OrderedMeal>();
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+
+            foreach (var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                }); ;
+            }
+
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public IActionResult TakeoutOrderFormAdd(AddOrderedMealViewModel model)
+        {
+            if (model.OrderedMeals == null) model.OrderedMeals = new List<OrderedMeal>();
+
+            var meal = new OrderedMeal
+            {
+                MenuEntryId = (int)model.CurrentOrderedMealId,
+                Quantity = (int)model.Quantity,
+                Comment = model.Comments,
+                Price = _context.MenuEntries.Find(model.CurrentOrderedMealId).Price
+            };
+            model.OrderedMeals.Add(meal);
+            for (int i = 0; i < model.OrderedMeals.Count; i++)
+            {
+                model.OrderedMeals[i].MenuEntry = _context.MenuEntries.Find(model.OrderedMeals[i].MenuEntryId);
+            }
+            model.CurrentOrderedMealId = null;
+            model.Quantity = null;
+            model.Comments = null;
+
+
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+            foreach (var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                }); ;
+            }
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return View("TakeoutOrderForm", model);
+        }
+
+
+        [HttpPost]
+        public IActionResult TakeoutOrderForm(AddOrderedMealViewModel model)
+        {
+            if (model.OrderedMeals == null) model.OrderedMeals = new List<OrderedMeal>();
+
+            var meal = new OrderedMeal
+            {
+                MenuEntryId = (int)model.CurrentOrderedMealId,
+                Quantity = (int)model.Quantity,
+                Comment = model.Comments,
+                Price = _context.MenuEntries.Find(model.CurrentOrderedMealId).Price
+            };
+            model.OrderedMeals.Add(meal);
+
+            CreateTakeoutPriorityOrderQueue(model);
+
+
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+            foreach (var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                }); ;
+            }
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return Redirect("/User/TakeoutOrdersPage");
+        }
+
+        public void CreateTakeoutPriorityOrderQueue(AddOrderedMealViewModel model)
+        {
+
+            var usrID = HttpContext.Session.GetInt32("userID");
+            var takeout = new TakeoutOrder
+            {
+                OrderedByUserId = (int)usrID,
+                OrderDate = DateTime.Now,
+                OrderedForDate = (DateTime)model.OrderedForDate,
+                Price = 0,
+                State = (int)OrderState.Created,
+                ManagedByWaiterId = 1
+            };
+            _context.Add(takeout);
+            _context.SaveChanges();
+
+            foreach (var m in model.OrderedMeals)
+            {
+                var om = new OrderedMeal
+                {
+                    InTakeoutTakeoutOrderId = takeout.TakeoutOrderId,
+                    MenuEntryId = m.MenuEntryId,
+                    Quantity = m.Quantity,
+                    Comment = m.Comment,
+                    Price = m.Price
+                };
+                _context.Add(om);
+            }
+            _context.SaveChanges();
+        }
     }
 }

@@ -8,10 +8,11 @@ namespace PSAPIRestaurantSystem.Models.ViewModels
 {
     public class AddOrderedMealViewModel
     {
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         public int? CurrentOrderedMealId { get; set; }
         public int? Quantity { get; set; }
         public string Comments { get; set; } = "";
+        public DateTime OrderedForDate { get; set; }
         public List<OrderedMeal> OrderedMeals { get; set; }
     }
 }
