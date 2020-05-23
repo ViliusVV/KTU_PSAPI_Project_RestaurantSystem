@@ -1,0 +1,83 @@
+﻿@model PSAPIRestaurantSystem.Models.Order
+
+@{
+    ViewData["Title"] = "Užsakymas";
+}
+
+<h1>Užsakymas Nr. @Model.OrderId</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManagedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ManagedBy.Employee.User.Person.Name) @Html.DisplayFor(model => model.ManagedBy.Employee.User.Person.Surname)
+        </dd>
+    </dl>
+
+    <h3>Užsakyti patiekalai/gėrimai:</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().MenuEntryId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Comment)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderedMeals)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MenuEntry.MenuEntryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |*@
+    <a asp-action="OrderList">Atgal į užsakymus</a>
+</div>

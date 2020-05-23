@@ -12,12 +12,14 @@ namespace PSAPIRestaurantSystem.Models
         public int OrderedMealId { get; set; }
         
         [Required]
+        [Display(Name ="Vnt. kaina")]
         public double Price { get; set; }
         
         [Required]
+        [Display(Name ="Kiekis")]
         public int Quantity { get; set; }
 
-        
+        [Display(Name ="Pastabos")]
         public string Comment { get; set; }
 
         // Relationships
@@ -30,6 +32,7 @@ namespace PSAPIRestaurantSystem.Models
         public Order InOrder { get; set; }
 
         // Menuentry to orderedmeal (1 to *)
+        [Display(Name = "Pavadinimas")]
         public int MenuEntryId { get; set; }
         public MenuEntry MenuEntry { get; set; }
     }

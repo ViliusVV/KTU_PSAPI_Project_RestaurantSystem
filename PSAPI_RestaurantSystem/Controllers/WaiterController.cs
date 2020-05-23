@@ -30,8 +30,7 @@ namespace PSAPIRestaurantSystem.Controllers
             return View(reserv);
         }
 
-        // open orders page
-
+        // Open orders page
         public IActionResult OrderList()
         {
             var orders = _context.Orders
@@ -54,12 +53,14 @@ namespace PSAPIRestaurantSystem.Controllers
             return View(orders);
         }
 
+        // Order creation for GET
         public IActionResult OrderCreationForm()
         {
             ViewData["TableNum"] = new SelectList(_context.Tables, "TableNum", "TableNum");
             return View();
         }
 
+        // Order creation form, add table to list and returns page with new list POST
         [HttpPost]
         public IActionResult OrderCreationFormAdd(OrderCreateViewModel model)
         {
@@ -72,9 +73,11 @@ namespace PSAPIRestaurantSystem.Controllers
         }
 
 
+        // Order creation form POST
         [HttpPost]
         public IActionResult OrderCreationForm(OrderCreateViewModel model)
         {
+            if (model.Tables == null) model.Tables = new List<Table>();
             var usrID = HttpContext.Session.GetInt32("userID");
             var waiterId = _context.Users.Where(w => w.UserId == (int)usrID).Include(e => e.Employee).ThenInclude(w => w.Waiter).FirstOrDefault().Employee.Waiter.WaiterId;
             var table = _context.Tables.Find(model.CurrentTable);
@@ -90,6 +93,32 @@ namespace PSAPIRestaurantSystem.Controllers
             }
             _context.SaveChanges();
             return RedirectToAction("OrderList");
+        }
+
+        // Order page (Details view) GET
+        public IActionResult OrderPage(int? id)
+        { 
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var order = _context.Orders
+                .Where(o => o.OrderId == id)
+                .Include(m => m.OrderedMeals)
+                    .ThenInclude(e => e.MenuEntry)
+                .Include(w => w.ManagedBy)
+                    .ThenInclude(e => e.Employee)
+                        .ThenInclude(u => u.User)
+                .Include(t => t.TableOccupancies)
+                .FirstOrDefault();
+
+            if(order == null)
+            {
+                return NotFound();
+            }
+                
+            return View(order);
         }
     }
 }

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PSAPIRestaurantSystem.Models.OrderedMeal>
+
+@{
+    ViewData["Title"] = "aaa";
+}
+
+<h1>aaa</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InTakeout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuEntry)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InTakeout.TakeoutOrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InOrder.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuEntry.MenuEntryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderedMealId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderedMealId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderedMealId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -31,12 +31,15 @@
             <th>
                 Staliukai
             </th>
+            <th>
+            </th>
         </tr>
     </thead>
 
     <thead>
         <tr class="font-weight-bold" style="background:#d7dadd;">
             <th>Aktyvūs užsakymai</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -73,6 +76,9 @@
                     <td>
                         @Html.DisplayFor(entryItem => tables)
                     </td>
+                    <td>
+                        <a asp-controller="Waiter" asp-action="OrderPage" asp-route-id="@item.OrderId"><i class="fas fa-edit"></i></a>
+                    </td>
                 </tr>
             }
         }
@@ -81,6 +87,7 @@
     <thead>
         <tr class="font-weight-bold" style="background:#d7dadd;">
             <th>Rezervacijų užsakymai</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -117,6 +124,9 @@
                     <td>
                         @Html.DisplayFor(entryItem => tables)
                     </td>
+                    <td>
+                        <a asp-controller="Waiter" asp-action="OrderPage" asp-route-id="@item.OrderId"><i class="fas fa-edit"></i></a>
+                    </td>
                 </tr>
             }
         }
@@ -125,6 +135,7 @@
     <thead>
         <tr class="font-weight-bold" style="background:#d7dadd;">
             <th>Atlikti užsakymai</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -161,6 +172,9 @@
                     <td>
                         @Html.DisplayFor(entryItem => tables)
                     </td>
+                    <td>
+                        <a asp-controller="Waiter" asp-action="OrderPage" asp-route-id="@item.OrderId"><i class="fas fa-edit"></i></a>
+                    </td>
                 </tr>
             }
         }
@@ -169,6 +183,7 @@
     <thead>
         <tr class="font-weight-bold" style="background:#d7dadd;">
             <th>Atšaukti užsakymai</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -204,6 +219,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(entryItem => tables)
+                    </td>
+                    <td>
+                        <a asp-controller="Waiter" asp-action="OrderPage" asp-route-id="@item.OrderId"><i class="fas fa-edit"></i></a>
                     </td>
                 </tr>
             }
