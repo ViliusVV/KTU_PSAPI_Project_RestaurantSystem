@@ -9,25 +9,25 @@
 <div>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Duration)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Duration)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ManagedBy)
         </dt>
         <dd class="col-sm-10">
@@ -35,7 +35,11 @@
         </dd>
     </dl>
 
-    <h3>Užsakyti patiekalai/gėrimai:</h3>
+    <p style="font-size:25px">Užsakyti patiekalai/gėrimai:
+        <a asp-controller="Waiter" asp-action="AddOrderedMeal" asp-route-id="@Model.OrderId"><i style="color:forestgreen; margin-left:25px" class="fa fa-cart-plus 5x"></i></a>
+        <a asp-controller="Waiter" asp-action="PayOrder" asp-route-id="@Model.OrderId"><i style="margin-left:25px" class="fa fa-credit-card 5x"></i></a>
+        <a asp-controller="Waiter" asp-action="OrderDeleteForm" asp-route-id="@Model.OrderId"><i style="color:darkred;margin-left:25px" class="fa fa-trash 5x"></i></a>
+    </p>
 
     <table class="table">
         <thead>
