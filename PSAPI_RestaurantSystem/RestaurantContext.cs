@@ -353,12 +353,12 @@ namespace PSAPIRestaurantSystem
                 new Order { OrderId = 39, OrderDate = DateTime.Now, State = (int)OrderState.Canceled, ManagedByWaiterId = 3 },
                 new Order { OrderId = 40, OrderDate = DateTime.Now, State = (int)OrderState.Paid, ManagedByWaiterId = 2, Price = 65, Duration = 153 },
 
-                new Order { OrderId = 41, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderId = 42, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderId = 43, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderId = 44, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderId = 45, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
-                new Order { OrderId = 46, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = null },
+                new Order { OrderId = 41, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 1, Price = 0, Duration = 0},
+                new Order { OrderId = 42, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 2, Price = 0, Duration = 0},
+                new Order { OrderId = 43, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 3, Price = 0, Duration = 0},
+                new Order { OrderId = 44, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 2, Price = 0, Duration = 0},
+                new Order { OrderId = 45, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 1, Price = 0, Duration = 0},
+                new Order { OrderId = 46, OrderDate = DateTime.Now, State = (int)OrderState.Created, ManagedByWaiterId = 3, Price = 0, Duration = 0},
 
                 //big chungus order
                 new Order { OrderId = 47, OrderDate = DateTime.Now, State = (int)OrderState.Paid, ManagedByWaiterId = 3, Price = 9999.12, Duration = 359}

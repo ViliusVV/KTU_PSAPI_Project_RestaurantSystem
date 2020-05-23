@@ -112,7 +112,8 @@ namespace PSAPIRestaurantSystem.Controllers
                 return NotFound();
             }
 
-            var reviewEntry = _context.Reviews.Where(r => r.UserId == id).FirstOrDefault();
+            var reviewEntry = _context.Reviews
+                .Where(r => r.UserId == id).FirstOrDefault();
             if (reviewEntry == null)
             {
                 return NotFound();
@@ -180,7 +181,9 @@ namespace PSAPIRestaurantSystem.Controllers
         public IActionResult ReservationPage()
         {
             var usrID = HttpContext.Session.GetInt32("userID");
-            var reservation = _context.Reservations.Where(r => r.ReservedByUserId == usrID).Include(t => t.TableOccupancies);
+            var reservation = _context.Reservations
+                .Where(r => r.ReservedByUserId == usrID)
+                .Include(t => t.TableOccupancies);
             return View(reservation.ToList());
         }
 
@@ -231,7 +234,10 @@ namespace PSAPIRestaurantSystem.Controllers
         public IActionResult TakeoutOrdersPage()
         {
             var usrID = HttpContext.Session.GetInt32("userID");
-            var takeoutOrder = _context.TakeoutOrders.Include(t => t.OrderedMeals).ThenInclude(m => m.MenuEntry).Where(o => o.OrderedBy.UserId == usrID);
+            var takeoutOrder = _context.TakeoutOrders
+                .Include(t => t.OrderedMeals)
+                    .ThenInclude(m => m.MenuEntry)
+                    .Where(o => o.OrderedBy.UserId == usrID);
 
             foreach (var meal in takeoutOrder)
             {

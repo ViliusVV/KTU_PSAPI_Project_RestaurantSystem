@@ -16,6 +16,8 @@
   <ItemGroup>
     <Compile Include="Migrations\20200522131419_Initial.cs" />
     <Compile Include="Migrations\20200522131419_Initial.designer.cs" />
+    <Compile Include="Migrations\20200523094232_update1.cs" />
+    <Compile Include="Migrations\20200523094232_update1.Designer.cs" />
     <Compile Include="Migrations\RestaurantContextModelSnapshot.cs" />
   </ItemGroup>
 
