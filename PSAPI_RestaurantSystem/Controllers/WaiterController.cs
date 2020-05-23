@@ -120,5 +120,40 @@ namespace PSAPIRestaurantSystem.Controllers
                 
             return View(order);
         }
+
+        // AddOrderedMeals for order GET
+        public IActionResult AddOrderedMeal(int? id)
+        {
+            return View();
+        }
+
+        public IActionResult OrderDeleteForm(int id)
+        {
+            var order = _context.Orders.Find(id);
+            return View(order);
+        }
+
+        // Order deletion form POST
+        [HttpPost]
+        public IActionResult OrderDeleteForm(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var order = _context.Orders.Find(id);
+            
+            if(order == null)
+            {
+                return NotFound();
+            }
+
+            order.State = (int)OrderState.Canceled;
+            _context.Update(order);
+            _context.SaveChanges();
+
+            return RedirectToAction("OrderList");
+        }
     }
 }
