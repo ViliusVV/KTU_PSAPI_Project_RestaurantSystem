@@ -11,6 +11,7 @@ using PSAPIRestaurantSystem.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.RegularExpressions;
 
 namespace PSAPIRestaurantSystem.Controllers
 {
@@ -113,18 +114,14 @@ namespace PSAPIRestaurantSystem.Controllers
                 .Include(t => t.TableOccupancies)
                 .FirstOrDefault();
 
-            if(order == null)
+            order.Price = order.OrderedMeals.Sum(s => s.Price * s.Quantity);
+
+            if (order == null)
             {
                 return NotFound();
             }
                 
             return View(order);
-        }
-
-        // AddOrderedMeals for order GET
-        public IActionResult AddOrderedMeal(int? id)
-        {
-            return View();
         }
 
         public IActionResult OrderDeleteForm(int id)
@@ -154,6 +151,108 @@ namespace PSAPIRestaurantSystem.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("OrderList");
+        }
+
+        // AddOrderedMeals for order GET
+        public IActionResult AddOrderedMeal(int id)
+        {
+
+            var model = new AddOrderedMealViewModel() { OrderId = id };
+            model.OrderedMeals = new List<OrderedMeal>();
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+
+            foreach(var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem() { 
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                });;
+            }
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public IActionResult AddOrderedMealAdd(AddOrderedMealViewModel model)
+        {
+            if (model.OrderedMeals == null) model.OrderedMeals = new List<OrderedMeal>();
+
+            var meal = new OrderedMeal {
+                InOrderOrderId = (int)model.OrderId,
+                MenuEntryId = (int)model.CurrentOrderedMealId,
+                Quantity = (int)model.Quantity,
+                Comment = model.Comments,
+                Price = _context.MenuEntries.Find(model.CurrentOrderedMealId).Price
+                };
+            model.OrderedMeals.Add(meal);
+            for (int i = 0; i < model.OrderedMeals.Count; i++)
+            {
+                model.OrderedMeals[i].MenuEntry = _context.MenuEntries.Find(model.OrderedMeals[i].MenuEntryId);
+            }
+            model.CurrentOrderedMealId = null;
+            model.Quantity = null;
+            model.Comments = null;
+
+            
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+            foreach (var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                }); ;
+            }
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return View("AddOrderedMeal", model);
+        }
+
+
+        [HttpPost]
+        public IActionResult AddOrderedMeal(int? id, AddOrderedMealViewModel model)
+        {
+            if (model.OrderedMeals == null) model.OrderedMeals = new List<OrderedMeal>();
+
+            var meal = new OrderedMeal
+            {
+                InOrderOrderId = (int)model.OrderId,
+                MenuEntryId = (int)model.CurrentOrderedMealId,
+                Quantity = (int)model.Quantity,
+                Comment = model.Comments,
+                Price = _context.MenuEntries.Find(model.CurrentOrderedMealId).Price
+            };
+            model.OrderedMeals.Add(meal);
+
+            foreach(var m in model.OrderedMeals)
+            {
+                var om = new OrderedMeal
+                {
+                    InOrderOrderId = (int)model.OrderId,
+                    MenuEntryId = m.MenuEntryId,
+                    Quantity = m.Quantity,
+                    Comment = m.Comment,
+                    Price = m.Price
+                };
+                _context.Add(om);
+            }
+            _context.SaveChanges();
+
+
+            var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
+            var selectList = new List<SelectListItem>();
+            foreach (var entry in menuEntries)
+            {
+                selectList.Add(new SelectListItem()
+                {
+                    Value = entry.MenuEntryId.ToString(),
+                    Text = entry.MenuEntryName,
+                }); ;
+            }
+            ViewData["Menu"] = new SelectList(selectList, "Value", "Text");
+            return Redirect("/Waiter/OrderPage/" + model.OrderId.ToString());
         }
     }
 }

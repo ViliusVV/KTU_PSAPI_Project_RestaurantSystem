@@ -1,49 +1,108 @@
-﻿@model PSAPIRestaurantSystem.Models.Order
+﻿@model PSAPIRestaurantSystem.Models.ViewModels.AddOrderedMealViewModel
 
 @{
-    ViewData["Title"] = "AddOrderedMeal";
+    ViewData["Title"] = "Papildyti užsakymą";
 }
 
-<h1>AddOrderedMeal</h1>
+<h1>Papildyti užsakyma</h1>
 
-<h4>Order</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddOrderedMeal">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().MenuEntryId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrderedMeals.FirstOrDefault().Comment)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.OrderedMeals.Count > 0)
+                    {
+                        @for (int i = 0; i < Model.OrderedMeals.Count; i++)
+                        {
+                            string menuEntry = Model.OrderedMeals[i].MenuEntry.MenuEntryName;
+                            int menuEntryId = Model.OrderedMeals[i].MenuEntryId;
+                            int qty = Model.OrderedMeals[i].Quantity;
+                            double price = Model.OrderedMeals[i].Price;
+                            string comm = Model.OrderedMeals[i].Comment;
+
+                            <tr>
+                                <td>
+                                    <input style="width:150px" disabled name="OrderedMeals[i].MenuEntryId" value=@menuEntry />
+                                    <input hidden asp-for="OrderedMeals[i].MenuEntryId" value=@menuEntryId />
+                                </td>
+                                <td>
+                                    <input disabled name="OrderedMeals[i].MenuEntryId" value=@qty />
+                                    <input hidden asp-for="OrderedMeals[i].Quantity" value=@qty />
+                                </td>
+                                <td>
+                                    <input disabled name="OrderedMeals[i].MenuEntryId" value=@price />
+                                    <input hidden asp-for="OrderedMeals[i].Price" value=@price />
+                                </td>
+                                <td>
+                                    <input disabled name="OrderedMeals[i].MenuEntryId" value=@comm />
+                                    <input hidden asp-for="OrderedMeals[i].Comment" value=@comm />
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if (Model != null)
+                {
+                    <label asp-for="CurrentTable" class="control-label"></label>
+                    @for (int i = 0; i < Model.Tables.Count; i++)
+                    {
+                        int tableNum = Model.Tables[i].TableNum;
+                        <div class="form-group">
+                            <select disabled asp-items="ViewBag.TableNum" asp-for="Tables[i].TableNum" class="control-label"></select>
+                            <input hidden asp-for="Tables[i].TableNum" value=@tableNum />
+                        </div>
+                    }
+                }*@
+            <input hidden asp-for="OrderId" value="@Model.OrderId" />
             <div class="form-group">
-                <label asp-for="OrderDate" class="control-label"></label>
-                <input asp-for="OrderDate" class="form-control" />
-                <span asp-validation-for="OrderDate" class="text-danger"></span>
+                <label class="control-label">Pasirinkite patiekalą/gėrimą:</label>
+                <select asp-for="CurrentOrderedMealId" asp-items="ViewBag.Menu" class="form-control"></select>
+                <span asp-validation-for="CurrentOrderedMealId" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label class="control-label">Pasirinkite kiekį:</label>
+                <input type="number" asp-for="Quantity" asp-items="ViewBag.Menu" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Duration" class="control-label"></label>
-                <input asp-for="Duration" class="form-control" />
-                <span asp-validation-for="Duration" class="text-danger"></span>
+                <label class="control-label">Pastabos/komentarai:</label>
+                <input type="text" asp-for="Comments" asp-items="ViewBag.Menu" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
             </div>
+
+            <button type="submit" class="btn" formaction="/Waiter/AddOrderedMealAdd/@Model.OrderId"><is class="fas fa-plus"></is></button>
             <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
+                <input type="submit" value="Išsaugoti" asp-action="AddOrderedMeal" class="btn btn-primary" />
             </div>
-            <div class="form-group">
-                <label asp-for="ManagedByWaiterId" class="control-label"></label>
-                <select asp-for="ManagedByWaiterId" class ="form-control" asp-items="ViewBag.ManagedByWaiterId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="OrderPage" asp->Grįžti atgal</a>
 </div>
-

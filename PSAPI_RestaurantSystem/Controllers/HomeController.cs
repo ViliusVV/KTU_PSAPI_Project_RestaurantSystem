@@ -21,7 +21,6 @@ namespace PSAPIRestaurantSystem.Controllers
 
         public IActionResult Index()
         {
-            HttpContext.Session.SetInt32("userID", 2);
             return View();
         }
 
