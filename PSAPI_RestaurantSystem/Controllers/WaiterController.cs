@@ -27,7 +27,10 @@ namespace PSAPIRestaurantSystem.Controllers
 
         public IActionResult WaiterReservationPage()
         {
-            var reserv = _context.Reservations.Include(r => r.ReservedBy).ThenInclude(p => p.Person).Include(t => t.TableOccupancies).ToList();
+            var reserv = _context.Reservations
+                .Include(r => r.ReservedBy)
+                    .ThenInclude(p => p.Person)
+                    .Include(t => t.TableOccupancies).ToList();
             return View(reserv);
         }
 

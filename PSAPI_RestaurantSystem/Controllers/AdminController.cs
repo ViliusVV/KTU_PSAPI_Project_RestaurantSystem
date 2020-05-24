@@ -158,8 +158,10 @@ namespace PSAPIRestaurantSystem.Controllers
             var menuEntriesRevenue = new List<MenuEntryRevenuModel>();
             var tablePopularity = new List<TablePopularityModel>();
 
-            var menuEntries = _context.MenuEntries.Include(m => m.OrderedMeals).ToList();
-            var tables = _context.Tables.Include(t => t.TableOccupancies);
+            var menuEntries = _context.MenuEntries
+                .Include(m => m.OrderedMeals).ToList();
+            var tables = _context.Tables
+                .Include(t => t.TableOccupancies);
 
 
             foreach(var entry in menuEntries)

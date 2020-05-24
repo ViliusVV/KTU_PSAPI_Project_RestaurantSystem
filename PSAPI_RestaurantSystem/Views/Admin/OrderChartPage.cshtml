@@ -28,14 +28,14 @@
             dataType: "json",
             type: "GET",
             success: function (data) {
-                YumChart(data);
+                DrawGraph(data);
                 return false;
             }
         });
         return false;
     }
 
-    function YumChart(data) {
+    function DrawGraph(data) {
         var dataArray1 = [
             ['Patiekalas', 'Pelnas', { role: 'annotation' }]
         ];
@@ -116,7 +116,7 @@
 
 
         var options3 = {
-            title: 'Stalikų pasinaudojimo grafikas',
+            title: 'Staliukų pasinaudojimo grafikas',
             width: 1200,
             height: 600,
             chartArea: {
