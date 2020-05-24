@@ -246,6 +246,7 @@ namespace PSAPIRestaurantSystem.Controllers
         {
             var model = new AddOrderedMealViewModel();
             model.OrderedMeals = new List<OrderedMeal>();
+            model.OrderedForDate = DateTime.Now;
             var menuEntries = _context.MenuEntries.Include(m => m.Menu).ToList();
             var selectList = new List<SelectListItem>();
 
@@ -333,8 +334,17 @@ namespace PSAPIRestaurantSystem.Controllers
 
         public void CreateTakeoutPriorityOrderQueue(AddOrderedMealViewModel model)
         {
-
             var usrID = HttpContext.Session.GetInt32("userID");
+
+            var users = _context.Users.Include(t => t.TakeoutOrders).Include(r => r.Reservations).ToList();
+            foreach(var user in users)
+            {
+                user.LoyalityPoints = user.Reservations.Where(r => r.State != (int)OrderState.Canceled).ToList().Count;
+                user.LoyalityPoints -= user.Reservations.Where(r => r.State == (int)OrderState.Canceled).ToList().Count;
+                user.LoyalityPoints += user.TakeoutOrders.Where(r => r.State != (int)OrderState.Canceled).ToList().Count;
+                user.LoyalityPoints -= user.TakeoutOrders.Where(r => r.State == (int)OrderState.Canceled).ToList().Count;
+            }
+
             var takeout = new TakeoutOrder
             {
                 OrderedByUserId = (int)usrID,
@@ -344,21 +354,78 @@ namespace PSAPIRestaurantSystem.Controllers
                 State = (int)OrderState.Created,
                 ManagedByWaiterId = 1
             };
-            _context.Add(takeout);
-            _context.SaveChanges();
 
-            foreach (var m in model.OrderedMeals)
+            var minDate = takeout.OrderedForDate.AddMinutes(-5);
+            var maxDate = takeout.OrderedForDate.AddMinutes(5);
+            var beforeTake = _context.TakeoutOrders.Where(d => DateTime.Compare(minDate, d.OrderedForDate) <= 0);
+            var afterTake = beforeTake.Where(d => DateTime.Compare(maxDate, d.OrderedForDate) >= 0).Include(u => u.OrderedBy);
+            var overlaped = afterTake.FirstOrDefault();
+            bool overlap = overlaped != null ? true : false;
+            int currentUserPoints = users.Where(l => l.UserId == (int)usrID).FirstOrDefault().LoyalityPoints;
+            int overlapUserPoints = overlap ? overlaped.OrderedBy.LoyalityPoints : 0;
+            if(overlap)
             {
-                var om = new OrderedMeal
+                if(overlapUserPoints >= currentUserPoints)
                 {
-                    InTakeoutTakeoutOrderId = takeout.TakeoutOrderId,
-                    MenuEntryId = m.MenuEntryId,
-                    Quantity = m.Quantity,
-                    Comment = m.Comment,
-                    Price = m.Price
-                };
-                _context.Add(om);
+                    takeout.State = (int)OrderState.Canceled;
+                    _context.Add(takeout);
+                    _context.SaveChanges();
+
+                    foreach (var m in model.OrderedMeals)
+                    {
+                        var om = new OrderedMeal
+                        {
+                            InTakeoutTakeoutOrderId = takeout.TakeoutOrderId,
+                            MenuEntryId = m.MenuEntryId,
+                            Quantity = m.Quantity,
+                            Comment = m.Comment,
+                            Price = m.Price
+                        };
+                        _context.Add(om);
+                    }
+                }
+                else
+                {
+                    overlaped.State = (int)OrderState.Canceled;
+                    _context.Update(overlaped);
+                    _context.Add(takeout);
+                    _context.SaveChanges();
+
+                    foreach (var m in model.OrderedMeals)
+                    {
+                        var om = new OrderedMeal
+                        {
+                            InTakeoutTakeoutOrderId = takeout.TakeoutOrderId,
+                            MenuEntryId = m.MenuEntryId,
+                            Quantity = m.Quantity,
+                            Comment = m.Comment,
+                            Price = m.Price
+                        };
+                        _context.Add(om);
+                    }
+                }
             }
+            else // No overlap detected
+            {
+                _context.Add(takeout);
+                _context.SaveChanges();
+
+                foreach (var m in model.OrderedMeals)
+                {
+                    var om = new OrderedMeal
+                    {
+                        InTakeoutTakeoutOrderId = takeout.TakeoutOrderId,
+                        MenuEntryId = m.MenuEntryId,
+                        Quantity = m.Quantity,
+                        Comment = m.Comment,
+                        Price = m.Price
+                    };
+                    _context.Add(om);
+                }
+            }
+  
+
+
             _context.SaveChanges();
         }
     }

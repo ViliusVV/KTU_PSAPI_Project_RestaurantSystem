@@ -9,13 +9,12 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <div class="form-group">
-            <label class="control-label">Pasirinkite atsiėmimo datą:</label>
-            <input asp-for="OrderedForDate"  class="form-control"/>
-            <span asp-validation-for="OrderedForDate" class="text-danger"></span>
-        </div>
-
         <form method="post">
+            <div class="form-group">
+                <label class="control-label">Pasirinkite atsiėmimo datą:</label>
+                <input asp-for="OrderedForDate" value="@Model.OrderedForDate" class="form-control" />
+                <span asp-validation-for="OrderedForDate" class="text-danger"></span>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -69,18 +68,18 @@
             </table>
 
             @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @if (Model != null)
+        @if (Model != null)
+        {
+            <label asp-for="CurrentTable" class="control-label"></label>
+            @for (int i = 0; i < Model.Tables.Count; i++)
             {
-                <label asp-for="CurrentTable" class="control-label"></label>
-                @for (int i = 0; i < Model.Tables.Count; i++)
-                {
-                    int tableNum = Model.Tables[i].TableNum;
-                    <div class="form-group">
-                        <select disabled asp-items="ViewBag.TableNum" asp-for="Tables[i].TableNum" class="control-label"></select>
-                        <input hidden asp-for="Tables[i].TableNum" value=@tableNum />
-                    </div>
-                }
-            }*@
+                int tableNum = Model.Tables[i].TableNum;
+                <div class="form-group">
+                    <select disabled asp-items="ViewBag.TableNum" asp-for="Tables[i].TableNum" class="control-label"></select>
+                    <input hidden asp-for="Tables[i].TableNum" value=@tableNum />
+                </div>
+            }
+        }*@
             <div class="form-group">
                 <label class="control-label">Pasirinkite patiekalą/gėrimą:</label>
                 <select asp-for="CurrentOrderedMealId" asp-items="ViewBag.Menu" class="form-control"></select>
@@ -89,7 +88,7 @@
 
             <div class="form-group">
                 <label class="control-label">Pasirinkite kiekį:</label>
-                <input type="number" asp-for="Quantity" asp-items="ViewBag.Menu" class="form-control" />
+                <input type="number" asp-for="Quantity" value="1" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
 
