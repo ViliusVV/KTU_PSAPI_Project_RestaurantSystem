@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @if (Model != null)
             {
-                <label asp-for="CurrentTable" class="control-label"></label>
+                <label class="control-label">Staliukas:</label>
                 @for (int i = 0; i < Model.Tables.Count; i++)
                 {
                     int tableNum = Model.Tables[i].TableNum;
@@ -26,14 +26,14 @@
             }
 
             <div class="form-group">
-                <label asp-for="CurrentTable" class="control-label"></label>
+                <label class="control-label">Pasirinkite staliuką:</label>
                 <select asp-for="CurrentTable" asp-items="ViewBag.TableNum" class="form-control"></select>
                 <span asp-validation-for="CurrentTable" class="text-danger"></span>
             </div>
             <br>
             <button type="submit" class="btn" formaction="OrderCreationFormAdd"><i class="fas fa-plus"></i></button>
             <div class="form-group">
-                <input type="submit" value="Create" asp-action="OrderCreationForm" class="btn btn-primary" />
+                <input type="submit" value="Sukurti" asp-action="OrderCreationForm" class="btn btn-primary" />
             </div>
 
         </form>
@@ -41,6 +41,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Grįžti atgal</a>
+    <a asp-action="OrderList">Grįžti atgal</a>
 </div>
 
